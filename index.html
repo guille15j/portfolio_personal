@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="estilos/0-home.css">
+    <link rel="stylesheet" href="estilos/0-namepage.css">
+    <link rel="stylesheet" href="estilos/0-navHover.css">
+
+    <link rel="stylesheet" href="estilos/1-header.css">
+
+    <link rel="stylesheet" href="estilos/2-aboutMe.css">
+
+    <link rel="stylesheet" href="estilos/3-0-proyectos.css">
+    <link rel="stylesheet" href="estilos/3-1-filtros.css">
+
+    <link rel="stylesheet" href="estilos/4-experiencia.css">
+
+    <link rel="stylesheet" href="estilos/botones.css">
+
+    <script src="scripts/modooscuro.js"></script>
+
+    <style>
+        
+    </style>
+
+</head>
+<body class="dark_mode ">
+    
+    <header>
+        <h1>Guillermo</h1>
+        <h1>Santos Sánchez</h1>
+        <div class="perfilPic">
+            <img src="resources\avatar.PNG" alt="Imagen Perfil">
+        </div>
+        
+        
+        <h3>Soy <span>Desarrollador BackEnd</span></h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nostrum fuga eligendi iure quos repellendus eum ducimus unde incidunt quaerat! Eius facilis labore, porro tenetur voluptatum atque maxime dolore illum.
+        </p>
+        <h3>
+            guillermosantossanchez@gmail.com
+        </h3>
+        <div class="botonera">
+            <button class="boton" onclick="abrirCV()">CV</button>
+            <button class="boton">Linkedin</button>
+            <button class="boton">Github</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="" class="enlace">
+            <span>¿Quíen Soy?</span>
+        </a>
+        <a href="" class="enlace">
+            <span>Proyectos</span>
+        </a>
+        <a href="" class="enlace">
+            <span>Técnologías</span>
+        </a>
+        <a href="" class="enlace">
+            <span>Esperiencia</span>
+        </a>
+
+        <i class="material-icons" id="dark_mode"  onclick="modoOscuro()">
+        light_mode</i>
+        
+        <div id="idiomas">
+            <button class="sel">ES</button>
+            <button>EN</button>
+        </div>
+    </nav>
+
+    <main>
+
+        <section id="sc0">
+            <h1>Desarrollador Full Stack</h1><h1>Desarrollador Full Stack</h1>
+            <h1>Guillermo</h1><h1>Guillermo</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, odio deleniti dolorem eos ducimus nisi deserunt quasi quae illo officia beatae expedita dolorum illum unde iste id, error at magni.</p>
+            <div class="botonera">
+                <button class="boton" onclick="verPDF()">CV</button>
+                <button class="boton" onclick="verLinkelin()">Linkedin</button>
+                <button class="boton" onclick="verGit()">Github</button>
+            </div>
+        </section>
+
+        <section id="sc1">
+            
+            <h2 class="tituloSection">¿Quién soy?</h2>
+            <div class="gridQnSy">
+                <img src="resources/avatar2.PNG" alt="">
+                <div>
+                    <h2>who i am</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo earum enim quaerat voluptate porro? Nobis officiis reprehenderit eligendi quia amet perspiciatis aperiam quae itaque, fuga voluptatem incidunt iusto. Deserunt, beatae?</p>
+                </div>
+
+                <div>
+                    <h2>Hobbies</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo earum enim quaerat voluptate porro? Nobis officiis reprehenderit eligendi quia amet perspiciatis aperiam quae itaque, fuga voluptatem incidunt iusto. Deserunt, beatae?</p>
+                </div>
+
+                <div>
+                    <h2>Caracteristicas</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo earum enim quaerat voluptate porro? Nobis officiis reprehenderit eligendi quia amet perspiciatis aperiam quae itaque, fuga voluptatem incidunt iusto. Deserunt, beatae?</p>
+                </div>
+
+                <div>
+                    <h2>Enlaces</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo earum enim quaerat voluptate porro? Nobis officiis reprehenderit eligendi quia amet perspiciatis aperiam quae itaque, fuga voluptatem incidunt iusto. Deserunt, beatae?</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sc2">
+            <h2 class="tituloSection">Proyectos</h2>
+
+            <!-- <button id="expandir" class="boton">Expandir</button>
+            <div class="techFilter">
+                <button class="filtroTech" id="tech01">Todo</button>
+                <div id="front">
+                    <span>FrontEnd</span>
+                    <button class="filtroTech" id="tech02">HTML</button>
+                    <button class="filtroTech" id="tech03">CSS</button>
+                    <button class="filtroTech" id="tech04">JS</button>
+                </div>
+                <div id="back">
+                    <span>BackEnd</span>
+                    <button class="filtroTech" id="tech05">Java</button>
+                    <button class="filtroTech" id="tech06">MySQL</button>
+                    <button class="filtroTech" id="tech07">C/C++</button>
+                    <button class="filtroTech" id="tech08">Maven</button>
+                    <button class="filtroTech" id="tech09">JUnit</button>
+                </div>
+                <div id="IDE">
+                    <span>Otros</span>
+                    <button class="filtroTech" id="tech10">Eclipse</button>
+                    <button class="filtroTech" id="tech11">Visual Studio</button>
+                    <button class="filtroTech" id="tech12">Visual Studio Code</button>
+                    <button class="filtroTech" id="tech13">Arduino</button>
+                    <button class="filtroTech" id="tech14">ESP</button>
+                    <button class="filtroTech" id="tech15">Docker</button>
+                </div>
+                
+            </div> -->
+
+            <div class="tarjetas">            
+                <article class="tarjeta" id="pT1">
+                    <div class="window">
+                        <img src="resources\img\projects\lockerApp.png" 
+                        class="imgProyectos" alt="Gestor de Paquetería" >
+                    </div>
+                    
+                    <div class="techProyectos">
+                        <span class="lenguaje">Java</span>
+                        <span class="tecnologia">MySQL</span>
+                        <span class="framework">Eclipse</span>
+                        <span class="tecnologia">Maven</span>
+                    </div>
+                    
+                    <div class="descripcion">
+                        <h5>Gestor de Paquetería</h5>
+                        <p>Aplicación gestora de lockers de recogida de 
+                        paquetes en diferentes campus.</p>
+                    </div>
+                </article> 
+                
+                <article class="tarjeta" id="pT2">
+                    <div class="window">
+                        <div class="wDecoration"> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <img src="resources\img\projects\rfidApp.png" 
+                            class="imgProyectos" alt="Gestor de Paquetería" >
+                    </div>
+
+                    <div class="techProyectos">
+                        <span class="lenguaje">C</span>
+                        <span class="lenguaje">C++</span>
+                        <span class="lenguaje">HTML</span>
+                        <span class="tecnologia">Arduino</span>
+                        <span class="framework">Visual Code</span>
+                        
+                    </div>
+                    <div class="descripcion">
+                        <h5>Control de acceso por RFID</h5>
+                        <p>Control de acceso y monitoreo mediante tarjetas RFID.</p>
+                    </div>
+                </article>
+
+                <article class="tarjeta" id="pT3">
+                    <div class="window">
+                        <div class="wDecoration"> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <img src="resources\img\projects\serviciosTI.png" 
+                            class="imgProyectos" alt="Gestor de Paquetería" >
+                    </div>
+                    
+                    <div class="techProyectos">
+                        <span class="lenguaje">HTML</span>
+                        <span class="lenguaje">CSS</span>
+                        <span class="lenguaje">JavaScript</span>
+                        <span class="framework">VSCode</span>
+                    </div>
+                    <div class="descripcion">
+                        <h5>Diseño WEB Servicios IT</h5>
+                        <p>Página web diseña para alojar servicios IT. 
+                        Encargado del diseño responsive y planteamiento de la 
+                        sección de servicios IT</p>
+                    </div>
+
+                </article>
+
+                <article class="tarjeta" id="pT1">
+                    <div class="window">
+                        <div class="wDecoration"> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <img src="resources\img\projects\GFS_2.jpeg" 
+                            class="imgProyectos" alt="Gestor de Paquetería" >
+                    </div>
+                    
+                    <div class="techProyectos">
+                        <span class="lenguaje">C</span>
+                        <span class="framework">Linux</span>
+                        <span class="tecnologia">ESP32</span>
+                        <span class="tecnologia">RS-232</span>
+                    </div>
+                    
+                    <div class="descripcion">
+                        <h5>Comunicación Serial</h5>
+                        <p>Desarrollo e implementación de comunicación Serial 
+                            en una embarcación de competición.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="sc3">
+            <h2 class="tituloSection">Experiencia</h2>
+
+            <!-- The Timeline -->
+
+            <ul class="timeline">
+
+                <!-- Item 1 -->
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Freelancer</span>
+                            <span class="time-wrapper"><span class="time">2013 - present</span></span>
+                        </div>
+                        <div class="desc">My current employment. Way better than the position before!</div>
+                    </div>
+                </li>
+            
+                <!-- Item 2 -->
+                <li>
+                    <div class="direction-l">
+                        <div class="flag-wrapper">
+                            <span class="flag">Apple Inc.</span>
+                            <span class="time-wrapper"><span class="time">2011 - 2013</span></span>
+                        </div>
+                        <div class="desc">My first employer. All the stuff I've learned and projects I've been working on.</div>
+                    </div>
+                </li>
+
+                <!-- Item 3 -->
+                <li>
+                    <div class="direction-r">
+                        <div class="flag-wrapper">
+                            <span class="flag">Harvard University</span>
+                            <span class="time-wrapper"><span class="time">2008 - 2011</span></span>
+                        </div>
+                        <div class="desc">A description of all the lectures and courses I have taken and my final degree?</div>
+                    </div>
+                </li>
+            
+            </ul>
+
+        </section>
+
+        <section id="sc4">
+            <h2 class="tituloSection">Tecnología</h2>
+        </section>
+
+    </main>
+
+    <!-- <footer></footer> -->
+
+    <script>
+        function abrirCV(){
+            console.log("DENTRO");
+            window.open('resources/CV.pdf', '_blank');
+                
+        }
+    </script>
+</body>
+</html>
+

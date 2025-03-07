@@ -1,0 +1,88 @@
+#sc2, #sc3, #sc4  {
+    width: calc(100% - 500px);
+    margin-left: 500px;
+}
+
+#sc2{
+    height: 100%;
+}
+
+.tarjetas{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0 ;
+    justify-content: center;
+    justify-items: center;
+}
+
+.tarjeta{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+@media screen and (max-width:1023px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+    .tarjeta {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 8fr;
+        gap: 10px;
+        background-color: blanchedalmond;
+        overflow: hidden;
+
+        padding: 20px;
+        margin: 10px 0;
+        position: relative; /* Asegura que el área sea interactiva */
+    }
+
+    .window {
+        grid-column: 1;
+        grid-row-start: 1;
+        grid-row-end: 3;
+
+        width: 100%;
+        height: 50dvh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 20px;
+        background-color: var(--c-acento);
+        overflow: hidden;
+        position: relative; /* Garantiza que la imagen se relacione con este contenedor */
+    }
+
+    .techProyectos {
+        grid-column: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+    }
+
+    .techProyectos span::before {
+        content: "#";
+    }
+
+    .techProyectos span {
+        margin-right: 10px;
+    }
+
+    .window img {
+        height: 50dvh;
+        transform: translateX(200px) rotateZ(-45deg) rotateY(45deg) rotateX(45deg);
+        transition: transform 0.3s ease; /* Cambia el timing para mayor fluidez */
+        pointer-events: none; /* Evita interferencias del mouse directamente sobre la imagen */
+    }
+
+    .tarjeta:hover .window img {
+        transform: translateX(0px) rotateZ(0deg) rotateY(0deg) rotateX(0deg);
+    }
+}

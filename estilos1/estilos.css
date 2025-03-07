@@ -1,0 +1,141 @@
+:root{
+    --c-primario: rgb(255, 235, 119);
+    --c-secundario: rgb(255, 202, 123);
+    --c-acento: purple;
+    --c-fondo: #151922;
+    --cd-f1: hsla(240,61%,61%,0.24);
+    --cd-f2: hsla(240,72%,74%,0.48);
+    --cd-f3: hsla(259,90%,76%,0.18);
+
+    --text: white;
+}
+
+
+
+.dark_mode{
+    --c-primario: hsl(260, 100%, 73%);
+    --c-secundario: hsl(280, 100%, 74%);
+    --c-acento: gold;
+    --c-fondo: hsl(38, 100%, 95%);
+    --cd-f1: hsla(40, 100%, 72%, 0.24);
+    --cd-f2: hsla(96, 100%, 81%, 0.48);
+    --cd-f3: hsla(96, 90%, 76%, 0.18);
+
+    --text: black;
+}
+
+*{
+    font-family:Arial, Helvetica, sans-serif;
+    color: var(--text);
+}
+
+body{
+    background-color:var(--c-fondo);
+    background-image:
+
+    radial-gradient(at 56% 54%, var(--cd-f1) 0px, transparent 50%),
+    radial-gradient(at 58% 25%, var(--cd-f2) 0px, transparent 50%),
+    radial-gradient(at 12% 43%, var(--cd-f3) 0px, transparent 50%);
+    
+    background-repeat: no-repeat;
+
+}
+
+body{
+    position: relative;
+    display: flex;
+
+    margin: 20px;
+    padding: 10px;
+}
+
+header, nav{
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+
+    border-radius: 50px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+nav{
+
+    position: fixed;
+    top: 30px;
+    left: 500px;
+
+    height: 50px;
+    width: calc(100% - 500px - 60px);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(5px);
+    
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+main{
+    width: calc(100% - 500px);
+    margin-left: calc(500px - 30px);
+    margin-top: 20px;
+
+    justify-items: center;
+    z-index: -1;
+
+}
+
+section{
+    margin: 50px;
+    margin-bottom: 120px;
+    width: 90%;
+    padding: 30px;
+
+}
+
+#sc1{
+    animation: fst both linear;
+    animation-timeline: view();
+    animation-range: exit 5vh exit 80vh;
+}
+
+nav{
+    animation: fstNav both linear;
+    animation-timeline: view();
+    animation-range: exit 140vh exit 180vh;
+}
+
+@keyframes fst {
+    from{
+        opacity: 1;
+        left:  calc(-250px + 15px) ;
+    }    
+    to{
+        opacity: 0;
+        
+        left: 0px;
+        transform:translateY(-100px) scale(0.9);
+    }
+
+}
+
+@keyframes fstNav {
+    from{
+        opacity: 1;
+        left:5%;
+        width: 90%;
+    }    
+    to{
+        left: 500px;
+
+        height: 50px;
+        width: calc(100% - 500px - 60px);
+    }
+
+}
