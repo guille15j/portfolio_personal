@@ -1,12 +1,7 @@
-
 header{
-    /* grid-column: 1;
-    grid-row-start:1;
-    grid-row-end:3; */
-
     position: fixed;
-    top: 30px;
-    left: 30px;
+    /* top: 30px;
+    left: 30px; */
 
     height: 80vh;
 
@@ -105,14 +100,9 @@ header h1{
 
 
 header{
-    /* animation: scale-up both ease-in-out,
-        fade-away both linear; */
-
     animation: fade-away both linear;
     animation-timeline: view();
-    animation-range: exit 170vh exit 180vh;
-    /* animation-range: exit 0% exit 100%,
-        exit 50% exit 90% ; */
+    animation-range: exit 140vh exit 150vh;
 }
 
 @keyframes scale-up {

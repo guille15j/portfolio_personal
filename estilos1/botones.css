@@ -7,7 +7,8 @@
 }
 
 .boton{
-    width: 70px;
+    width: 100px;
+    height: 40px;
     padding: 5px;
     border-radius: 20px;
     border: none;
@@ -29,4 +30,40 @@
     position: absolute;
     bottom: 200px;
     left: -250px;
+}
+
+
+
+/* ANIMAIONES */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Animación de salida */
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+/* Definición de la animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Definición de la animación de salida */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.2);
+    }
 }

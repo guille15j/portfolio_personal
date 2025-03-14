@@ -1,0 +1,176 @@
+#sc0 {
+    display:grid;
+    place-items: center;
+
+    position: relative;
+    position: fixed;
+    top: 50px;
+    left: 92px;
+
+    width: 87.15%;
+    /* background-color: red; */
+
+    view-timeline: --scroll;
+}
+
+#sc0::content{
+    position: absolute;
+}
+
+#sc0 h1{
+    position: absolute;
+}
+
+#sc0 h1:nth-child(1), #sc0 h1:nth-child(2){
+    top: 100px;
+    font-size: 80px;
+    
+    /* color: var(--c-fondo); */
+    /* height: 100vh; */
+}
+
+#sc0 h1:nth-child(3), #sc0 h1:nth-child(4){
+   /* height: 140%;  */
+   top: 80px;
+   text-transform: uppercase;
+   font-size: 190px;
+   color: var(--c-fondo);
+   /* background: url(""); */
+   background-clip: text;
+}
+
+#sc0 h1:nth-child(odd){
+    /* color: var(--c-fondo); */
+    text-shadow: 2px 2px 5px #ffffff00,
+    -2px -2px 5px #2727274d,
+    2px 2px 20px #92e0ff00,
+    -2px -2px 20px #0000004f;
+
+}
+
+#sc0 h1:nth-child(4){
+    color: transparent;
+    background:
+    radial-gradient(at 50% 0%, var(--cd-f1) 0px, transparent 75%),
+    radial-gradient(at 50% 0%, var(--cd-f2) 0px, transparent 30%),
+    radial-gradient(at 50% 0%, var(--cd-f3) 0px, var(--c-acento) 255%);
+    
+    background-clip: text ;
+    background-size: cover;
+    background-position: 100%;
+}
+
+#sc0 h1:nth-child(1){
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 8px 30px #080a0e,
+             -0px -8px 10px #222836;
+}
+#sc0 h1:nth-child(2){
+    color: transparent;
+    background:
+    radial-gradient(at 50% 0%, var(--cd-f1) 0px, transparent 75%),
+    radial-gradient(at 50% 0%, var(--cd-f2) 0px, transparent 30%),
+    radial-gradient(at 50% 0%, var(--cd-f3) 0px,
+    var(--c-acento) 555%);
+   
+        
+    background-clip: text ;
+    background-size: cover;
+    background-position: 100%;
+}
+
+#sc0 p{
+    position: relative;
+    top: 65px;
+    width: 600px;
+    text-align: center;
+
+    animation: fade-in both linear;
+    animation-timeline: --scroll;
+    animation-range: exit 0% exit 35%;
+}
+
+#sc0 .botonera{
+    position: relative;
+    /* left: -250px; */
+
+    border-radius: 50px;
+    background: var(--c-fondo);
+    box-shadow:  8px 8px 30px #080a0e,
+             -8px -8px 30px #222836;
+
+    width: 500px;
+    height: 40px;
+    margin-left: 50%;
+    padding: 10px;
+}
+
+#sc0 h1:nth-child(3), #sc0 h1:nth-child(4){   
+    /* position: fixed; */
+    animation: fade-out both linear; 
+    animation-timeline: --scroll;
+    animation-range: exit 0% exit 45%;
+}
+
+.botonera{
+    animation: fade-in both linear; /* Añadimos la animación */
+    animation-timeline: --scroll; /* Usamos la línea de tiempo de desplazamiento */
+    animation-range: exit 0% exit 20%;
+}
+.botonera button{
+    background:
+    /* radial-gradient(at 50% 0%, var(--cd-f1) 0px, transparent 75%),
+    radial-gradient(at 50% 0%, var(--cd-f2) 0px, transparent 30%), */
+    radial-gradient(at 50% 0%, var(--cd-f1) 0px,
+    rgba(255, 255, 255, 0.144) 85%);
+
+     color: var(--c-texto);
+    
+}
+
+.botonera button:nth-child(1) {
+    background-size: 200% 200%;
+    background-repeat: no-repeat;    
+    background-position: 0% 100%;
+    box-shadow: 
+        2px 2px 2px var(--cd-f3),
+        -2px 2px 2px rgba(0, 0, 0, 0.521);
+}
+
+.botonera button:nth-child(2) {
+    background-size: 200% 200%;
+    background-repeat: no-repeat;    
+    background-position: 50% 100%;
+    box-shadow: 
+        2px 2px 2px var(--cd-f3),
+        2px 2px 2px rgba(0, 0, 0, 0.521);
+}
+
+.botonera button:nth-child(3) {
+    background-size: 200% 200%;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    box-shadow: 
+        -2px 2px 2px var(--cd-f3),
+        2px 2px 2px rgba(0, 0, 0, 0.521);
+}
+#sc0 h1:nth-child(1), #sc0 h1:nth-child(2)
+ {
+    animation: fade-in both linear; /* Añadimos la animación */
+    animation-timeline: --scroll; /* Usamos la línea de tiempo de desplazamiento */
+    animation-range: exit 0% exit 40%;
+}
+
+/* @keyframes fade-in {
+    to{
+        scale:0.8;
+        opacity: 0;
+    }
+}
+
+@keyframes fade-out{
+    to{
+        opacity: 0;
+        scale:1.5;
+    }
+} */

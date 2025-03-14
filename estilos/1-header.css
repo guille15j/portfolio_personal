@@ -13,6 +13,8 @@ header{
     padding: 20px;
     padding-top: 100px;
     width: 400px;
+
+    opacity: 0;
 }
 
 .perfilPic{
@@ -100,21 +102,23 @@ header h1{
 
 
 header{
-    animation: fade-away both linear;
+    animation: fade-in both linear,
+                fade-away both linear;
     animation-timeline: view();
-    animation-range: exit 140vh exit 150vh;
-}
-
-@keyframes scale-up {
-    from{
-        transform: scale(1);
-    }
-    to{
-        transform: scale(0.1);
-    }
+    animation-range: 
+        exit 120vh exit 150vh,
+        exit 250vh exit 325vh
+        ;
 }
 
 @keyframes fade-away {
+    to{
+        opacity: 0;
+        transform:translateX(-100px) scale(0.9);
+    }    
+}
+
+@keyframes fade-in {
     from{
         opacity: 0;
         transform:translateX(-100px) scale(0.9);

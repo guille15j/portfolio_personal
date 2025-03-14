@@ -1,0 +1,101 @@
+#sc5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input, textarea{
+    border-radius: 20px;
+    background: linear-gradient(to top,var(--cd-f1),transparent);
+    backdrop-filter: blur(5px);
+    border: none;
+    margin: 5px;
+}
+
+form input:valid{
+    background-color: none;
+}
+
+textarea{
+    height: 30dvh;
+}
+
+form input{
+    height: 30px;
+}
+
+form p{
+    display: none;
+}
+
+fieldset{
+    border: none;
+}
+
+
+
+@media screen and (max-width:1023px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+    form{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width:clamp(300px, 90%, 1000px);    
+    }
+
+    fieldset {
+        display:grid;
+        grid-template-columns:80px auto;
+        align-items: center;
+    }
+
+    fieldset :nth-child(1){
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    fieldset :nth-child(2){
+        grid-column: 2;
+        grid-row: 1;
+        
+    }
+
+    fieldset :nth-child(3){
+        grid-column-start:1;
+        grid-column-end: 3;
+        grid-row: 2;
+
+        width: auto;
+    }
+    
+    fieldset:nth-child(1){
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row: 1;
+    }
+
+    fieldset:nth-child(2){
+        grid-column: 1;
+        grid-row: 2;
+    }
+    fieldset:nth-child(3){
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    fieldset:nth-child(4), fieldset:nth-child(5){
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    fieldset:nth-child(5){
+        display: flex;
+        flex-direction: column;
+    }
+    fieldset:nth-child(5) *{
+        width: 100%;
+    }
+    
+}

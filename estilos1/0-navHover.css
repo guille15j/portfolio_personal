@@ -1,3 +1,16 @@
+nav a {
+    /* height: 100%;
+    width: 100%; */
+
+    /* border: solid; */
+    width: 100%;
+    max-width: 150px;
+    min-width: 100px;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
 #idiomas button{
     background-color: transparent;
     border: transparent ;
@@ -9,6 +22,7 @@
     margin-left: 1.5px;
     color: var(--c-secundario);
 }
+
 #idiomas .sel{
     color: var(--c-primario);
 }
@@ -22,7 +36,7 @@
     position: absolute;
 
     left: -10px;
-        bottom: -7px;
+    bottom: -7px;
 
     height: 3px;
     width: 0;
@@ -98,6 +112,10 @@
     }
 }
 
-#dark-mode{
-    background-color: red;
+nav #dark_mode{
+    border-radius: 20px;
+    border: 1px var(--c-primario) solid;
+    color: var(--c-secundario);
+    padding: 5px;
+    cursor: pointer;
 }
