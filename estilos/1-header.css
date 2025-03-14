@@ -102,7 +102,7 @@ header h1{
 header{
     animation: fade-away both linear;
     animation-timeline: view();
-    animation-range: exit 120vh exit 150vh;
+    animation-range: exit 140vh exit 150vh;
 }
 
 @keyframes scale-up {

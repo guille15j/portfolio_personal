@@ -1,7 +1,7 @@
 :root{
     --c-primario: rgb(255, 235, 119);
     --c-secundario: rgb(255, 202, 123);
-    --c-acento: purple;
+    --c-acento: rgb(2, 0, 128);
     /* --c-fondo: #151922; */
     --c-fondo: #151922;
     --cd-f1: hsla(240,61%,61%,0.24);
@@ -16,15 +16,15 @@ html{
 }
 
 .dark_mode{
-    --c-primario: #34617F;
-    --c-secundario: #5f8fa5;
-    --c-acento: #051C36;
-    --c-fondo: hsl(42, 72%, 83%);
-    --cd-f1: hsla(189, 100%, 72%, 0.24);
-    --cd-f2: hsla(180, 100%, 81%, 0.48);
-    --cd-f3: hsla(196, 90%, 76%, 0.18);
+    --c-primario: #44347f;
+    --c-secundario: #5f6fa5;
+    --c-acento: rgb(255, 202, 123);
+    --c-fondo: hsl(0, 0%, 100%);
+    --cd-f1: hsla(234, 100%, 72%, 0.24);
+    --cd-f2: hsla(225, 100%, 81%, 0.48);
+    --cd-f3: hsla(214, 90%, 76%, 0.18);
 
-    --text: rgb(0, 80, 73);
+    --text: rgb(17, 0, 80);
 }
 
 *{
@@ -120,7 +120,7 @@ section{
 nav{
     animation: fstNav both linear;
     animation-timeline: view();
-    animation-range: exit 75vh exit 150vh;
+    animation-range: exit 90vh exit 150vh;
 }
 
 @keyframes fst {

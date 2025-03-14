@@ -7,7 +7,8 @@
 }
 
 .boton{
-    width: 70px;
+    width: 100px;
+    height: 40px;
     padding: 5px;
     border-radius: 20px;
     border: none;
