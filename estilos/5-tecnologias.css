@@ -9,29 +9,37 @@
 }
 
 .in{
-    animation: closeTech 0.4s linear both;
+    animation: closeTech .4s linear both;
 }
 
 .in.out{
-    animation: openTech 0.4s linear both;
+    animation: openTech .4s linear both;
     
     background-color: var(--c-fondo);
     z-index: 2;
 }
 
-.out h2, .out div img{ 
-    animation: banish 0.4s linear both;
+.in.out h2, .in.out div img, .in card{ 
+    animation: banish .4s linear both;
 }
 
+.in h2, .in div img, .in.out card{ 
+    animation: appear .4s linear both;
+}
+
+
 @keyframes openTech {
+    from{
+        transform: translateX(0%) scale(1);
+    }
     to{
-        transform: translateX(-50%) scale(5);
+        transform: translateX(-0%) scale(5);
     }
 }
 
 @keyframes closeTech {
     from{
-        transform: translateX(-50%) scale(5);
+        transform: translateX(-0%) scale(5);
     }
     to{
         transform: translateX(0%) scale(1);
@@ -39,8 +47,20 @@
 }
 
 @keyframes banish {
+    from{
+        opacity: 1;
+    }
     to{
         opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
     }
 }
 
@@ -81,7 +101,7 @@
    -2px  2px 10px var(--text);
 }
 
-#sc4 div{
+#sc4 div:nth-child(2),#sc4 div:nth-child(3),#sc4 div:nth-child(4){
     border-radius: 50%;
     border: 1px solid var(--cd-f2);
     /* filter: grayscale(1) sepia(1) hue-rotate(180deg) saturate(2); */
@@ -151,7 +171,6 @@
     left: 50%;
     transform: translateX(-50%) rotate(180deg);
 }
-
 
 #sc4 div:nth-child(4):after{
     content: "";
@@ -323,4 +342,55 @@
     top: 11%;
     transform:translateX(11%) translateY(11%) rotate(45deg);
     
+}
+
+/* tarjetas */
+div.opened{
+    opacity: 0;
+    animation: bannish 1s linear both;
+}
+
+.in.out div.opened{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translateX(-50%) translateY(-50%);
+    animation: appear 1s linear both;
+
+    width: 210px;
+    /* height: px; */
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 5px;
+
+}
+
+.out div:nth-child(2),
+     .out div:nth-child(3),
+         .out div:nth-child(4){
+
+    filter: saturate(1) blur(0.5px);
+    border-style: dashed;
+}
+
+card {
+    background-color: var(--c-acento);
+    border-radius: 2px;
+    width: 50px;
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    padding: 1px;
+}
+
+card ul{
+    list-style: none;
+    transform: translateX(-30px);
+    font-size: 3px;
 }
