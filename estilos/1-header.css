@@ -106,8 +106,8 @@ header{
                 fade-away both linear;
     animation-timeline: view();
     animation-range: 
-        exit 120vh exit 150vh,
-        exit 250vh exit 325vh
+        exit 220vh exit 250vh,
+        exit 350vh exit 425vh
         ;
 }
 
