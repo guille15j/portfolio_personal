@@ -197,131 +197,111 @@
         <section id="sc2">
             <h2 class="tituloSection">Proyectos</h2>
 
-            <!-- <button id="expandir" class="boton">Expandir</button>
-            <div class="techFilter">
-                <button class="filtroTech" id="tech01">Todo</button>
-                <div id="front">
-                    <span>FrontEnd</span>
-                    <button class="filtroTech" id="tech02">HTML</button>
-                    <button class="filtroTech" id="tech03">CSS</button>
-                    <button class="filtroTech" id="tech04">JS</button>
-                </div>
-                <div id="back">
-                    <span>BackEnd</span>
-                    <button class="filtroTech" id="tech05">Java</button>
-                    <button class="filtroTech" id="tech06">MySQL</button>
-                    <button class="filtroTech" id="tech07">C/C++</button>
-                    <button class="filtroTech" id="tech08">Maven</button>
-                    <button class="filtroTech" id="tech09">JUnit</button>
-                </div>
-                <div id="IDE">
-                    <span>Otros</span>
-                    <button class="filtroTech" id="tech10">Eclipse</button>
-                    <button class="filtroTech" id="tech11">Visual Studio</button>
-                    <button class="filtroTech" id="tech12">Visual Studio Code</button>
-                    <button class="filtroTech" id="tech13">Arduino</button>
-                    <button class="filtroTech" id="tech14">ESP</button>
-                    <button class="filtroTech" id="tech15">Docker</button>
-                </div>
+            <div class="tarjetas">
                 
-            </div> -->
 
-            <div class="tarjetas">            
                 <article class="tarjeta" id="pT1">
                     <div class="window">
-                        <img src="resources\img\projects\lockerApp.png" 
-                        class="imgProyectos" alt="Gestor de Paquetería" >
-                    </div>
-                    
-                    <div class="techProyectos">
-                        <span class="lenguaje">Java</span>
-                        <span class="tecnologia">MySQL</span>
-                        <span class="framework">Eclipse</span>
-                        <span class="tecnologia">Maven</span>
-                    </div>
-                    
-                    <div class="descripcion">
-                        <h5>Gestor de Paquetería</h5>
-                        <p>Aplicación gestora de lockers de recogida de 
-                        paquetes en diferentes campus.</p>
-                    </div>
-                </article> 
-                
-                <article class="tarjeta" id="pT2">
-                    <div class="window">
-                        <div class="wDecoration"> 
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <img src="resources\img\projects\rfidApp.png" 
+                        <img src="resources\img\projects\GFS_2.jpeg" 
                             class="imgProyectos" alt="Gestor de Paquetería" >
+                            <span></span>
+                        <img class="bttn" src="resources/img/github.png" 
+                            onclick="verGit()" alt="Enlace a Github">
                     </div>
-
-                    <div class="techProyectos">
-                        <span class="lenguaje">C</span>
-                        <span class="lenguaje">C++</span>
-                        <span class="lenguaje">HTML</span>
-                        <span class="tecnologia">Arduino</span>
-                        <span class="framework">Visual Code</span>
-                        
-                    </div>
+                    
+                    
                     <div class="descripcion">
-                        <h5>Control de acceso por RFID</h5>
-                        <p>Control de acceso y monitoreo mediante tarjetas RFID.</p>
+                        <h3>Comunicación Serial</h3>
+                        <div class="techProyectos">
+                            <span class="b">C</span>
+                            <span class="o">Linux</span>
+                            <span class="o">ESP32</span>
+                            <span class="o">RS-232</span>
+                        </div>
+                        <p>Desarrollo e implementación de comunicación Serial 
+                            en una embarcación de competición.</p>
                     </div>
+                    
+                    
                 </article>
 
-                <article class="tarjeta" id="pT3">
+                <article class="tarjeta" id="pT2">
                     <div class="window">
-                        <div class="wDecoration"> 
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <img src="resources\img\projects\serviciosTI.png" 
+                        <img src="resources\img\projects\rfidApp.png" 
                             class="imgProyectos" alt="Gestor de Paquetería" >
+                            <span></span>
+                            <img class="bttn" src="resources/img/github.png" 
+                            onclick="verGit()" alt="Enlace a Github">
+                    </div>
+
+                
+                    <div class="descripcion">
+                        <h3>Control de acceso por RFID</h3>
+
+                        <div class="techProyectos">
+                            <span class="b">C</span>
+                            <span class="b">C++</span>
+                            <span class="f">HTML</span>
+                            <span class="o">Arduino</span>
+                            <span class="o">Visual Code</span>
+                        </div>
+
+                        <p>Control de acceso y monitoreo mediante tarjetas RFID.</p>
                     </div>
                     
-                    <div class="techProyectos">
-                        <span class="lenguaje">HTML</span>
-                        <span class="lenguaje">CSS</span>
-                        <span class="lenguaje">JavaScript</span>
-                        <span class="framework">VSCode</span>
+                    
+                </article>
+
+                <article class="tarjeta" id="pT1">
+                    <div class="window">
+                        
+                        <img src="resources\img\projects\lockerApp.png" 
+                        class="imgProyectos" alt="Gestor de Paquetería" >
+                        <span></span>
+                        <img class="bttn" src="resources/img/github.png" 
+                            onclick="verGit()" alt="Enlace a Github">
                     </div>
+                    
                     <div class="descripcion">
-                        <h5>Diseño WEB Servicios IT</h5>
+                        <h3>Gestor de Paquetería</h3>
+
+                        <div class="techProyectos">
+                            <span class="b">Java</span>
+                            <span class="b">MySQL</span>
+                            <span class="o">Eclipse</span>
+                            <span class="o">Maven</span>
+                        </div>
+
+                        <p>Aplicación gestora de lockers de recogida de 
+                        paquetes en diferentes campus.</p>
+                    </div>                  
+                </article> 
+                
+                <article class="tarjeta" id="pT3">
+                    <div class="window">
+                        <img src="resources\img\projects\serviciosTI.png" 
+                            class="imgProyectos" alt="Gestor de Paquetería" >
+                            <span></span>
+                            <img class="bttn" src="resources/img/github.png" 
+                            onclick="verGit()" alt="Enlace a Github">
+                    </div>
+                    
+                    <div class="descripcion">
+                        <h3>Diseño WEB Servicios IT</h3>
+
+                        <div class="techProyectos">
+                            <span class="f">HTML</span>
+                            <span class="f">CSS</span>
+                            <span class="f">JavaScript</span>
+                            <span class="o">VSCode</span>
+                        </div>
+
                         <p>Página web diseña para alojar servicios IT. 
                         Encargado del diseño responsive y planteamiento de la 
                         sección de servicios IT</p>
                     </div>
-
                 </article>
 
-                <article class="tarjeta" id="pT1">
-                    <div class="window">
-                        <div class="wDecoration"> 
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <img src="resources\img\projects\GFS_2.jpeg" 
-                            class="imgProyectos" alt="Gestor de Paquetería" >
-                    </div>
-                    
-                    <div class="techProyectos">
-                        <span class="lenguaje">C</span>
-                        <span class="framework">Linux</span>
-                        <span class="tecnologia">ESP32</span>
-                        <span class="tecnologia">RS-232</span>
-                    </div>
-                    
-                    <div class="descripcion">
-                        <h5>Comunicación Serial</h5>
-                        <p>Desarrollo e implementación de comunicación Serial 
-                            en una embarcación de competición.</p>
-                    </div>
-                </article>
             </div>
         </section>
 

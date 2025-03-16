@@ -1,3 +1,12 @@
+@media screen and (max-width:1023px) {
+
+    header{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
 header{
     position: fixed;
     /* top: 30px;
@@ -126,4 +135,5 @@ header{
     to{
         opacity: 1;
     }
+}
 }
