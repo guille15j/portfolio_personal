@@ -1,3 +1,17 @@
+header{
+    background: linear-gradient(to top, var(--c-fondo),
+         var(--cd-f1), var(--c-fondo));
+    backdrop-filter: blur(5px);
+    
+    border-radius: 20px;
+    border: 1px solid var(--text);
+
+    
+    height: clamp(60dvh, 100%, 70dvh);
+    width: clamp(10vw, 100%, 20vw);
+    overflow: inherit;
+}
+
 @media screen and (max-width:1023px) {
 
     header{
@@ -9,10 +23,9 @@
 
 header{
     position: fixed;
-    /* top: 30px;
-    left: 30px; */
+    /* top: 30px; */
+    /* left: 30px; */
 
-    height: 80vh;
 
     display: flex;
     flex-direction: column;
@@ -21,22 +34,27 @@ header{
 
     padding: 20px;
     padding-top: 100px;
-    width: 400px;
+    margin-left: 1vw;
 
     opacity: 0;
 }
 
 .perfilPic{
     position: relative;
-    width: 200px;
-    height: 200px;
+    /* width: 200px; */
+    /* height: 200px; */
+    width: clamp(10px, 100dvw, 200px);
+    height: clamp(10px, 100dvw, 200px);
     margin: 50px 0;
 }
 
 .perfilPic img{
-    width: 100%;
-    height: 100%;
+    width: clamp(10px, 100dvw, 200px);
+    height: clamp(10px, 100dvw, 200px);
     z-index: 1;
+    border-radius: 0 0 70px 80px;
+/*     
+    background-color: red; */
 }
 
 .perfilPic::after{
@@ -48,7 +66,7 @@ header{
     width: calc(100% + 60px);
     height: calc(100% + 60px);
 
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid var(--c-secundario);
     border-radius: 50% ;
     animation: bubbles2 20s infinite;
 }
@@ -107,8 +125,15 @@ header h1{
     text-align: left;
     width: 100%;
     margin: 0;
+    font-size: clamp(20px, 2dvw, 55px);
 }
 
+header h3{
+    font-size: clamp(13px, 1dvw, 20px);
+}
+header p{
+    font-size: clamp(10px, 1dvw, 15px);
+}
 
 header{
     animation: fade-in both linear,

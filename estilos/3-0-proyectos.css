@@ -193,8 +193,12 @@
 
 @media screen and (min-width: 1024px) {
     #sc2{
-        width: calc(100% - 700px);
-        margin-left: 500px;
+        width: clamp(calc(90dvw - 25dvw), 100%, calc(90dvw - 25dvw));
+        margin-left: calc( clamp(10vw, 100%, 21vw) + 5vw);
+    }
+
+    .tarjeta .descripcion {
+        min-width: 350px;
     }
 
     .tarjeta div:last-child{

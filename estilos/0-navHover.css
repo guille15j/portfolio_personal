@@ -2,7 +2,7 @@ nav{
     position: fixed;
     top: 20px;
     left: 25%;
-    width: 50%;
+    width: clamp(650px, 50dvw, 4000px);
 
     display: flex;
     align-items: center;
@@ -42,4 +42,21 @@ nav div:last-child{
 
 #idiomas .sel{
     color: var(--c-primario);
+}
+
+@media screen and (max-width:1023px) {
+    nav{
+        width: 100%;
+        margin: 0;
+        top:0;
+        left: 0;
+
+        border-radius: unset;
+        border: unset;
+        border-bottom: 1px solid var(--text);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
 }
