@@ -5,7 +5,7 @@
     justify-items: center;
     align-items: center;
 
-    width: 100%;
+
 }
 
 #sc1::after{
@@ -64,8 +64,8 @@
     /* width: calc(100% + 100px);
     height: calc(100% + 100px); */
 
-    width: calc(210px * 3 + 20px * 4);
-    height: calc(210px * 3 + 20px * 4);
+width: calc(210px * 3 + 20px * 4);
+height: calc(210px * 3 + 20px * 4);
 
     position: absolute;
     top: -20px;
@@ -81,6 +81,10 @@
     display: grid;
     grid-template-columns: repeat(3, 210px);
     grid-template-rows: repeat(3, 210px);
+
+/* grid-template-columns: repeat(3, minmax(100px,210px));
+grid-template-rows: repeat(3, minmax(100px,210px)); */
+
     gap: 20px;
 
     margin-left: auto;
@@ -89,6 +93,8 @@
 
     position: absolute;
     margin-left: 20px;
+    
+    
 }
 
 .gridQnSy div{

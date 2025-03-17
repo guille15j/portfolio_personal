@@ -1,14 +1,42 @@
 :root{
+    /* ORIGINAL */
+    
     --c-primario: rgb(255, 235, 119);
     --c-secundario: rgb(255, 202, 123);
     --c-acento: rgb(130, 85, 160);
-    /* --c-fondo: #151922; */
     --c-fondo: #151922;
     --cd-f1: hsla(240,61%,61%,0.24);
     --cd-f2: hsla(240,72%,74%,0.48);
     --cd-f3: hsla(234, 90%, 76%, 0.18);
 
-    --text: white;
+    --text: white; 
+   
+
+    /* RECOMENDACION DEEPSEEK  */
+    /*
+    --c-primario: #4ECDC4;
+    --c-secundario: #FFD166;
+    --c-acento: #FF6B6B;
+    --text: #E0E0E0;
+    --cd-f1: rgba(78, 205, 196, 0.24);
+    --cd-f2: rgba(78, 205, 196, 0.46);
+    --cd-f3: rgba(78, 205, 196, 0.18);
+    --c-fondo: #1E1E1E;
+     */
+
+    /* Correcion de DEEPSEEK */
+    /* 
+    --c-primario: rgb(255, 223, 89); 
+    --c-secundario: rgb(255, 202, 123); 
+    --c-acento: rgb(160, 110, 200); 
+    --c-fondo: #151922; 
+    --cd-f1: hsla(50, 100%, 80%, 0.24); 
+    --cd-f2: hsla(30, 100%, 80%, 0.48); 
+    --cd-f3: hsla(50, 100%, 90%, 0.18); 
+    --text: white;  
+    */
+    
+
 }
 
 .dark_mode{
@@ -21,6 +49,24 @@
     --cd-f3: hsla(214, 90%, 76%, 0.18);
 
     --text: rgb(17, 0, 80);
+
+    /* --c-primario: #2E86AB; */
+    /* --c-secundario: #F6AE2D; */
+    /* --c-acento: #FF6B6B; */
+    /* --text: #333333;
+    --cd-f1: rgba(46, 134, 171, 0.24);
+    --cd-f2: rgba(46, 134, 171, 0.48);
+    --cd-f3: rgba(46, 134, 171, 0.18);
+    --c-fondo: #FFFFFF; */
+
+    --c-primario: #44347F; /* Morado oscuro */
+    --c-secundario: #5F6FA5; /* Azul grisáceo */
+    --c-acento: rgb(0, 140, 180); /* Azul brillante más suave */
+    --c-fondo: hsl(0, 0%, 100%); /* Fondo blanco */
+    --cd-f1: hsla(250, 60%, 60%, 0.24); /* Morado claro con opacidad */
+    --cd-f2: hsla(250, 60%, 50%, 0.48); /* Morado medio con opacidad */
+    --cd-f3: hsla(250, 60%, 70%, 0.18); /* Morado muy claro con opacidad */
+    --text: rgb(40, 20, 100); /* Morado oscuro más claro */
 }
 
 html{

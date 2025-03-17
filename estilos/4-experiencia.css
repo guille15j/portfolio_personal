@@ -10,6 +10,7 @@
     width: 75%;
     /* height: 70dvh; */
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
@@ -68,23 +69,74 @@
     position: relative;
 }
 
+#contentExp div{
+    position: relative;
+}
+
+#contentExp::aftfer{
+    position: absolute;
+    /* left: calc(50% - 200px); */
+    /* left: 20dvw; */
+    left:calc(45% - (clamp(300px, 20vw, 500px) / 2));
+
+    content: "";
+    width: 2px;
+    height: 100%;
+
+    background-color: var(--c-primario);
+    z-index: -1;
+}
+
+#contentExp div::before{
+    content: "work_history"; /* Nombre del icono */
+    font-family: "Material Icons"; /* Especifica la fuente */
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    
+    font-size: 30px;
+    position: absolute;
+    left: -50px;
+    top: 0;
+
+    background-color: var(--cd-f2);
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: 1px solid var(--c-secundario);
+}
+
+#contentExp .work::before{
+    content: "badge"; /* Nombre del icono */
+    font-family: "Material Icons"; /* Especifica la fuente */
+
+}
+
+#contentExp .study::before{
+    content: "school"; /* Nombre del icono */
+    font-family: "Material Icons"; /* Especifica la fuente */
+
+}
+
+#contentExp div::after{
+    content: "";
+    width: 1px;
+    height: calc(100% - 45px);
+
+    position: absolute;
+    left: -30px;
+    top: 45px;
+
+    background-color: var(--c-primario);
+}
+
 @media screen and (max-width:1023px) {
-    #contentExp::after{
-        position: absolute;
-        left: calc(50% - 200px);
-        top: 0;
-
-        content: "";
-        width: 2px;
-        height: 100%;
-
-        background-color: var(--c-primario);
-        z-index: -1;
-    }
 }
 
 @media screen and (min-width: 1024px) {
-    #contentExp::after{
+    /* #contentExp::after{
         position: absolute;
         left: 0;
         top: 90%;
@@ -95,5 +147,5 @@
 
         background-color: var(--c-primario);
         z-index: -1;
-    }
+    } */
 }
