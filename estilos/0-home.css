@@ -9,6 +9,10 @@
     --cd-f2: hsla(240,72%,74%,0.48);
     --cd-f3: hsla(234, 90%, 76%, 0.18);
 
+    --c-wave1:hwb(244 28% 51%);
+    --c-wave2:hwb(244 18% 61%);
+    --c-wave3:hwb(244 08% 71%);
+
     --text: white; 
    
 
@@ -48,29 +52,16 @@
     --cd-f2: hsla(225, 100%, 61%, 0.48);
     --cd-f3: hsla(214, 90%, 76%, 0.18);
 
-    --text: rgb(17, 0, 80);
+    --text: rgb(6, 0, 27);
 
-    /* --c-primario: #2E86AB; */
-    /* --c-secundario: #F6AE2D; */
-    /* --c-acento: #FF6B6B; */
-    /* --text: #333333;
-    --cd-f1: rgba(46, 134, 171, 0.24);
-    --cd-f2: rgba(46, 134, 171, 0.48);
-    --cd-f3: rgba(46, 134, 171, 0.18);
-    --c-fondo: #FFFFFF; */
-
-    --c-primario: #44347F; /* Morado oscuro */
-    --c-secundario: #5F6FA5; /* Azul grisáceo */
-    --c-acento: rgb(0, 140, 180); /* Azul brillante más suave */
-    --c-fondo: hsl(0, 0%, 100%); /* Fondo blanco */
-    --cd-f1: hsla(250, 60%, 60%, 0.24); /* Morado claro con opacidad */
-    --cd-f2: hsla(250, 60%, 50%, 0.48); /* Morado medio con opacidad */
-    --cd-f3: hsla(250, 60%, 70%, 0.18); /* Morado muy claro con opacidad */
-    --text: rgb(40, 20, 100); /* Morado oscuro más claro */
+    --c-wave1:hwb(244 58% 1%);
+    --c-wave2:hwb(244 48% 11%);
+    --c-wave3:hwb(244 38% 21%);
 }
 
 html{
     overflow-x: hidden;
+    
 }
 
 *{
@@ -85,11 +76,14 @@ body{
     radial-gradient(at 50% 0%, var(--cd-f1) 0px, transparent 50%),
     radial-gradient(at 50% 0%, var(--cd-f2) 0px, transparent 10%),
     radial-gradient(at 50% 0%, var(--cd-f3) 0px, transparent 55%);
-    transition: background-color 0.5s ease;
+    /* transition: background-color 0.5s ease; */
     background-size: 100dvw 80dvh;
     background-repeat: no-repeat;
 }
 
+footer,body{
+    transition: background-color 0.5s ease;
+}
 
 a{
     text-decoration: none;

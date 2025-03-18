@@ -1,0 +1,25 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    /* justify-items: */
+
+    height: clamp(150px, 40dvh, 250px);
+    /* height: 40dvh; */
+
+    /* background: linear-gradient(to bottom, transparent, black);
+    width: 100%; */
+}
+
+footer .botonera :nth-child(1){
+    background-color: red;
+}
+
+footer .botonera :nth-child(2){
+    background-color: blue;
+}
+
+footer .botonera :nth-child(3){
+    background-color: green;
+}
