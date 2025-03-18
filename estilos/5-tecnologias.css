@@ -90,7 +90,13 @@
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     z-index: 1;
+    transition: all 0.5s ease;
     
+}
+
+#sc4 h2:nth-child(1):hover{
+    color: var(--text);
+    transform: translateY(-50%) translateX(-50%) scale(1.2);
 }
 
 .dark_mode #sc4 h2:nth-child(1){

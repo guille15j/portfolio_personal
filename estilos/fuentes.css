@@ -12,14 +12,77 @@ footer{
     width: 100%; */
 }
 
+footer .botonera{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+
+    width: 100px;
+}
+
+footer p{
+     text-align: center;
+}
+
+footer .botonera img{
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.dark_mode footer .botonera img{
+   filter: invert(0);
+}
+
+footer .botonera button{
+    border: none;
+    cursor: pointer;
+    border: 1px solid var(--text);
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    font-size: 10px;
+}
+
 footer .botonera :nth-child(1){
-    background-color: red;
+    background-color: transparent;
+}
+
+footer .botonera :nth-child(1)::before{
+    content:"";
+
 }
 
 footer .botonera :nth-child(2){
-    background-color: blue;
+    
+    background-color: transparent;
+}
+
+footer .botonera :nth-child(2)::before{
+    content:"";
 }
 
 footer .botonera :nth-child(3){
-    background-color: green;
+    background-color: transparent;
+   
+}
+
+.cpMail::after{
+    content:"content_copy";
+    font-family: "Material Icons";
+    /* height: inherit; */
+    height: 100%;
+    margin-left: 5px;
+    align-self: center;
+}
+
+.cpMail:hover {
+    transition: all 0.3s ease;
+    color: var(--c-primario)    ;
+}
+
+.cpMail{
+    cursor: pointer;
 }

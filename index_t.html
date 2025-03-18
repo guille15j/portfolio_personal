@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="title">Guillermo Santos Sánchez</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Enlaces a tus archivos CSS -->
+    <link rel="stylesheet" href="estilos/0-home.css">
+    <link rel="stylesheet" href="estilos/0-namepage.css">
+    <link rel="stylesheet" href="estilos/0-navHover.css">
+    <link rel="stylesheet" href="estilos/1-header.css">
+    <link rel="stylesheet" href="estilos/2-aboutMe.css">
+    <link rel="stylesheet" href="estilos/3-0-proyectos.css">
+    <link rel="stylesheet" href="estilos/3-1-filtros.css">
+    <link rel="stylesheet" href="estilos/4-experiencia.css">
+    <link rel="stylesheet" href="estilos/5-tecnologias.css">
+    <link rel="stylesheet" href="estilos/6-contacto.css">
+    <link rel="stylesheet" href="estilos/botones.css">
+    <link rel="stylesheet" href="estilos/fuentes.css">
+    <script src="scripts/modooscuro.js"></script>
+    <script src="scripts/traduccion.js"></script>
+
+
+</head>
+<body class="">
+    <header>
+        <h1 data-lang-key="name">Guillermo Santos Sánchez</h1>
+        <div class="perfilPic">
+            <img src="resources/avatar.PNG" alt="Imagen Perfil">
+        </div>
+        <h3 data-lang-key="job-title">Soy <span>Desarrollador BackEnd</span></h3>
+        <p data-lang-key="description">
+            Apasionado por resolver problemas complejos y crear soluciones 
+            eficientes. Mi curiosidad por entender cómo funcionan las cosas 
+            me llevó al mundo de la programación, donde aplico mi enfoque 
+            analítico y metódico para desarrollar sistemas robustos y 
+            escalables.
+        </p>
+        <h3 data-lang-key="email">guillermosantossanchez@gmail.com</h3>
+        <div class="botonera">
+            <button class="boton" onclick="abrirCV()" data-lang-key="cv-button">CV</button>
+            <button class="boton" data-lang-key="linkedin-button">Linkedin</button>
+            <button class="boton" data-lang-key="github-button">Github</button>
+        </div>
+    </header>
+
+    <nav>
+        <a href="" class="enlace">
+            <span data-lang-key="about-me">¿Quién Soy?</span>
+        </a>
+        <a href="" class="enlace">
+            <span data-lang-key="projects">Proyectos</span>
+        </a>
+        <a href="" class="enlace">
+            <span data-lang-key="experience">Experiencia</span>
+        </a>
+        <a href="" class="enlace">
+            <span data-lang-key="technologies">Tecnologías</span>
+        </a>
+        <a href="" class="enlace">
+            <span data-lang-key="contact">Contacto</span>
+        </a>
+
+        <div>
+            <div id="idiomas">
+                <button id="btn-espanol" class="sel">ES</button>
+                <button id="btn-ingles">EN</button>
+            </div>
+
+            <i class="material-icons" id="dark_mode" onclick="modoOscuro()">
+                light_mode
+            </i>
+        </div>
+    </nav>
+
+    <main>
+        <section id="sc0">
+            <h1 data-lang-key="fullstack-title">
+                <span>Desarrollador Full-Stack</span>
+                <br>
+                <span>Guillermo</span>
+            </h1>
+            <p data-lang-key="fullstack-description">
+                Creo soluciones tecnológicas que combinan eficiencia y creatividad. 
+                Mi enfoque metódico y mi pasión por aprender me permiten enfrentar 
+                desafíos técnicos con confianza y determinación.
+            </p>
+            <div class="botonera">
+                <button class="boton" onclick="verPDF()" data-lang-key="cv-button">CV</button>
+                <button class="boton" onclick="verLinkelin()" data-lang-key="linkedin-button">Linkedin</button>
+                <button class="boton" onclick="verGit()" data-lang-key="github-button">Github</button>
+            </div>
+        </section>
+
+        <section id="sc1">
+            <h2 class="tituloSection" data-lang-key="about-me">¿Quién soy?</h2>
+            <div class="gridQnSy">
+                <img src="resources/avatar2.PNG" alt="">
+                <div>
+                    <h3 data-lang-key="who-title">Quién soy</h3>
+                    <p data-lang-key="who-description">
+                        Soy un desarrollador BackEnd con experiencia en 
+                        Java, C/C++ y Docker. Mi curiosidad por entender cómo
+                        funcionan las cosas me llevó a la programación, 
+                        donde disfruto resolviendo problemas complejos y 
+                        creando soluciones eficientes.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 data-lang-key="hobbies-title">Hobbies</h3>
+                    <p data-lang-key="hobbies-description">
+                        En mi tiempo libre, disfruto de la música, el cine y el 
+                        dibujo. La robótica también ha sido una gran pasión, 
+                        aunque ahora es más parte de mi trabajo que de mi ocio.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 data-lang-key="characteristics-title">Características</h3>
+                    <p data-lang-key="characteristics-description">
+                        Soy curioso, organizado y perseverante. Mi experiencia como 
+                        profesor me ha enseñado a descomponer problemas complejos en 
+                        partes más sencillas, lo que aplico en mi trabajo diario.
+                    </p>    
+                </div>
+
+                <div>
+                    <h3 data-lang-key="links-title">Enlaces</h3>
+                    <p data-lang-key="links-description">
+                        Conéctate conmigo en 
+                        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
+                        o revisa mis proyectos en 
+                        <a href="https://github.com/tu-usuario" target="_blank">GitHub</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Continúa agregando data-lang-key a todas las secciones restantes -->
+    </main>
+
+    <footer>
+        <p data-lang-key="email">guillermosantossanchez@gmail.com</p>
+        <div class="botonera">
+            <button onclick="abrirCV()" data-lang-key="cv-button">CV</button>
+            <button data-lang-key="linkedin-button">Linkedin</button>
+            <button data-lang-key="github-button">Github</button>
+        </div>
+    </footer>
+
+    <script>
+        function abrirCV() {
+            console.log("DENTRO");
+            window.open('resources/CV.pdf', '_blank');
+        }
+    </script>
+</body>
+</html>

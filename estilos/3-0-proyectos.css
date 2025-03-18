@@ -27,8 +27,11 @@
 
     border-radius: 10px;
     position: relative;
-    border: 5px var(--cd-f1) solid;
+    background-color: var(--c-tarjeta);
+    border: 5px var(--c-tarjeta) solid;
     border-top-width: 30px;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 .window span{
@@ -40,7 +43,6 @@
     left: 5px;
 
     border-radius: 50%;
-    
 }
 
 .window span::before,  .window span::after{
@@ -60,7 +62,7 @@
     left: 30px;
 }
 
-.window::after{
+/* .window::after{
     content: "";
     position: absolute;
     width: 12px;
@@ -70,8 +72,8 @@
     top: -20px;
 
     border-radius: 25%;
-    background-color: var(--c-acento);
-}
+    background-color: rgb(78, 0, 0);
+} */
 
 .window .bttn{
     position: absolute;
@@ -82,7 +84,7 @@
     height: 30px;
     border-radius: 50%;
 
-    padding: 10px;
+    padding: 5px;
     background-color: white;
     border: 2px solid black;
 
@@ -104,6 +106,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
+    background-color: var(--cd-f1);
 }
 
 .b::before, .f::before, .c::before {
@@ -143,7 +147,61 @@
     color: var(--c-primario);
 }
 
-@media screen and (max-width:1023px) {
+@media screen and (min-width: 601px) and (max-width:1023px){
+    #sc2{
+        width: 100%;
+        margin-left: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+
+    .tarjetas{
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+
+        width: clamp(300px,100%,650px);
+    }
+
+    .tarjeta{
+        
+        flex-direction: column;
+        padding: 0px;
+        margin: 10px 0;
+        width: 90%;
+        
+        display: flex;
+        justify-content: flex;
+        justify-items: center;
+        align-items: center;
+        /* background-color: red; */
+    }
+
+    .window{
+        width: clamp(300px,80%,450px);
+        padding: 0;
+        margin: 0;
+    }
+
+    .descripcion{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .tarjeta h3{
+        margin-top: 10px;
+        margin-bottom: 5px 
+    }
+}
+
+@media screen and (max-width:600px) {
 
     #sc2{
         width: 100%;
@@ -161,6 +219,8 @@
         flex-direction: column;
         align-items: center;
         justify-items: center;
+
+        width: 90%;
     }
 
     .tarjeta{

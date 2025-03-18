@@ -44,7 +44,7 @@ nav div:last-child{
     color: var(--c-primario);
 }
 
-@media screen and (max-width:1023px) {
+@media screen and (min-width: 601px) and (max-width:1023px) {
     nav{
         width: 100%;
         margin: 0;
@@ -57,6 +57,44 @@ nav div:last-child{
     }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 600px) {
+    nav{
+        width: 100%;
+        margin: 0;
+        top:0;
+        left: 0;
 
+        border-radius: unset;
+        border: unset;
+        border-bottom: 1px solid var(--text);
+        font-size: 14px;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    nav div i{
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        display: none;
+    }
+
+    /* #idiomas button{
+        display: none;
+        font-size: 12px;
+        width: 5px;
+    }
+    #idiomas .sel{
+        display: block;
+    }
+    #idiomas button:nth-child(1)::after{
+        display: none;
+    } */
+
+    nav div:last-child{
+        /* background-color: red; */
+        display: none;
+        justify-content: space-around;
+        width: clamp(0px, 20%, 100px);
+    }
 }

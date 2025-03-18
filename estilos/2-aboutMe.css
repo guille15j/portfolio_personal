@@ -53,11 +53,12 @@
 
 #sc1 h2{
     text-align: center;
+    width: 100%;
 }
 
-#sc1 h2:nth-child(1){
+/* #sc1 h2:nth-child(1){
     position: relative;
-}
+} */
 
 .gridQnSy::before{
     content: "";
@@ -156,4 +157,20 @@ grid-template-rows: repeat(3, minmax(100px,210px)); */
     
     padding: 20px;
 
+}
+
+
+@media screen and (max-width:700px) {
+    .gridQnSy{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .gridQnSy img{
+        display: none;
+    }
+
+    .gridQnSy::before{
+        display: none;
+    }
 }

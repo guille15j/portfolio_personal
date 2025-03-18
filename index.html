@@ -51,8 +51,8 @@
             analítico y metódico para desarrollar sistemas robustos y 
             escalables.
         </p>
-        <h3>
-            guillermosantossanchez@gmail.com
+        <h3  class="cpMail">
+            guillermosantosanchez@gmail.com
         </h3>
         <div class="botonera">
             <button class="boton" onclick="abrirCV()">CV</button>
@@ -62,19 +62,20 @@
     </header>
 
     <nav>
-        <a href="" class="enlace">
+        <a href="#sc1" class="enlace">
             <span>¿Quíen Soy?</span>
         </a>
-        <a href="" class="enlace">
-            <span>Proyectos</span>
-        </a>
-        <a href="" class="enlace">
-            <span>Esperiencia</span>
-        </a>
-        <a href="" class="enlace">
+        <a href="#sc4" class="enlace">
             <span>Técnologías</span>
         </a>
-        <a href="" class="enlace">
+        <a href="#sc2" class="enlace">
+            <span>Proyectos</span>
+        </a>
+        <a href="#sc3" class="enlace">
+            <span>Esperiencia</span>
+        </a>
+        
+        <a href="#sc5" class="enlace">
             <span>Contácto</span>
         </a>
 
@@ -89,6 +90,8 @@
         </div>
         
     </nav>
+    
+    <button id="btnScrollTop" >Arriba</button>
 
     <main>
 
@@ -475,14 +478,15 @@
             </form>
         </section>
 
+        
     </main>
 
     <footer>
-        <p>guillermosantossanchez@gmail.com</p>
+        <p class="cpMail">guillermosantosanchez@gmail.com</p>
         <div class="botonera">
             <button onclick="abrirCV()">CV</button>
-            <button >Linkedin</button>
-            <button >Github</button>
+            <img src="resources/img/linkedin.png" alt="Linkedin">
+            <img src="resources/img/github.png" alt="Gihub">
         </div>
     </footer>
 
@@ -491,7 +495,40 @@
             console.log("DENTRO");
             window.open('resources/CV.pdf', '_blank');
                 
-        }        
+        }       
+        
+        document.addEventListener("click", (evento) => {
+            if (evento.target.classList.contains("cpMail")) {
+                copiarTextoAlPortapapeles("guillermosantosanchez@gmail.com");
+            }
+        });
+
+        function copiarTextoAlPortapapeles(texto) {
+            navigator.clipboard.writeText(texto).catch((error) => {
+                console.error("Error al copiar al portapapeles:", error);
+            });
+        }
+
+        // Selección del botón
+        const btnScrollTop = document.getElementById("btnScrollTop");
+
+        // Mostrar el botón al hacer scroll
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) { // Mostrar cuando el usuario haya hecho scroll hacia abajo
+                btnScrollTop.style.display = "block";
+            } else {
+                btnScrollTop.style.display = "none";
+            }
+        });
+
+        // Función para volver arriba
+        btnScrollTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" // Desplazamiento suave hacia arriba
+            });
+        });
+
     </script>
 </body>
 

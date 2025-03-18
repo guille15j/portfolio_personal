@@ -4,10 +4,12 @@
 
     border: none;
 
+    background: var(--c-primario);
     background: radial-gradient(at 50% 0%, var(--cd-f1) 0px, transparent 75%),
     radial-gradient(at 50% 0%, var(--cd-f2) 0px, transparent 70%),
-    radial-gradient(at 50% 0%, var(--cd-f3) 10px, var(--c-acento) 555%);
+    radial-gradient(at 50% 0%, var(--cd-f3) 10px, var(--c-wave1) 555%);
    ;
+    
     
     border-radius: 20px;
     padding: 2px;
@@ -17,6 +19,36 @@
 }
 
 .boton:hover{
+    
     background: var(--c-acento);
+    background: radial-gradient(at 50% 0%, var(--cd-f1) 0px, transparent 75%),
+    radial-gradient(at 50% 0%, var(--cd-f2) 0px, transparent 70%),
+    radial-gradient(at 50% 0%, var(--cd-f3) 10px, var(--c-acento) 555%);
+   ;
+
+   transform: scale(1.1);
 }
 
+#btnScrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    background-color: var(--cd-f3);
+    color: white;
+    border: none;
+    /* border-radius: 5px; */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    /* padding: 10px 15px; */
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: none; /* Por defecto oculto */
+    color: var(--text);
+}
+
+#btnScrollTop:hover {
+    background-color: var(--cd-f2);
+}

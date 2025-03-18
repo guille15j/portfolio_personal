@@ -13,34 +13,9 @@
     --c-wave2:hwb(244 18% 61%);
     --c-wave3:hwb(244 08% 71%);
 
+    --c-tarjeta: hwb(243 22% 63%);
+
     --text: white; 
-   
-
-    /* RECOMENDACION DEEPSEEK  */
-    /*
-    --c-primario: #4ECDC4;
-    --c-secundario: #FFD166;
-    --c-acento: #FF6B6B;
-    --text: #E0E0E0;
-    --cd-f1: rgba(78, 205, 196, 0.24);
-    --cd-f2: rgba(78, 205, 196, 0.46);
-    --cd-f3: rgba(78, 205, 196, 0.18);
-    --c-fondo: #1E1E1E;
-     */
-
-    /* Correcion de DEEPSEEK */
-    /* 
-    --c-primario: rgb(255, 223, 89); 
-    --c-secundario: rgb(255, 202, 123); 
-    --c-acento: rgb(160, 110, 200); 
-    --c-fondo: #151922; 
-    --cd-f1: hsla(50, 100%, 80%, 0.24); 
-    --cd-f2: hsla(30, 100%, 80%, 0.48); 
-    --cd-f3: hsla(50, 100%, 90%, 0.18); 
-    --text: white;  
-    */
-    
-
 }
 
 .dark_mode{
@@ -57,6 +32,8 @@
     --c-wave1:hwb(244 58% 1%);
     --c-wave2:hwb(244 48% 11%);
     --c-wave3:hwb(244 38% 21%);
+
+    --c-tarjeta: #bbc7ec;
 }
 
 html{
@@ -95,8 +72,9 @@ i{
 }
 
 section{
-    min-height: 85dvh;
+    min-height: 805px;
     margin: calc(15dvh / 2) 20px;
+    scroll-margin-top: 100px;
     view-timeline: --scroll;
 }
 
