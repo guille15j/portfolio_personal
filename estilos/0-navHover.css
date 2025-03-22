@@ -16,12 +16,15 @@ nav{
          var(--cd-f1), var(--c-fondo));
     backdrop-filter: blur(10px);
 
-    z-index: 10;
+    z-index: 9;
     border-radius: 20px;
     border: 1px solid var(--text);
 
 }
 
+.burger{
+    display: none;
+}
 
 nav div:last-child{
     /* background-color: red; */
@@ -43,8 +46,12 @@ nav div:last-child{
     color: var(--c-secundario);
 }
 
-#idiomas .sel{
-    color: var(--c-primario);
+#idiomas button{
+    color: var(--text);
+}
+
+#idiomas  .sel{
+    color: var(--c-acento);
 }
 
 @media screen and (min-width: 601px) and (max-width:1023px) {
@@ -61,45 +68,151 @@ nav div:last-child{
 }
 
 @media screen and (max-width: 600px) {
-    nav{
-        width: 100%;
+
+    .dark_mode nav div:nth-child(6){
         margin: 0;
-        top:0;
-        left: 0;
+        margin-top: 68dvh;
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--c-wave3);
+        border-radius: 20px;
 
-        border-radius: unset;
-        border: unset;
-        border-bottom: 1px solid var(--text);
-        font-size: 14px;
-        justify-content: space-evenly;
-        width: 100%;
+        padding: 5px;
+        
     }
 
-    nav div i{
-        width: 0px;
-        height: 0px;
-        overflow: hidden;
+    nav div:nth-child(6){
+        margin: 0;
+        margin-top: 68dvh;
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--c-wave1);
+        border-radius: 20px;
+
+        padding: 5px;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        align-items:end;
+        justify-items: right;
+        justify-content: start;
+
+        height: 100%;
+        width: clamp(240px, 20%, 400px);
+        top: 0;
+        backdrop-filter: blur(5px);
+        border-radius: 0;
+        border-color: transparent;
+
+        background: var(--c-wave2);
+        box-shadow: 0 0px 20px black;
+
+         padding-top: 50px;
+    }
+
+    nav a{
+        margin: 10px 30px;
+    }
+
+    nav {
         display: none;
+        transition: all 0.3s ease-in-out;
     }
 
-    /* #idiomas button{
-        display: none;
-        font-size: 12px;
-        width: 5px;
-    }
-    #idiomas .sel{
+    /* buger icon menu */
+
+    .burger {
+        position: fixed;
+        top: 15px;
+        left: 12px;
+
+        width: 15px;
+        height: 20px;
+        background: transparent;
+        
+        cursor: pointer;
         display: block;
+       
+        z-index: 10;
     }
-    #idiomas button:nth-child(1)::after{
-        display: none;
-    } */
+      
+    .burger input {
+    display: none;
+    }
+    
+    .burger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 20px;
+    background: var(--text);
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    
+    z-index: 11;
+    }
+    
+    .burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+    }
+    
+    .burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+    }
+    
+    .burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+    }
+    
+    .burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    width: 20px;
+    z-index: 11;
+    }
+    
+    .burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+    }
+    
+    .burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 14px;
+    width: 20px;
+    z-index: 11;
+    }
 
-    nav div:last-child{
-        /* background-color: red; */
-        display: none;
-        justify-content: space-around;
-        width: clamp(0px, 20%, 100px);
+    .burger::after{
+    content: "";
+    position: absolute;
+    top: -55px;
+    left: -115px;
+
+    width: 150px;
+    height: 90px;
+
+    border-radius: 20px;
+
+    background-color: var(--c-wave1);
+    border: 1px solid var(--c-primario);
+
+    z-index: 10;
+
     }
+
 }
 
 .enlace{
@@ -116,85 +229,53 @@ nav div:last-child{
     height: 3px;
     width: 0;
 
-    background-color: var(--c-acento);
-    /* background: linear-gradient(90deg, var(--c-primario),  */
-    /* var(--c-secundario) 120%); */
+    background-color: var(--c-primario);
 
     height: 0;
     width: 0;
-    /* opacity: 0; */
-}
-
-.enlace:hover{
-    color: black;
 }
 
 .enlace:hover::before{
-    /* opacity: 1; */
-    animation: hoverNAV 1s ease-out forwards;
+    animation: hoverNAV 0.2s ease-out forwards;
     animation-iteration-count: 1;
+}
 
+.dark_mode .enlace::before{
+     background-color: var(--c-acento);
+}
+
+.enlace:hover span{
+    color: var(--c-primario) !important;   
+}
+
+.dark_mode  .enlace:hover span{
+    color: var(--c-acento) !important;   
 }
 
 .enlace:not(:hover)::before {
-    animation: hoverNAVReverse 0.4s  forwards;
+    animation: hoverNAVReverse 0.2s  forwards;
     animation-iteration-count: 1;
-    /* opacity: 0; */
+
 }
 
 @keyframes hoverNAV {
-    35%{
-        width: calc(100% + 20px);
+    from{
         height: 3px;
+        width: 0;
     }
-    55%{
-        height: 32px;
+    to{
+        height: 3px;
         width: calc(100% + 20px);
-        border-radius: 0;
-    }
-    75%,100%{
-        height: 32px;
-        width: calc(100% + 20px);
-        border-radius: 20px;
-        color: black;
-        
-
-        z-index: -1;
-    }
-    75%{
-        box-shadow:0px -3px 2px rgba(0, 0, 0, 0.5) inset,
-        3px -3px 2px rgba(0, 0, 0, 0.1) ;
-    }
-    100%{
-        /* box-shadow: 0px -3px 2px rgba(0, 0, 0, 0.5) inset,
-        3px -3px 2px rgba(0, 0, 0, 0.1) ,
-        -14px -2px 0px var(--c-primario) ,
-        14px 2px 0px var(--c-acento) 
-        ; */
-    }
+    }        
 }
 
 @keyframes hoverNAVReverse {
-    0%, 45% {
-        height: 32px;
-        width: calc(100% + 20px);
-        border-radius: 20px;
-        color: black;
-        z-index: -1;
-        opacity: 1;
-    }
-    685% {
-        height: 32px;
-        width: calc(100% + 20px);
-        border-radius: 0;
-    }
-    85%, 100% {
-        width: calc(100% + 20px);
+    from{
         height: 3px;
-    }
-    100%{
+        width: calc(100% + 20px);
+    }to{
+        height: 0px;
         width: 0;
-        opacity: 0;
     }
      
 }

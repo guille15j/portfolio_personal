@@ -94,3 +94,9 @@
     animation-range: exit -10% exit 85dvh;
 }
 
+@media screen and (max-width: 600px) {
+
+    #sc0 h1{   
+        padding-top: 10dvh;
+    }
+}

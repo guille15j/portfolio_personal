@@ -31,7 +31,7 @@
     <script src="scripts/traduccion.js"></script>
 
 </head>
-<body class="dark_mode">
+<body class="">
     
     <header>
         <h1 data-lang-key="minombre">Guillermo</h1>
@@ -59,36 +59,45 @@
         </div>
     </header>
 
-    <nav>
-        <a href="#sc1" class="enlace">
-            <span data-lang-key="about-me">¿Quíen Soy?</span>
-        </a>
-        <a href="#sc4" class="enlace">
-            <span data-lang-key="technologies">Técnologías</span>
-        </a>
-        <a href="#sc2" class="enlace">
-            <span data-lang-key="projects">Proyectos</span>
-        </a>
-        <a href="#sc3" class="enlace">
-            <span data-lang-key="experience">Esperiencia</span>
-        </a>
-        
-        <a href="#sc5" class="enlace">
-            <span data-lang-key="contact">Contácto</span>
-        </a>
+    <div class="menuCt">
+        <label  class="burger" >
+            <input type="checkbox" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-        <div>
-            <div id="idiomas">
-                <button class="sel" id="btn-espanol">ES</button>
-                <button id="btn-ingles">EN</button>
+        <nav>
+            <a href="#sc1" class="enlace">
+                <span data-lang-key="about-me">¿Quíen Soy?</span>
+            </a>
+            <a href="#sc4" class="enlace">
+                <span data-lang-key="technologies">Técnologías</span>
+            </a>
+            <a href="#sc2" class="enlace">
+                <span data-lang-key="projects">Proyectos</span>
+            </a>
+            <a href="#sc3" class="enlace">
+                <span data-lang-key="experience">Esperiencia</span>
+            </a>
+            
+            <a href="#sc5" class="enlace">
+                <span data-lang-key="contact">Contácto</span>
+            </a>
+
+            <div>
+                <div id="idiomas">
+                    <button class="sel" id="btn-espanol">ES</button>
+                    <button id="btn-ingles">EN</button>
+                </div>
+
+                <i class="material-icons" id="dark_mode"  onclick="modoOscuro()">
+                    light_mode</i>
             </div>
+            
+        </nav>
+    </div>
 
-            <i class="material-icons" id="dark_mode"  onclick="modoOscuro()">
-                light_mode</i>
-        </div>
-        
-    </nav>
-    
     <button id="btnScrollTop" data-lang-key="upBttn" >Arriba</button>
     <div class="notification">
         <h3 id="tituloNot">guillermosantosanchez@gmail.com</h3>
@@ -552,6 +561,18 @@
             });
         });
 
+
+        //Menu burger
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('nav');
+
+        burger.addEventListener('change', () => {
+        if (burger.checked) {
+            nav.classList.add('active');
+        } else {
+            nav.classList.remove('active');
+        }
+        });
 
 
     </script>
