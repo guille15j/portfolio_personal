@@ -538,22 +538,12 @@
             });
         }
 
-        // Esperar a que el DOM cargue
         document.addEventListener("DOMContentLoaded", function () {
             const cpMailButtons = document.querySelectorAll(".cpMail");
-            const notification = document.querySelector(".notification");
 
-            // Evento para mostrar la notificación
             cpMailButtons.forEach(button => {
                 button.addEventListener("click", function () {
-                    notification.classList.add("active"); // Agregar clase activa para la animación
-                    // document.body.style.overflow = "hidden"; // Bloquear scroll
-
-                    // Esperar 1.2 segundos antes de desaparecer
-                    setTimeout(() => {
-                        notification.classList.remove("active"); // Quitar la clase activa
-                        // document.body.style.overflow = "auto"; // Restaurar scroll
-                    }, 2200);
+                    notificacion("Copiado", "El correo guillermosantosanchez@gmail.com ha sido copiado en el portapapeles")
                 });
             });
         });

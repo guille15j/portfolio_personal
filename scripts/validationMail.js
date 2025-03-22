@@ -65,7 +65,7 @@ function validarMailFCN() {
     // enviar
     if (isValid) {
         document.getElementById('contactForm').reset();
-        
+        notificacion("Enviado", "El correo ha sido enviado correctamente");
     }
 }
 
@@ -88,3 +88,15 @@ document.querySelector('button[type="reset"]').addEventListener('click', functio
         error.classList.remove('show-error');
     });
 });
+
+function notificacion(titulo, cuerpo) {
+    const tituloNot = document.getElementById('tituloNot');
+    const infoNot = document.getElementById('infoNot');
+    const notification = document.querySelector(".notification");
+
+    tituloNot.textContent = titulo;
+    infoNot.textContent = cuerpo;
+
+    notification.classList.add("active");
+    setTimeout(() => { notification.classList.remove("active");}, 2200);
+}
