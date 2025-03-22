@@ -3,8 +3,6 @@
     flex-direction: column;
     align-items: center;
 
-    /* background-color: var(--c-wave3); */
-
     width: 100%;
     margin: 0;
     height: calc(auto + 80px);
@@ -17,31 +15,42 @@
     position: absolute;
     content: "";
     width: calc(100% + 30px);
-    height: calc(100% + 30px);
+    height: calc(100% + 100px);
     
     left: -15px;
     top: -60px;
 
     background-color: var(--c-wave3);
-    background: linear-gradient(to bottom, var(--c-wave3), var(--c-fondo));
-    z-index: -1;
+    /* background: linear-gradient(to bottom, var(--c-wave3), var(--c-fondo));*/
+    z-index: -4;
+}
+
+form{
+    background-color: var(--c-fondo);
+    box-shadow:  0 0 15px var(--cd-f2);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    padding: 10px;
 }
 
 form input, textarea{
     border-radius: 20px;
-    background: linear-gradient(to top,var(--cd-f1),transparent);
+    background: var(--c-wave2) !important;
     backdrop-filter: blur(5px);
     border: none;
     margin: 5px;
     padding: 2.5px;
+
+    appearance: none; /* Desactiva los estilos predeterminados del navegador */
+    -webkit-appearance: none;
+}
+
+input:-webkit-autofill{
+    /* background-color: red; */
 }
 
 textarea{
     padding: 5px;
-}
-
-form input:valid{
-    background-color: none;
 }
 
 textarea{
@@ -55,7 +64,7 @@ form input{
 
 form p.error {
     display: none; 
-    color: red;
+    color: rgb(167, 0, 0);
     font-size: 12px;
     font-style: italic;
     margin: 0;
@@ -94,8 +103,8 @@ fieldset{
         width: 100%;
     }
 
-    form button[type=submit]{
-        width: 80%;
+    form button{
+        width: 80% !important;
     }
 
    form button:last-child{
@@ -105,6 +114,10 @@ fieldset{
 }
 
 @media screen and (min-width: 701px) {
+    #sc5{
+        /* background-color: red; */
+    }
+
     form{
         display: grid;
         grid-template-columns: repeat(2,1fr);
@@ -156,12 +169,25 @@ fieldset{
         grid-column-end: 3;
     }
 
-    fieldset:nth-child(5){
-        display: flex;
-        flex-direction: column;
+
+
+    fieldset:nth-child(5) :nth-child(1){
+        height: 100%;
+        text-align: top;
     }
-    fieldset:nth-child(5) *{
-        width: 100%;
+
+    form button{
+        /* width: 80% !important; */
+        margin-left: auto !important;
     }
-    
+    form button:last-child{
+        /* width: 80% !important; */
+        margin-right: auto !important;
+        margin-left: 0 !important;
+    }
+
+   /* form button:last-child{
+        display: none;
+    } */
+
 }

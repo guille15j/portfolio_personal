@@ -1,9 +1,9 @@
 :root{
     /* ORIGINAL */
     
-    --c-primario: rgb(255, 235, 119);
-    --c-secundario: rgb(255, 202, 123);
-    --c-acento: rgb(130, 85, 160);
+    --c-primario: #ffeb77;
+    --c-secundario: #ffca7b;
+    --c-acento: #9c77ff;
     --c-fondo: #151922;
     --cd-f1: hsla(240,61%,61%,0.24);
     --cd-f2: hsla(240,72%,74%,0.48);
@@ -21,7 +21,7 @@
 .dark_mode{
     --c-primario: #44347f;
     --c-secundario: #5f6fa5;
-    --c-acento: rgb(0, 195, 255);
+    --c-acento: #ffc876;
     --c-fondo: hsl(0, 0%, 100%);
     --cd-f1: hsla(234, 100%, 72%, 0.24);
     --cd-f2: hsla(225, 100%, 61%, 0.48);
@@ -45,6 +45,7 @@ html{
     font-family:Arial, Helvetica, sans-serif;
     color: var(--text);
     user-select: none;
+    transition: all 0.3s ease;
 }
 
 body{
@@ -58,7 +59,7 @@ body{
     background-repeat: no-repeat;
 }
 
-footer,body{
+body{
     transition: background-color 0.5s ease;
 }
 
