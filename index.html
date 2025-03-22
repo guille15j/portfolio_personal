@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="estilos/fuentes.css">
 
     <script src="scripts/modooscuro.js"></script>
+    <script src="scripts/traduccion.js"></script>
 
     <style>
         
@@ -36,15 +37,15 @@
 <body class="">
     
     <header>
-        <h1>Guillermo</h1>
-        <h1>Santos Sánchez</h1>
+        <h1 data-lang-key="minombre">Guillermo</h1>
+        <h1 data-lang-key="misapellidos">Santos Sánchez</h1>
         <div class="perfilPic">
             <img src="resources\avatar.PNG" alt="Imagen Perfil">
         </div>
         
         
-        <h3>Soy <span>Desarrollador BackEnd</span></h3>
-        <p>
+        <h3 data-lang-key="soyHeader">Soy <span>Desarrollador BackEnd</span></h3>
+        <p data-lang-key="header-descript">
             Apasionado por resolver problemas complejos y crear soluciones 
             eficientes. Mi curiosidad por entender cómo funcionan las cosas 
             me llevó al mundo de la programación, donde aplico mi enfoque 
@@ -63,26 +64,26 @@
 
     <nav>
         <a href="#sc1" class="enlace">
-            <span>¿Quíen Soy?</span>
+            <span data-lang-key="about-me">¿Quíen Soy?</span>
         </a>
         <a href="#sc4" class="enlace">
-            <span>Técnologías</span>
+            <span data-lang-key="technologies">Técnologías</span>
         </a>
         <a href="#sc2" class="enlace">
-            <span>Proyectos</span>
+            <span data-lang-key="projects">Proyectos</span>
         </a>
         <a href="#sc3" class="enlace">
-            <span>Esperiencia</span>
+            <span data-lang-key="experience">Esperiencia</span>
         </a>
         
         <a href="#sc5" class="enlace">
-            <span>Contácto</span>
+            <span data-lang-key="contact">Contácto</span>
         </a>
 
         <div>
             <div id="idiomas">
-                <button class="sel">ES</button>
-                <button>EN</button>
+                <button class="sel" id="btn-espanol">ES</button>
+                <button id="btn-ingles">EN</button>
             </div>
 
             <i class="material-icons" id="dark_mode"  onclick="modoOscuro()">
@@ -91,17 +92,21 @@
         
     </nav>
     
-    <button id="btnScrollTop" >Arriba</button>
+    <button id="btnScrollTop" data-lang-key="upBttn" >Arriba</button>
+    <div class="notification">
+        <h3 id="tituloNot">guillermosantosanchez@gmail.com</h3>
+        <p id="infoNot" data-lang-key="notText">El correo ha sido copiado a tu portapapeles</p>
+    </div>
 
     <main>
 
         <section id="sc0">
             <h1>
-                <span>Desarrollador Full-Stack</span>
+                <span data-lang-key="fullstack">Desarrollador Full-Stack</span><span>Desarrollador Full-Stack</span>
                 <br>
-                <span>Guillermo</span>
+                <span data-lang-key="minombre">Guillermo</span>
             </h1>
-            <p>
+            <p data-lang-key="sc0-descript">
                 Creo soluciones tecnológicas que combinan eficiencia y creatividad. 
                 Mi enfoque metódico y mi pasión por aprender me permiten enfrentar 
                 desafíos técnicos con confianza y determinación.
@@ -118,8 +123,8 @@
             <div class="gridQnSy">
                 <img src="resources/avatar2.PNG" alt="">
                 <div>
-                    <h3>Quién soy</h3>
-                    <p>
+                    <h3 data-lang-key="about-me">Quién soy</h3>
+                    <p data-lang-key="sc1-descrip1">
                         Soy un desarrollador BackEnd con experiencia en 
                         Java, C/C++ y Docker. Mi curiosidad por entender cómo
                          funcionan las cosas me llevó a la programación, 
@@ -129,8 +134,8 @@
                 </div>
 
                 <div>
-                    <h3>Hobbies</h3>
-                    <p>
+                    <h3 data-lang-key="hobby">Hobbies</h3>
+                    <p data-lang-key="sc1-descrip2">
                         En mi tiempo libre, disfruto de la música, el cine y el 
                         dibujo. La robótica también ha sido una gran pasión, 
                         aunque ahora es más parte de mi trabajo que de mi ocio.
@@ -138,8 +143,8 @@
                 </div>
 
                 <div>
-                    <h3>Características</h3>
-                    <p>
+                    <h3 data-lang-key="caracteristicas">Características</h3>
+                    <p data-lang-key="sc1-descrip2">
                         Soy curioso, organizado y perseverante. Mi experiencia como 
                         profesor me ha enseñado a descomponer problemas complejos en 
                         partes más sencillas, lo que aplico en mi trabajo diario.
@@ -147,8 +152,8 @@
                 </div>
 
                 <div>
-                    <h3>Enlaces</h3>
-                    <p>
+                    <h3 data-lang-key="encuentrame">Puedes encontrarme en</h3>
+                    <p data-lang-key="sc1-descrip3">
                         Conéctate conmigo en 
                         <a href="https://www.linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
                          o revisa mis proyectos en 
@@ -158,7 +163,8 @@
         </section>
 
         <section id="sc4"  class="">
-            <h2 onclick="enterTech()" class="tituloSection">Tecnologías</h2>
+            <h2 onclick="enterTech()" class="tituloSection" 
+                data-lang-key="technologies">Tecnologías</h2>
 
             <!-- terciarios -->
             <div>
@@ -206,7 +212,7 @@
                     </ul>
                 </card>
                 <card>
-                    <p>Otros</p>
+                    <p data-lang-key="otros"></p>>Otros</p>
                     <ul>
                         <li>Eclipse</li>
                         <li>Apache Maven</li>
@@ -221,10 +227,9 @@
         </section>
         
         <section id="sc2">
-            <h2 class="tituloSection">Proyectos</h2>
+            <h2 class="tituloSection" data-lang-key="projects">Proyectos</h2>
 
-            <div class="tarjetas">
-                
+            <div class="tarjetas">             
 
                 <article class="tarjeta" id="pT1">
                     <div class="window">
@@ -237,14 +242,14 @@
                     
                     
                     <div class="descripcion">
-                        <h3>Comunicación Serial</h3>
+                        <h3 data-lang-key="comSer">Comunicación Serial</h3>
                         <div class="techProyectos">
                             <span class="b">C</span>
                             <span class="o">Linux</span>
                             <span class="o">ESP32</span>
                             <span class="o">RS-232</span>
                         </div>
-                        <p>
+                        <p data-lang-key="comSer-descrip">
                             Desarrollo e implementación de un sistema de comunicación serial para una embarcación de competición. Utilicé C y Docker para garantizar la transmisión de datos en tiempo real.
                         </p>
                     </div>
@@ -261,9 +266,8 @@
                             onclick="verGit()" alt="Enlace a Github">
                     </div>
 
-                
                     <div class="descripcion">
-                        <h3>Control de acceso por RFID</h3>
+                        <h3 data-lang-key="rfid">Control de acceso por RFID</h3>
 
                         <div class="techProyectos">
                             <span class="b">C</span>
@@ -273,7 +277,7 @@
                             <span class="o">Visual Code</span>
                         </div>
 
-                        <p>
+                        <p data-lang-key="rfid-descrip">
                             Sistema de control de acceso y monitoreo mediante tarjetas RFID. Desarrollé la lógica en C/C++ y diseñé una interfaz web para la visualización de datos.
                         </p>
                     </div>
@@ -292,7 +296,7 @@
                     </div>
                     
                     <div class="descripcion">
-                        <h3>Gestor de Paquetería</h3>
+                        <h3 data-lang-key="paqueteria">Gestor de Paquetería</h3>
 
                         <div class="techProyectos">
                             <span class="b">Java</span>
@@ -301,7 +305,7 @@
                             <span class="o">Maven</span>
                         </div>
 
-                        <p>
+                        <p data-lang-key="paqueteria-descrip">
                             Aplicación para la gestión de lockers de recogida de paquetes en diferentes campus. Utilicé Java y MySQL para garantizar un sistema robusto y escalable.
                         </p>
                     </div>                  
@@ -317,7 +321,7 @@
                     </div>
                     
                     <div class="descripcion">
-                        <h3>Diseño WEB Servicios IT</h3>
+                        <h3 data-lang-key="webIt">Diseño WEB Servicios IT</h3>
 
                         <div class="techProyectos">
                             <span class="f">HTML</span>
@@ -326,7 +330,7 @@
                             <span class="o">VSCode</span>
                         </div>
 
-                        <p>Página web diseñada para alojar servicios IT. 
+                        <p data-lang-key="webIt-descrip">Página web diseñada para alojar servicios IT. 
                         Encargado del diseño responsive y planteamiento de la 
                         sección de servicios IT</p>
                     </div>
@@ -336,7 +340,7 @@
         </section>
 
         <section id="sc3">
-            <h2 class="tituloSection">Experiencia</h2>
+            <h2 class="tituloSection"  data-lang-key="experience">Experiencia</h2>
 
             <span>1</span>
             <span>2</span>
@@ -360,7 +364,7 @@
                 </div> -->
 
                 <div class="study">
-                    <h3>Doble Grado Ing. Telemática y Electrónica</h3>
+                    <h3 data-lang-key="upmGrado">Doble Grado Ing. Telemática y Electrónica</h3>
                     <h4>Sep. 2018 - Dic. 2023</h4>
                     <ul>
                         <!-- li*4>{tecnologia $} -->
@@ -375,10 +379,10 @@
                 </div>
 
                 <div class="work">
-                    <h3>Monitor de Ingeniería</h3>
+                    <h3 data-lang-key="fgUpm-tit">Monitor de Ingeniería</h3>
                     <h4>Jun. 2023 - Agst. 2024</h4>
-                    <p>Organización y supervisión de talleres de robótica y programación.</p>
-                    <p>Dirección de equipos de hasta 7 personas.</p>
+                    <p data-lang-key="fgUpm-info1">Organización y supervisión de talleres de robótica y programación.</p>
+                    <p data-lang-key="fgUpm-info2">Dirección de equipos de hasta 7 personas.</p>
                     <ul>
                         <!-- li*4>{tecnologia $} -->
                         <li class="b">C</li>
@@ -392,10 +396,10 @@
                 </div>
 
                 <div class="work">
-                    <h3>Profesor de Robótica</h3>
+                    <h3 data-lang-key="cara-tit">Profesor de Robótica</h3>
                     <h4>Oct. 2023 - Jun. 2024</h4>
-                    <p>Formación a más de 100 estudiantes en programación y robótica.</p>
-                    <p>Diseño de actividades con metodología STEAM.</p>
+                    <p data-lang-key="cara-info1">Formación a más de 100 estudiantes en programación y robótica.</p>
+                    <p data-lang-key="cara-info2">Diseño de actividades con metodología STEAM.</p>
                     <ul>
                         <!-- li*4>{tecnologia $} -->
                         <li class="b">C</li>
@@ -409,9 +413,9 @@
                 </div>
 
                 <div class="study">
-                    <h3>Grado Superios DAM</h3>
+                    <h3 data-lang-key="dam-tit">Grado Superior DAM</h3>
                     <h4>Sep. 2024 - Actualmente</h4>
-                    <p>Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
+                    <p data-lang-key="dam-info">Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
                     <ul>
                         <li class="b"></li>
                         <li class="f"></li>
@@ -425,9 +429,9 @@
                 </div>
 
                 <div class="work">
-                    <h3>Técnico de Control y Telemetría</h3>
+                    <h3 data-lang-key="gfs-tit">Técnico de Control y Telemetría</h3>
                     <h4>Nov. 2024 - Actualmente</h4>
-                    <p>Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
+                    <p data-lang-key="gfs-info">Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
                     <ul>
                         <li class="b">C</li>
                         <li class="b">GitLab</li>
@@ -445,36 +449,36 @@
         </section>
 
         <section id="sc5">
-            <h2 class="tituloSection">Contáctemos</h2>
+            <h2 class="tituloSection" data-lang-key="contact">Contáctemos</h2>
             
             <form action="">
                 <fieldset>
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre" data-lang-key="name">Nombre</label>
                     <input type="text" name="nombre" required>
-                    <p class="error">Por favor, ingresa tu nombre.</p>
+                    <p class="error" data-lang-key="err-name">Por favor, ingresa tu nombre.</p>
                 </fieldset>
                 <fieldset>
-                    <label for="correo">Correo</label>
+                    <label for="correo" data-lang-key="mail">Correo</label>
                     <input type="email" id="email" name="email" required>
-                    <p class="error">Por favor, ingresa un correo válido.</p>
+                    <p class="error" data-lang-key="mail-name">Por favor, ingresa un correo válido.</p>
                 </fieldset>
                 <fieldset>
-                    <label for="phone">Teléfono</label>
+                    <label for="phone" data-lang-key="tel">Teléfono</label>
                     <input type="tel" name="phone">
-                    <p class="error">Por favor, ingresa un número de teléfono válido.</p>
+                    <p class="error" data-lang-key="err-tel">Por favor, ingresa un número de teléfono válido.</p>
                 </fieldset>
                 <fieldset>
-                    <label for="asunto">Asunto</label>
+                    <label for="asunto" data-lang-key="asunto">Asunto</label>
                     <input type="text" name="asunto" required>
-                    <p class="error">Por favor, ingresa un asunto.</p>
+                    <p class="error" data-lang-key="asunto-name">Por favor, ingresa un asunto.</p>
                 </fieldset>
                 <fieldset>
-                    <label for="mensaje">Mensaje</label>
+                    <label for="mensaje" data-lang-key="mnsj">Mensaje</label>
                     <textarea name="mensaje" id="mensaje" required></textarea>
-                    <p class="error">Por favor, ingresa un mensaje.</p>
+                    <p class="error" data-lang-key="err-mnsj">Por favor, ingresa un mensaje.</p>
                 </fieldset>
-                <button type="submit" class="boton">Enviar</button>
-                <button type="reset" class="boton">Restablecer</button>
+                <button type="submit" class="boton" data-lang-key="send">Enviar</button>
+                <button type="reset" class="boton" data-lang-key="rst">Restablecer</button>
             </form>
         </section>
 
@@ -496,7 +500,29 @@
             window.open('resources/CV.pdf', '_blank');
                 
         }       
-        
+       
+
+        // Boton scroll UP
+        const btnScrollTop = document.getElementById("btnScrollTop");
+
+        // Mostrar el botón al hacer scroll
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                btnScrollTop.style.display = "block";
+            } else {
+                btnScrollTop.style.display = "none";
+            }
+        });
+
+        // Función para volver arriba
+        btnScrollTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" 
+            });
+        });
+
+        //Copiar correo
         document.addEventListener("click", (evento) => {
             if (evento.target.classList.contains("cpMail")) {
                 copiarTextoAlPortapapeles("guillermosantosanchez@gmail.com");
@@ -509,25 +535,27 @@
             });
         }
 
-        // Selección del botón
-        const btnScrollTop = document.getElementById("btnScrollTop");
+        // Esperar a que el DOM cargue
+        document.addEventListener("DOMContentLoaded", function () {
+            const cpMailButtons = document.querySelectorAll(".cpMail");
+            const notification = document.querySelector(".notification");
 
-        // Mostrar el botón al hacer scroll
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) { // Mostrar cuando el usuario haya hecho scroll hacia abajo
-                btnScrollTop.style.display = "block";
-            } else {
-                btnScrollTop.style.display = "none";
-            }
-        });
+            // Evento para mostrar la notificación
+            cpMailButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    notification.classList.add("active"); // Agregar clase activa para la animación
+                    // document.body.style.overflow = "hidden"; // Bloquear scroll
 
-        // Función para volver arriba
-        btnScrollTop.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth" // Desplazamiento suave hacia arriba
+                    // Esperar 1.2 segundos antes de desaparecer
+                    setTimeout(() => {
+                        notification.classList.remove("active"); // Quitar la clase activa
+                        // document.body.style.overflow = "auto"; // Restaurar scroll
+                    }, 2200);
+                });
             });
         });
+
+
 
     </script>
 </body>

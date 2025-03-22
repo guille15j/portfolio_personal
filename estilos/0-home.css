@@ -21,17 +21,17 @@
 .dark_mode{
     --c-primario: #44347f;
     --c-secundario: #5f6fa5;
-    --c-acento: rgb(0, 167, 218);
+    --c-acento: rgb(0, 195, 255);
     --c-fondo: hsl(0, 0%, 100%);
     --cd-f1: hsla(234, 100%, 72%, 0.24);
     --cd-f2: hsla(225, 100%, 61%, 0.48);
     --cd-f3: hsla(214, 90%, 76%, 0.18);
 
-    --text: rgb(6, 0, 27);
+    --text: rgb(0, 0, 0);
 
-    --c-wave1:hwb(244 58% 1%);
-    --c-wave2:hwb(244 48% 11%);
-    --c-wave3:hwb(244 38% 21%);
+    --c-wave1:hwb(244 78% 1%);
+    --c-wave2:hwb(244 68% 11%);
+    --c-wave3:hwb(244 58% 21%);
 
     --c-tarjeta: #bbc7ec;
 }

@@ -86,3 +86,52 @@ footer .botonera :nth-child(3){
 .cpMail{
     cursor: pointer;
 }
+
+/* NOTIFICACION  */
+
+.notification{
+    position: fixed;
+    top: 85%;
+    right: -20px;
+
+    padding: 0 20px;
+    border-radius: 20px;
+
+    width: 270px;
+
+    background-color: var(--cd-f2);
+    border: 1px var(--c-secundario) solid;
+    backdrop-filter: blur(10px) brightness(0.5);
+
+    z-index: 10;
+}
+
+.dark_mode .notification{
+    
+    backdrop-filter: blur(10px) brightness(2.5);
+}
+
+.notification p{
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.notification h3{
+    margin: 5px 0;
+    font-size: 15px;
+    color: var(--c-primario);
+}
+
+.notification{
+    /* opacity: 0; */
+    transform: translateX(300px);
+    transition: all 0.5s ease;
+
+    /* pointer-events: none; */
+}
+
+.notification.active{
+    opacity: 1;
+    transform: translateX(0px);
+    /* pointer-events: auto; */
+}

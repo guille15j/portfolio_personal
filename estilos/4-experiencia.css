@@ -57,6 +57,13 @@
     color: var(--c-primario);
 }
 
+.dark_mode #contentExp div h3:nth-child(1),
+.dark_mode #contentExp div h4:nth-child(2){
+    color: white;
+}
+
+
+
 #contentExp div h4:nth-child(2){
     /* background-color: red; */
     /* letter-spacing: 0.3rem; */
@@ -91,8 +98,8 @@
 }
 
 #contentExp div::before{
-    content: "work_history"; /* Nombre del icono */
-    font-family: "Material Icons"; /* Especifica la fuente */
+    content: "work_history"; 
+    font-family: "Material Icons"; 
     display: flex;
     align-items: center;
     justify-items: center;
@@ -112,15 +119,15 @@
 }
 
 #contentExp .work::before{
-    content: "badge"; /* Nombre del icono */
-    font-family: "Material Icons"; /* Especifica la fuente */
-
+    content: "badge"; 
+    font-family: "Material Icons"; 
+    color: white;
 }
 
 #contentExp .study::before{
-    content: "school"; /* Nombre del icono */
-    font-family: "Material Icons"; /* Especifica la fuente */
-
+    content: "school"; 
+    font-family: "Material Icons"; 
+    color: white;
 }
 
 #contentExp div::after{

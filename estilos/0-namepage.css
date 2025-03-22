@@ -6,7 +6,6 @@
 
 #sc0 p{
     width: clamp(300px,100%,30vw);
-
     text-align: center;
 }
 
@@ -35,11 +34,17 @@
     
 }
 
-#sc0 h1 span:nth-child(1)::after{
+#sc0 h1 span:nth-child(2){
+    display: none;
+}
+
+/* #sc0 h1 span:nth-child(2){
     font-size: clamp(16px, 7vw, 70px);
     content: "Desarrollador Full-Stack";
+    
     position: absolute;
     left: 0;
+
 
     color: transparent;
     background:
@@ -50,17 +55,17 @@
     background-clip: text ;
     background-size: cover;
     background-position: 100%;
-}
+} */
 
 /* GUILLERMO */
-#sc0 h1 span:nth-child(3){
+#sc0 h1 span:nth-child(4){
     font-size: clamp(16px, 20vw, 220px);
     position: relative;
 
     color: var(--c-fondo);
 }
 
-#sc0 h1 span:nth-child(3)::after{
+#sc0 h1 span:nth-child(4)::after{
     content: "Guillermo";
     position: absolute;
     left: 0;
@@ -79,8 +84,9 @@
     
 }
 
-#sc0 h1 span:nth-child(3), 
+#sc0 h1 span:nth-child(4), 
     #sc0 h1 span:nth-child(1),
+    #sc0 h1 span:nth-child(2),
         #sc0 p, #sc0 .botonera{
     opacity: 1;
     animation: fade-away-in both linear;
