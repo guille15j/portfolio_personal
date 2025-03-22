@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "err-name": "Por favor, ingresa tu nombre.",
         "mail-name": "Por favor, ingresa un correo válido.",
         "err-tel": "Por favor, ingresa un número de teléfono válido.",
-        "asunto-name": "Por favor, ingresa un asunto.",
+        "asunto-err": "Por favor, ingresa un asunto.",
         "err-mnsj": "Por favor, ingresa un mensaje."
       },
     "en": {
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "err-name": "Please enter your name.",
         "mail-name": "Please enter a valid email.",
         "err-tel": "Please enter a valid phone number.",
-        "asunto-name": "Please enter a subject.",
+        "asunto-err": "Please enter a subject.",
         "err-mnsj": "Please enter a message."
       }
     };

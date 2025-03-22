@@ -23,6 +23,27 @@ function verGit() {
    window.open('https://github.com/guille15j', '_blank');
 }
 
+// GIT a proyectos ***********************************************************************
+
+function verGitPaqueteria() {
+  window.open('https://github.com/guille15j', '_blank');
+}
+
+function verGitRFID() {
+  window.open('https://github.com/guille15j', '_blank');
+}
+
+function verGitGFS() {
+  window.open('https://github.com/guille15j', '_blank');
+}
+
+function verGitWebIT() {
+  window.open('https://github.com/guille15j', '_blank');
+}
+
+//****************************************************************************************
+
+
 
 let isScrolling = false;
 let addClass = false;

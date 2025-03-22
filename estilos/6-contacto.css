@@ -52,8 +52,19 @@ form input{
     height: 30px;
 }
 
-form p{
-    display: none;
+
+form p.error {
+    display: none; 
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+form p.error.show-error {
+    display: block;
 }
 
 fieldset{

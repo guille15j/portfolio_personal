@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guillermo Santos</title>
+    <link rel="icon" href="resources/avatar2.PNG" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link rel="stylesheet" href="estilos/0-home.css">
@@ -212,7 +213,7 @@
                     </ul>
                 </card>
                 <card>
-                    <p data-lang-key="otros"></p>>Otros</p>
+                    <p data-lang-key="otros">Otros</p>
                     <ul>
                         <li>Eclipse</li>
                         <li>Apache Maven</li>
@@ -451,33 +452,33 @@
         <section id="sc5">
             <h2 class="tituloSection" data-lang-key="contact">Contáctemos</h2>
             
-            <form action="">
+            <form id="contactForm" action="">
                 <fieldset>
                     <label for="nombre" data-lang-key="name">Nombre</label>
-                    <input type="text" name="nombre" required>
-                    <p class="error" data-lang-key="err-name">Por favor, ingresa tu nombre.</p>
+                    <input type="text" name="nombre" id="nombre">
+                    <p class="error" id="err-name">Por favor, ingresa tu nombre.</p>
                 </fieldset>
                 <fieldset>
                     <label for="correo" data-lang-key="mail">Correo</label>
-                    <input type="email" id="email" name="email" required>
-                    <p class="error" data-lang-key="mail-name">Por favor, ingresa un correo válido.</p>
+                    <input type="email" id="email" name="email">
+                    <p class="error" id="err-email">Por favor, ingresa un correo válido.</p>
                 </fieldset>
                 <fieldset>
                     <label for="phone" data-lang-key="tel">Teléfono</label>
-                    <input type="tel" name="phone">
-                    <p class="error" data-lang-key="err-tel">Por favor, ingresa un número de teléfono válido.</p>
+                    <input type="tel" name="phone" id="phone">
+                    <p class="error" id="err-tel">Por favor, ingresa un número de teléfono válido.</p>
                 </fieldset>
                 <fieldset>
                     <label for="asunto" data-lang-key="asunto">Asunto</label>
-                    <input type="text" name="asunto" required>
-                    <p class="error" data-lang-key="asunto-name">Por favor, ingresa un asunto.</p>
+                    <input type="text" name="asunto" id="asunto">
+                    <p class="error" id="asunto-err">Por favor, ingresa un asunto.</p>
                 </fieldset>
                 <fieldset>
                     <label for="mensaje" data-lang-key="mnsj">Mensaje</label>
-                    <textarea name="mensaje" id="mensaje" required></textarea>
-                    <p class="error" data-lang-key="err-mnsj">Por favor, ingresa un mensaje.</p>
+                    <textarea name="mensaje" id="mensaje"></textarea>
+                    <p class="error" id="err-mnsj">Por favor, ingresa un mensaje.</p>
                 </fieldset>
-                <button type="submit" class="boton" data-lang-key="send">Enviar</button>
+                <button type="button" class="boton" data-lang-key="send" onclick="validarMailFCN()">Enviar</button>
                 <button type="reset" class="boton" data-lang-key="rst">Restablecer</button>
             </form>
         </section>
@@ -494,6 +495,8 @@
         </div>
     </footer>
 
+    
+    <script src="scripts/validationMail.js"></script>
     <script>
         function abrirCV(){
             console.log("DENTRO");
@@ -559,7 +562,5 @@
 
     </script>
 </body>
-
-
 </html>
 
