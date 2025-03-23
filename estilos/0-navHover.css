@@ -46,13 +46,36 @@ nav div:last-child{
     color: var(--c-secundario);
 }
 
-#idiomas button{
-    color: var(--text);
+.dark_mode #idiomas button{
+    color: var(--c-fondo);
+    /* text-shadow: 0 0 2px; */
 }
 
 #idiomas  .sel{
     color: var(--c-acento);
+    /* text-shadow: 0 0 2px; */
 }
+
+.dark_mode #idiomas  .sel{
+    color: var(--c-primario);
+}
+
+.dark_mode nav div:nth-child(6), nav div:nth-child(6){
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--c-wave1);
+    border-radius: 20px;
+
+    padding: 5px;
+    
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.493);
+}
+
+nav div:nth-child(6){
+    background-color: var(--c-wave1);
+}
+
+
 
 @media screen and (min-width: 601px) and (max-width:1023px) {
     nav{
@@ -69,32 +92,17 @@ nav div:last-child{
 
 @media screen and (max-width: 600px) {
 
-    .dark_mode nav div:nth-child(6){
+    .dark_mode nav div:nth-child(6), nav div:nth-child(6){
         margin: 0;
-        margin-top: 68dvh;
-        width: 150px;
-        display: flex;
-        justify-content: space-between;
-        background-color: var(--c-wave3);
-        border-radius: 20px;
-
-        padding: 5px;
+        margin-top: 65dvh;
+        width:100%;  
         
     }
-
-    nav div:nth-child(6){
-        margin: 0;
-        margin-top: 68dvh;
-        width: 150px;
-        display: flex;
-        justify-content: space-between;
-        background-color: var(--c-wave1);
-        border-radius: 20px;
-
-        padding: 5px;
-    }
-
+    
     nav.active {
+        top: 0;
+        left: 0;
+
         display: flex;
         flex-direction: column;
         align-items:end;
@@ -102,20 +110,30 @@ nav div:last-child{
         justify-content: start;
 
         height: 100%;
-        width: clamp(240px, 20%, 400px);
-        top: 0;
-        backdrop-filter: blur(5px);
+        width: 150px !important;
+
+        background: var(--cd-f2);
+        backdrop-filter: blur(5px) brightness(.5);
         border-radius: 0;
         border-color: transparent;
 
-        background: var(--c-wave2);
+        /* background: var(--c-wave2); */
         box-shadow: 0 0px 20px black;
 
          padding-top: 50px;
     }
 
+    .dark_mode nav.active{
+        background: hsla(240,72%,74%,0.78);
+        backdrop-filter: blur(5px);
+    }
+
     nav a{
         margin: 10px 30px;
+    }
+
+    nav a:first-child{
+        margin-top: 40px;
     }
 
     nav {
@@ -141,76 +159,75 @@ nav div:last-child{
     }
       
     .burger input {
-    display: none;
+        display: none;
     }
     
     .burger span {
-    display: block;
-    position: absolute;
-    height: 4px;
-    width: 20px;
-    background: var(--text);
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-    
-    z-index: 11;
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 20px;
+        background: var(--text);
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+        
+        z-index: 11;
     }
     
     .burger span:nth-of-type(1) {
-    top: 0px;
-    transform-origin: left center;
+        top: 0px;
+        transform-origin: left center;
     }
     
     .burger span:nth-of-type(2) {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: left center;
+        top: 50%;
+        transform: translateY(-50%);
+        transform-origin: left center;
     }
     
     .burger span:nth-of-type(3) {
-    top: 100%;
-    transform-origin: left center;
-    transform: translateY(-100%);
+        top: 100%;
+        transform-origin: left center;
+        transform: translateY(-100%);
     }
     
     .burger input:checked ~ span:nth-of-type(1) {
-    transform: rotate(45deg);
-    top: 0px;
-    width: 20px;
-    z-index: 11;
+        transform: rotate(45deg);
+        top: 0px;
+        width: 20px;
+        z-index: 11;
     }
     
     .burger input:checked ~ span:nth-of-type(2) {
-    width: 0%;
-    opacity: 0;
+        width: 0%;
+        opacity: 0;
     }
     
     .burger input:checked ~ span:nth-of-type(3) {
-    transform: rotate(-45deg);
-    top: 14px;
-    width: 20px;
-    z-index: 11;
+        transform: rotate(-45deg);
+        top: 14px;
+        width: 20px;
+        z-index: 11;
     }
 
     .burger::after{
-    content: "";
-    position: absolute;
-    top: -55px;
-    left: -115px;
+        content: "";
+        position: absolute;
+        top: -55px;
+        left: -115px;
 
-    width: 150px;
-    height: 90px;
+        width: 150px;
+        height: 90px;
 
-    border-radius: 20px;
+        border-radius: 20px;
 
-    background-color: var(--c-wave1);
-    border: 1px solid var(--c-primario);
+        background-color: var(--c-wave1);
+        border: 1px solid var(--c-primario);
 
-    z-index: 10;
-
+        z-index: 10;
     }
 
 }
