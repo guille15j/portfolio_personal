@@ -166,3 +166,150 @@
     });
   }
 })();
+
+
+(function () {
+  "use strict";
+
+  const TITULOS_FOLDER = "resources/titulos/";
+  const TITULOS_MANIFEST = TITULOS_FOLDER + "manifest.json";
+
+  function getContainer(id) {
+    return document.getElementById(id);
+  }
+
+  function renderPlaceholder(track) {
+    track.innerHTML = "";
+    track.classList.remove("is-marquee");
+    const placeholder = document.createElement("div");
+    placeholder.className = "titulos-placeholder";
+    placeholder.textContent = "Work in progress — títulos en camino.";
+    track.appendChild(placeholder);
+  }
+
+  function buildCard(entry) {
+  const isPdf = /\.pdf$/i.test(entry.file);
+  const thumbSrc = entry.thumb || (isPdf ? null : entry.file);
+
+  const card = document.createElement("a");
+  card.className = "titulo-card";
+  card.href = TITULOS_FOLDER + entry.file;
+  card.target = "_blank";
+  card.rel = "noopener";
+
+  const caption = document.createElement("figcaption");
+  caption.className = "titulo-caption";
+  caption.textContent = entry.file.replace(/\.[^/.]+$/, "");
+
+  if (isPdf) {
+    const badge = document.createElement("span");
+    badge.className = "titulo-badge";
+    badge.textContent = "PDF";
+    card.appendChild(badge);
+  }
+
+  if (!thumbSrc) {
+    // PDF declarado sin miniatura: directamente sin vista previa
+    const broken = document.createElement("div");
+    broken.className = "titulo-broken";
+    broken.innerHTML = svgNoImageIcon() + '<span>Sin vista previa</span>';
+    card.classList.add("titulo-card--broken");
+    card.appendChild(broken);
+    card.appendChild(caption);
+    return card;
+  }
+
+  const img = document.createElement("img");
+  img.src = TITULOS_FOLDER + thumbSrc;
+  img.alt = entry.file;
+  img.loading = "lazy";
+  img.onerror = function () { showBrokenState(card, img); };
+
+  card.appendChild(img);
+  card.appendChild(caption);
+  return card;
+}
+
+  function svgNoImageIcon() {
+    return `
+      <svg viewBox="0 0 48 48" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="4" y="8" width="40" height="32" rx="3" stroke="currentColor" stroke-width="2"/>
+        <circle cx="16" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
+        <path d="M6 34l10-10 7 7 6-6 13 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 6l36 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    `;
+  }
+
+  function showBrokenState(card, imgEl) {
+    card.classList.add("titulo-card--broken");
+    imgEl.remove();
+    const broken = document.createElement("div");
+    broken.className = "titulo-broken";
+    broken.innerHTML = svgNoImageIcon() + '<span>Sin vista previa</span>';
+    card.prepend(broken);
+  }
+
+  function renderCards(track, entries) {
+  track.innerHTML = "";
+  track.classList.remove("is-marquee");
+  entries.forEach((entry) => track.appendChild(buildCard(entry)));
+}
+
+  function evaluateOverflow(viewport, track, originalFiles) {
+    const singleSetWidth = track.classList.contains("is-marquee")
+      ? track.scrollWidth / 2
+      : track.scrollWidth;
+
+    const overflows = singleSetWidth > viewport.clientWidth;
+
+    if (overflows && !track.classList.contains("is-marquee")) {
+      // Duplicamos el set una vez para que el bucle infinito no dé salto
+      Array.from(track.children)
+        .map((n) => n.cloneNode(true))
+        .forEach((clone) => track.appendChild(clone));
+      track.classList.add("is-marquee");
+      const duration = Math.max(18, Math.round(singleSetWidth / 40));
+      track.style.setProperty("--marquee-duration", duration + "s");
+    } else if (!overflows && track.classList.contains("is-marquee")) {
+      renderCards(track, originalFiles); // ya cabe: quitamos duplicados
+    }
+  }
+
+  function debounce(fn, wait) {
+    let t;
+    return function (...args) {
+      clearTimeout(t);
+      t = setTimeout(() => fn.apply(this, args), wait);
+    };
+  }
+
+  function initTitulosCarousel(viewportId, trackId) {
+    const viewport = getContainer(viewportId);
+    const track = getContainer(trackId);
+    if (!viewport || !track) return;
+
+    fetch(TITULOS_MANIFEST, { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error("manifest no encontrado");
+        return res.json();
+      })
+      .then((files) => {
+        if (!Array.isArray(files) || files.length === 0) {
+          renderPlaceholder(track);
+          return;
+        }
+        renderCards(track, files);
+        requestAnimationFrame(() => evaluateOverflow(viewport, track, files));
+        window.addEventListener(
+          "resize",
+          debounce(() => evaluateOverflow(viewport, track, files), 200)
+        );
+      })
+      .catch(() => renderPlaceholder(track));
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initTitulosCarousel("titulosViewport", "titulosTrack");
+  });
+})();
