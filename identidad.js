@@ -2,21 +2,12 @@
   "use strict";
 
   const EMAIL = "guillermosantosanchez@gmail.com";
-  const LINKEDIN_URL = "https://www.linkedin.com/in/guillermosant";
-  const GITHUB_URL = "https://github.com/guille-ss";
   const CV_URL = "resources/CV.pdf";
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ============ Enlaces globales usados por los botones ============ */
   window.verPDF = function () {
     window.open(CV_URL, "_blank");
-  };
-  window.verLinkedin = function () {
-    window.open(LINKEDIN_URL, "_blank");
-  };
-  window.verGit = function () {
-    window.open(GITHUB_URL, "_blank");
   };
 
   /* ============ Toast / notificación ============ */
@@ -51,31 +42,6 @@
     });
   });
 
-  /* ============ Reloj de sesión ============ */
-  const sessionClock = document.getElementById("sessionClock");
-  if (sessionClock) {
-    const start = Date.now();
-    function tick() {
-      const elapsed = Math.floor((Date.now() - start) / 1000);
-      const h = String(Math.floor(elapsed / 3600)).padStart(2, "0");
-      const m = String(Math.floor((elapsed % 3600) / 60)).padStart(2, "0");
-      const s = String(elapsed % 60).padStart(2, "0");
-      sessionClock.textContent = h + ":" + m + ":" + s;
-    }
-    tick();
-    setInterval(tick, 1000);
-  }
-
-  /* ============ Marcadores de esquina en paneles ============ */
-  document.querySelectorAll(".panel").forEach((panel) => {
-    ["tl", "tr", "bl", "br"].forEach((pos) => {
-      const span = document.createElement("span");
-      span.className = "corner " + pos;
-      span.setAttribute("aria-hidden", "true");
-      panel.appendChild(span);
-    });
-  });
-
   /* ============ Menú móvil ============ */
   const burger = document.getElementById("burger");
   const nav = document.getElementById("mainNav");
@@ -92,26 +58,7 @@
     });
   }
 
-  /* ============ Scrollspy de navegación ============ */
-  const navLinks = Array.from(document.querySelectorAll(".nav-link"));
-  const sections = navLinks
-    .map((l) => document.querySelector(l.getAttribute("href")))
-    .filter(Boolean);
-
-  function updateActiveNav() {
-    let current = sections[0];
-    const scrollPos = window.scrollY + 140;
-    sections.forEach((sec) => {
-      if (sec.offsetTop <= scrollPos) current = sec;
-    });
-    navLinks.forEach((link) => {
-      link.classList.toggle("active", link.getAttribute("href") === "#" + current.id);
-    });
-  }
-  window.addEventListener("scroll", updateActiveNav, { passive: true });
-  updateActiveNav();
-
-  /* ============ Revelado de secciones al hacer scroll ============ */
+  /* ============ Revelado progresivo de secciones ============ */
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && !prefersReducedMotion) {
     const io = new IntersectionObserver(
@@ -123,12 +70,34 @@
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
     revealEls.forEach((el) => io.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add("in"));
   }
+
+  /* ============ Acordeón de casos de estudio (divulgación progresiva) ============ */
+  document.querySelectorAll(".case").forEach((caseEl) => {
+    const summaryBtn = caseEl.querySelector(".case-summary");
+    const body = caseEl.querySelector(".case-body");
+    if (!summaryBtn || !body) return;
+
+    summaryBtn.addEventListener("click", () => {
+      const isOpen = caseEl.getAttribute("data-open") === "true";
+      const next = !isOpen;
+      caseEl.setAttribute("data-open", String(next));
+      summaryBtn.setAttribute("aria-expanded", String(next));
+      body.style.maxHeight = next ? body.scrollHeight + "px" : "0px";
+    });
+  });
+
+  // Recalcula alturas abiertas si cambia el viewport (imágenes con lazy load, etc.)
+  window.addEventListener("resize", () => {
+    document.querySelectorAll('.case[data-open="true"] .case-body').forEach((body) => {
+      body.style.maxHeight = body.scrollHeight + "px";
+    });
+  });
 
   /* ============ Botón volver arriba ============ */
   const btnTop = document.getElementById("btnTop");
@@ -179,11 +148,11 @@
         .every(Boolean);
 
       if (!allValid) {
-        notify("Transmisión rechazada", "Revise los campos marcados antes de continuar.");
+        notify("Formulario incompleto", "Revisa los campos marcados antes de continuar.");
         return;
       }
 
-      notify("Transmisión enviada", "Su mensaje ha sido registrado. Responderé a la mayor brevedad.");
+      notify("Mensaje enviado", "Gracias por escribir. Responderé a la mayor brevedad.");
       form.reset();
       Object.keys(rules).forEach((id) => {
         document.getElementById(id).closest(".field").classList.remove("invalid");

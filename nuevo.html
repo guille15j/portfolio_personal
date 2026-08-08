@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guillermo Santos Sánchez — Rigor de proceso. Velocidad de producto.</title>
+<meta name="description" content="Guillermo Santos Sánchez. Desarrollador Backend y Técnico de Control y Telemetría. Estructura para escalar, velocidad para lanzar.">
+<link rel="icon" href="resources/avatar2.PNG" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="identidad.css">
+</head>
+<body>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <p class="toast-title" id="toastTitle">Copiado</p>
+  <p class="toast-body" id="toastBody">El dato ha sido copiado al portapapeles.</p>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <a href="#top" class="nav-mark">GS</a>
+  <nav id="mainNav">
+    <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+    <a href="#sistemas" class="nav-link">Sistemas</a>
+    <a href="#casos" class="nav-link">Casos de estudio</a>
+    <a href="#registro" class="nav-link">Trayectoria</a>
+    <a href="#canal" class="nav-link nav-link-cta">Contacto</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<main id="top">
+
+  <!-- HERO / MANIFIESTO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Backend &amp; Telemetría — Perfil dual</p>
+      <h1>Disciplina de proceso.<br>Velocidad de producto.</h1>
+      <p class="lead">
+        Construyo sistemas que superan una auditoría y sobreviven a un sprint de una semana.
+        Estructura, gobernanza y trazabilidad cuando el riesgo lo exige; iteración, ownership
+        y foco en el usuario cuando la velocidad decide quién gana.
+      </p>
+
+      <div class="duality-badges">
+        <span class="duality-badge">Metodología · Gobernanza · Riesgo mitigado</span>
+        <span class="duality-badge duality-badge-accent">MVP · Ownership · Growth</span>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn btn-primary" onclick="document.getElementById('casos').scrollIntoView({behavior:'smooth'})">Ver casos de estudio</button>
+        <button class="btn btn-ghost" onclick="document.getElementById('canal').scrollIntoView({behavior:'smooth'})">Hablemos</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MÉTRICAS DESTACADAS -->
+  <section class="metrics-strip">
+    <div class="metrics-grid">
+      <div class="metric">
+        <span class="metric-value">10/10</span>
+        <span class="metric-label">Nota del TFG — FocusBot, de principio a fin</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">~5h</span>
+        <span class="metric-label">De trabajo manual eliminadas cada semana</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">8</span>
+        <span class="metric-label">Sistemas propios documentados</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">100+</span>
+        <span class="metric-label">Estudiantes formados en programación</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi" class="section reveal">
+    <div class="section-head">
+      <span class="eyebrow-mini">Sobre mí</span>
+      <h2>Un perfil hecho para dos velocidades</h2>
+    </div>
+
+    <div class="about-grid">
+      <figure class="about-photo">
+        <img src="resources/avatar2.PNG" alt="Fotografía de Guillermo Santos Sánchez" loading="lazy">
+      </figure>
+
+      <div class="about-copy">
+        <p>
+          Desarrollador backend con base en Java, C/C++ y Docker. Empecé por curiosidad de
+          entender cómo funcionan los sistemas por dentro; hoy aplico esa misma curiosidad,
+          de forma metódica, para construir soluciones fiables y escalables.
+        </p>
+        <p>
+          Mi paso por la docencia me enseñó a descomponer problemas complejos en partes
+          verificables — el mismo procedimiento que uso antes de dar cualquier entrega por
+          cerrada. Fuera del código: música, cine, dibujo y una robótica que empezó como
+          hobby y hoy es tanto trabajo como pasión.
+        </p>
+        <div class="proof-row">
+          <div class="proof">
+            <span class="proof-tag">Rigor</span>
+            <p>Estructura, documentación y trazabilidad en cada sistema que entrego.</p>
+          </div>
+          <div class="proof">
+            <span class="proof-tag">Velocidad</span>
+            <p>Prototipos funcionales primero, refinamiento después. Sin bloqueos por perfeccionismo.</p>
+          </div>
+        </div>
+        <p class="contact-inline">
+          <a href="https://www.linkedin.com/in/guillermosant" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="sep">·</span>
+          <a href="https://github.com/guille-ss" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SISTEMAS -->
+  <section id="sistemas" class="section reveal section-alt">
+    <div class="section-head">
+      <span class="eyebrow-mini">Stack</span>
+      <h2>Herramientas por vocación, no por moda</h2>
+      <p class="section-intro">Agrupadas por lo que aportan: gobernanza cuando el riesgo lo exige, velocidad cuando el mercado no espera.</p>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-block">
+        <div class="stack-head">
+          <span class="stack-tag stack-tag-rigor">Rigor &amp; Estructura</span>
+          <span class="stack-note">Sistemas que no pueden fallar</span>
+        </div>
+        <ul class="stack-list">
+          <li>Java</li><li>C / C++</li><li>MySQL</li><li>PostgreSQL</li><li>Flask</li><li>Docker</li>
+        </ul>
+      </div>
+
+      <div class="stack-block">
+        <div class="stack-head">
+          <span class="stack-tag stack-tag-speed">Velocidad &amp; Ejecución</span>
+          <span class="stack-note">Del prototipo al usuario</span>
+        </div>
+        <ul class="stack-list">
+          <li>JavaScript</li><li>HTML</li><li>CSS</li><li>Python</li><li>React Native</li><li>Flutter / Dart</li>
+        </ul>
+      </div>
+
+      <div class="stack-block">
+        <div class="stack-head">
+          <span class="stack-tag">Soporte transversal</span>
+          <span class="stack-note">Proceso, hardware y despliegue</span>
+        </div>
+        <ul class="stack-list">
+          <li>SCRUM</li><li>GitLab</li><li>Maven</li><li>Arduino / ESP32</li><li>MQTT</li><li>Google Apps Script</li><li>Vercel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS DE ESTUDIO -->
+  <section id="casos" class="section reveal">
+    <div class="section-head">
+      <span class="eyebrow-mini">Casos de estudio</span>
+      <h2>Reto → Restricciones → Intervención → Resultado</h2>
+      <p class="section-intro">Ocho sistemas, un mismo método. Ordenados por calibre técnico y evaluación, no por fecha. Despliega cada caso para ver el detalle completo.</p>
+    </div>
+
+    <div class="case-group-head case-group-head-first">
+      <span class="eyebrow-mini">Proyectos insignia</span>
+      <p class="case-group-note">Los de mayor complejidad técnica y mejor evaluados.</p>
+    </div>
+
+    <div class="cases-list">
+
+      <article class="case" data-open="false">
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">01</span>
+            <div>
+              <span class="case-badge case-badge-top">TFG · Nota 10/10</span>
+              <h3>FocusBot — robot de acompañamiento para foco y descanso</h3>
+              <p class="case-result-line">Resultado: sistema completo — hardware, app y backend — evaluado con la nota máxima.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">C++</span><span class="chip">ESP32</span><span class="chip">React Native</span><span class="chip">Flask</span><span class="chip">MQTT</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">Reto de negocio</span>
+              <p>Sostener rutinas de concentración y descanso es difícil con una app más en el móvil: se necesitaba un apoyo físico, no solo digital, que acompañara al usuario en tiempo real.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Restricciones</span>
+              <p>Trabajo de Fin de Grado con un único desarrollador y plazo académico fijo: había que integrar hardware propio, app móvil y backend en un sistema coherente de extremo a extremo.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Intervención estratégica</span>
+              <p>Ecosistema de tres capas: dispositivo con ESP32 y una máquina de estados en C++ (temporizador Pomodoro e hitos), app móvil en React Native/Expo y backend en Flask + PostgreSQL, comunicados en tiempo real vía MQTT con autenticación propia y Google, todo containerizado con Docker.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado cuantificable</span>
+              <p>Trabajo de Fin de Grado calificado con 10/10. Sistema funcional de extremo a extremo — de la placa electrónica al backend — con guía de instalación entregada.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" data-open="false">
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">02</span>
+            <div>
+              <span class="case-badge case-badge-top">Proyecto de clase · Nota 10/10</span>
+              <h3>Gestión de Incidencias — sistema de tickets de soporte</h3>
+              <p class="case-result-line">Resultado: ciclo completo de una incidencia, del alta a la resolución medida.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">JavaScript</span><span class="chip">REST API</span><span class="chip">Dashboard</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">Reto de negocio</span>
+              <p>Un equipo de soporte técnico sin sistema propio para registrar, asignar y medir incidencias de clientes, dependiendo de procesos manuales dispersos.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Restricciones</span>
+              <p>Proyecto académico en equipo con plazo cerrado: debía cubrir empleados, clientes, tickets y estadísticas con control de acceso por rol.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Intervención estratégica</span>
+              <p>Dashboard con gestión de empleados, clientes y tickets, asignación dinámica de incidencias y paneles de estadísticas generales y por empleado, consumiendo una API REST propia con autenticación.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado cuantificable</span>
+              <p>Proyecto calificado con 10/10: sistema funcional cubriendo todo el ciclo de una incidencia, del alta a la resolución medida.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="case-group-head">
+      <span class="eyebrow-mini">Herramientas en producción</span>
+      <p class="case-group-note">Nadie las evalúa con una nota: las usa gente real, cada semana.</p>
+    </div>
+
+    <div class="cases-list">
+
+      <article class="case" data-open="false">
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">03</span>
+            <div>
+              <span class="case-badge case-badge-prod">En producción · Uso real</span>
+              <h3>Gestión de Grupos — clasificación y equipos de campamento</h3>
+              <p class="case-result-line">Resultado: una tarde entera de trabajo manual eliminada cada semana.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">JavaScript</span><span class="chip">PostgreSQL</span><span class="chip">Vercel</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">Reto de negocio</span>
+              <p>Cada semana, el equipo del campamento invertía horas clasificando manualmente a los campistas por edad y grupo, y formando equipos para las actividades de tarde en una hoja de cálculo.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Restricciones</span>
+              <p>Debía usarla personal no técnico durante el propio campamento, sin conexión estable garantizada y sin presupuesto de infraestructura.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Intervención estratégica</span>
+              <p>Aplicación web con árbol de decisión para clasificar campistas automáticamente, generación de equipos equilibrados por edad y grupo, y base de datos PostgreSQL desplegada en Vercel — sustituyendo la hoja de cálculo manual.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado cuantificable</span>
+              <p>~5 horas de trabajo manual eliminadas cada semana. Herramienta en uso real por el equipo del campamento.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" data-open="false">
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">04</span>
+            <div>
+              <span class="case-badge case-badge-prod">En producción · Uso real</span>
+              <h3>Gestión de Inventario — control de material sobre Google Sheets</h3>
+              <p class="case-result-line">Resultado: inventario consultado y actualizado en segundos, desde el móvil.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">JavaScript</span><span class="chip">Google Apps Script</span><span class="chip">Mobile-first</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">Reto de negocio</span>
+              <p>El inventario de material se llevaba en una hoja de Google Sheets actualizada a mano, sin visibilidad rápida de qué había disponible, en uso o roto.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Restricciones</span>
+              <p>Debía funcionar desde el móvil sin instalar nada, y el equipo ya trabajaba sobre Google Sheets como fuente de datos: no había margen para migrar de sistema.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Intervención estratégica</span>
+              <p>Interfaz web ligera de un solo archivo, conectada a Google Sheets vía Apps Script, con acciones rápidas de entrada, baja, uso, liberación y reparación de material, optimizada para uso táctil.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado cuantificable</span>
+              <p>Consulta y actualización del inventario en segundos desde cualquier móvil, sin mantener una hoja de cálculo abierta ni duplicar el registro.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="case-group-head">
+      <span class="eyebrow-mini">Proyectos académicos y de práctica</span>
+      <p class="case-group-note">Base técnica: de aquí sale el resto.</p>
+    </div>
+
+    <div class="cases-list">
+
+      <article class="case" data-open="false">
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">05</span>
+            <div>
+              <span class="case-badge case-badge-academic">En producción · Competición</span>
+              <h3>Comunicación serial para embarcación de competición</h3>
+              <p class="case-result-line">Resultado: cero pérdidas de señal durante toda la regata.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">C</span><span class="chip">Docker</span><span class="chip">RS-232</span><span class="chip">ESP32</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <img class="case-image" src="resources/img/projects/GFS_2.jpeg" alt="Comunicación serial para embarcación de competición" loading="lazy">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">Reto de negocio</span>
+              <p>El equipo de competición necesitaba telemetría fiable en tiempo real entre la embarcación y el puesto de control, sin margen de error durante la regata.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Restricciones</span>
+              <p>Hardware embebido de recursos limitados (ESP32), línea serie propensa a ruido (RS-232) y cero tolerancia a reinicios del sistema en carrera.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Intervención estratégica</span>
+              <p>Protocolo de comunicación serial en C, contenedorizado con Docker para garantizar entornos reproducibles, con manejo de errores y reconexión automática.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado cuantificable</span>
+              <p>Transmisión estable durante toda la competición: 0 pérdidas de señal reportadas por el equipo técnico.</p>
+            </div>
+          </div>
+          <a class="case-link" href="https://github.com/guille-ss" target="_blank" rel="noopener">Ver repositorio en GitHub →</a>
+        </div>
+      </article>
+
+      <article class="case" data-open="false">
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">06</span>
+            <div>
+              <span class="case-badge case-badge-academic">Proyecto académico</span>
+              <h3>Control de acceso por RFID</h3>
+              <p class="case-result-line">Resultado: trazabilidad total, cero registros en papel.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">C</span><span class="chip">C++</span><span class="chip">HTML</span><span class="chip">Arduino</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <img class="case-image" src="resources/img/projects/rfidApp.png" alt="Control de acceso por RFID" loading="lazy">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">Reto de negocio</span>
+              <p>El control de acceso manual generaba fricción y ausencia total de trazabilidad de entradas en las instalaciones.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Restricciones</span>
+              <p>Hardware de bajo coste (Arduino) y necesidad de una interfaz de consulta sin curva de aprendizaje para personal no técnico.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Intervención estratégica</span>
+              <p>Lógica de lectura y validación en C/C++ junto a una interfaz web ligera en HTML para consultar accesos en tiempo real.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado cuantificable</span>
+              <p>Registro automático y consultable de cada acceso, eliminando por completo el control manual en papel.</p>
+            </div>
+          </div>
+          <a class="case-link" href="https://github.com/guille-ss" target="_blank" rel="noopener">Ver repositorio en GitHub →</a>
+        </div>
+      </article>
+
+      <article class="case" data-open="false">
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">07</span>
+            <div>
+              <span class="case-badge case-badge-academic">Proyecto académico</span>
+              <h3>Gestor de paquetería multi-campus</h3>
+              <p class="case-result-line">Resultado: un único modelo de datos para todos los campus.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">Java</span><span class="chip">MySQL</span><span class="chip">Maven</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <img class="case-image" src="resources/img/projects/lockerApp.png" alt="Gestor de paquetería multi-campus" loading="lazy">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">Reto de negocio</span>
+              <p>Gestión de lockers de recogida de paquetes repartida en varios campus, sin ningún sistema centralizado.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Restricciones</span>
+              <p>Múltiples ubicaciones a sincronizar, necesidad de consistencia de datos entre puntos y presupuesto de infraestructura acotado.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Intervención estratégica</span>
+              <p>Arquitectura en Java + MySQL con Maven para builds reproducibles, diseñada para escalar a nuevos campus sin reescritura.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado cuantificable</span>
+              <p>Sistema desplegado y operativo en múltiples ubicaciones bajo un único modelo de datos centralizado.</p>
+            </div>
+          </div>
+          <a class="case-link" href="https://github.com/guille-ss" target="_blank" rel="noopener">Ver repositorio en GitHub →</a>
+        </div>
+      </article>
+
+      <article class="case" data-open="false">
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">08</span>
+            <div>
+              <span class="case-badge case-badge-academic">Proyecto académico</span>
+              <h3>Diseño web · Catálogo de Servicios IT</h3>
+              <p class="case-result-line">Resultado: catálogo usable desde el primer sprint.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <img class="case-image" src="resources/img/projects/serviciosTI.png" alt="Diseño web del catálogo de Servicios IT" loading="lazy">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">Reto de negocio</span>
+              <p>El catálogo de servicios IT no tenía una presencia web clara para los usuarios internos que debían consultarlo.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Restricciones</span>
+              <p>Plazos ajustados, sin equipo de diseño dedicado, y debía funcionar de forma consistente en cualquier dispositivo.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Intervención estratégica</span>
+              <p>Diseño y desarrollo responsive de punta a punta en HTML/CSS/JS, priorizando velocidad de carga y claridad de navegación.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado cuantificable</span>
+              <p>Catálogo accesible y usable desde el primer sprint, sin retrabajo posterior de diseño.</p>
+            </div>
+          </div>
+          <a class="case-link" href="https://github.com/guille-ss" target="_blank" rel="noopener">Ver repositorio en GitHub →</a>
+        </div>
+      </article>
+
+      <article class="case" data-open="false">
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">09</span>
+            <div>
+              <span class="case-badge case-badge-practice">Ejercicio de práctica · Nota 8/10</span>
+              <h3>TPV — punto de venta simulado</h3>
+              <p class="case-result-line">Resultado: base Flutter multiplataforma para prácticas posteriores.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">Flutter</span><span class="chip">Dart</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">Reto de negocio</span>
+              <p>Simular el flujo completo de un punto de venta — tienda, administración y gestión — como ejercicio de aprendizaje multiplataforma.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Restricciones</span>
+              <p>Ejercicio de práctica con alcance y tiempo acotados por el temario, sin datos ni backend reales.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Intervención estratégica</span>
+              <p>App Flutter con tres módulos (Tienda, Administración, Manager), catálogo de productos por categoría y carrito de compra, pensada para Android, iOS y escritorio desde una única base de código.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado cuantificable</span>
+              <p>Ejercicio calificado con 8/10: base sólida de Flutter multiplataforma, el proyecto de menor alcance de este conjunto.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TRAYECTORIA -->
+  <section id="registro" class="section reveal section-alt">
+    <div class="section-head">
+      <span class="eyebrow-mini">Trayectoria</span>
+      <h2>Formación y puestos, en orden</h2>
+    </div>
+
+    <ol class="timeline">
+      <li class="timeline-entry">
+        <div class="timeline-meta">
+          <span class="chip chip-outline">Formación</span>
+          <time>Sep. 2018 — Dic. 2023</time>
+        </div>
+        <h3>Doble Grado Ing. Telemática y Electrónica</h3>
+        <div class="timeline-chips">
+          <span class="chip">C</span><span class="chip">C++</span><span class="chip">HTML</span>
+          <span class="chip">Scrum</span><span class="chip">Trello</span><span class="chip">Fusion 360</span>
+        </div>
+      </li>
+
+      <li class="timeline-entry">
+        <div class="timeline-meta">
+          <span class="chip chip-outline">Puesto</span>
+          <time>Jun. 2023 — Ago. 2024</time>
+        </div>
+        <h3>Monitor de Ingeniería</h3>
+        <p>Organización y supervisión de talleres de robótica y programación. Dirección de equipos de hasta 7 personas.</p>
+        <div class="timeline-chips">
+          <span class="chip">C</span><span class="chip">C++</span><span class="chip">HTML</span><span class="chip">Scrum</span>
+        </div>
+      </li>
+
+      <li class="timeline-entry">
+        <div class="timeline-meta">
+          <span class="chip chip-outline">Puesto</span>
+          <time>Oct. 2023 — Jun. 2024</time>
+        </div>
+        <h3>Profesor de Robótica</h3>
+        <p>Formación a más de 100 estudiantes en programación y robótica. Diseño de actividades con metodología STEAM.</p>
+        <div class="timeline-chips">
+          <span class="chip">C</span><span class="chip">C++</span><span class="chip">Java</span><span class="chip">STEAM</span>
+        </div>
+      </li>
+
+      <li class="timeline-entry">
+        <div class="timeline-meta">
+          <span class="chip chip-outline">Formación</span>
+          <time>Sep. 2024 — Actualmente</time>
+        </div>
+        <h3>Grado Superior DAM</h3>
+        <p>Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
+      </li>
+
+      <li class="timeline-entry">
+        <div class="timeline-meta">
+          <span class="chip chip-outline">Puesto</span>
+          <time>Nov. 2024 — Actualmente</time>
+        </div>
+        <h3>Técnico de Control y Telemetría</h3>
+        <p>Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
+        <div class="timeline-chips">
+          <span class="chip">C</span><span class="chip">GitLab</span><span class="chip">RS-232</span><span class="chip">Docker</span>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="canal" class="section reveal">
+    <div class="section-head">
+      <span class="eyebrow-mini">Contacto</span>
+      <h2>Hablemos de tu próximo reto</h2>
+      <p class="section-intro">Toda entrega, aunque sea un formulario, se valida antes de enviarse.</p>
+    </div>
+
+    <form id="contactForm" class="contact-form" novalidate>
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" autocomplete="name">
+        <p class="error" id="err-nombre">Indica tu nombre.</p>
+      </div>
+      <div class="field">
+        <label for="email">Correo</label>
+        <input type="email" id="email" name="email" autocomplete="email">
+        <p class="error" id="err-email">Indica un correo válido.</p>
+      </div>
+      <div class="field">
+        <label for="phone">Teléfono <span class="opt">(opcional)</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel">
+        <p class="error" id="err-phone">Indica un teléfono válido.</p>
+      </div>
+      <div class="field">
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="asunto">
+        <p class="error" id="err-asunto">Indica un asunto.</p>
+      </div>
+      <div class="field field-full">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5"></textarea>
+        <p class="error" id="err-mensaje">Escribe un mensaje.</p>
+      </div>
+      <div class="field-full form-actions">
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <button type="reset" class="btn btn-ghost">Restablecer</button>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-id">
+      <p class="footer-name">Guillermo Santos Sánchez</p>
+      <p class="copy-mail" id="footerMail" tabindex="0" role="button">guillermosantosanchez@gmail.com</p>
+    </div>
+    <div class="footer-links">
+      <button class="icon-link" onclick="verPDF()">Ver CV</button>
+      <a class="icon-link" href="https://www.linkedin.com/in/guillermosant" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="icon-link" href="https://github.com/guille-ss" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <p class="footer-fine">Rigor de proceso. Velocidad de producto. © 2026</p>
+</footer>
+
+<button id="btnTop" class="btn-top" aria-label="Volver arriba">↑</button>
+
+<script src="identidad.js"></script>
+</body>
+</html>

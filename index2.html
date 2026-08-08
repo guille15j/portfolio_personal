@@ -1,445 +1,580 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guillermo Santos Sánchez — Expediente Técnico</title>
-<meta name="description" content="Guillermo Santos Sánchez. Desarrollador Backend y Técnico de Control y Telemetría.">
-<link rel="icon" href="resources/avatar2.PNG" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guillermo Santos</title>
+    <link rel="icon" href="resources/avatar2.PNG" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/0-home.css">
+    <link rel="stylesheet" href="estilos/0-namepage.css">
+    <link rel="stylesheet" href="estilos/0-navHover.css">
 
-<link rel="stylesheet" href="identidad.css">
+    <link rel="stylesheet" href="estilos/1-header.css">
+
+    <link rel="stylesheet" href="estilos/2-aboutMe.css">
+
+    <link rel="stylesheet" href="estilos/3-0-proyectos.css">
+
+    <link rel="stylesheet" href="estilos/4-experiencia.css">
+
+    <link rel="stylesheet" href="estilos/5-tecnologias.css">
+
+    <link rel="stylesheet" href="estilos/6-contacto.css">
+
+    <link rel="stylesheet" href="estilos/botones.css">
+    <link rel="stylesheet" href="estilos/fuentes.css">
+
+    <script src="scripts/modooscuro.js"></script>
+    <script src="scripts/traduccion.js"></script>
+
 </head>
-<body>
-
-<!-- MARCO DE VISOR — elemento de firma fijo -->
-<span class="viewport-corner vc-tl" aria-hidden="true"></span>
-<span class="viewport-corner vc-tr" aria-hidden="true"></span>
-<span class="viewport-corner vc-bl" aria-hidden="true"></span>
-<span class="viewport-corner vc-br" aria-hidden="true"></span>
-
-<div class="scan-line" aria-hidden="true"></div>
-
-<!-- NAV -->
-<div class="nav-wrap">
-  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-
-  <nav id="mainNav">
-    <a href="#ident" class="nav-link" data-n="01"><span class="n">01</span>Identificación</a>
-    <a href="#sistemas" class="nav-link" data-n="02"><span class="n">02</span>Sistemas</a>
-    <a href="#casos" class="nav-link" data-n="03"><span class="n">03</span>Casos</a>
-    <a href="#registro" class="nav-link" data-n="04"><span class="n">04</span>Registro</a>
-    <a href="#canal" class="nav-link" data-n="05"><span class="n">05</span>Canal seguro</a>
-  </nav>
-</div>
-
-<div class="toast" id="toast" role="status" aria-live="polite">
-  <p class="toast-title" id="toastTitle">Copiado</p>
-  <p class="toast-body" id="toastBody">El dato ha sido copiado al portapapeles.</p>
-</div>
-
-<main>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-grid">
-      <div class="hero-main">
-        <p class="eyebrow">Expediente técnico // GS&#8209;2024</p>
-        <h1>Guillermo<br>Santos&nbsp;Sánchez</h1>
-        <p class="role">Desarrollador <span>Backend</span> &amp; Técnico de Control y Telemetría</p>
-        <p class="lead">
-          Diseño y mantengo sistemas que no pueden fallar cuando importa. Backend robusto,
-          comunicación en tiempo real y control de sistemas críticos, con la misma disciplina
-          con la que un ingeniero calibra un instrumento antes de ponerlo en servicio.
+<body class="">
+    
+    <header>
+        <h1 data-lang-key="minombre">Guillermo</h1>
+        <h1 data-lang-key="misapellidos">Santos Sánchez</h1>
+        <div class="perfilPic">
+            <img src="resources\avatar.PNG" alt="Imagen Perfil">
+        </div>
+        
+        
+        <h3 data-lang-key="soyHeader">Soy <span>Desarrollador BackEnd</span></h3>
+        <p data-lang-key="header-descript">
+            Apasionado por resolver problemas complejos y crear soluciones 
+            eficientes. Mi curiosidad por entender cómo funcionan las cosas 
+            me llevó al mundo de la programación, donde aplico mi enfoque 
+            analítico y metódico para desarrollar sistemas robustos y 
+            escalables.
         </p>
-        <div class="cta-row">
-          <button class="btn btn-primary" onclick="verPDF()">Ver expediente (CV)</button>
-          <button class="btn btn-ghost" onclick="verLinkedin()">LinkedIn</button>
-          <button class="btn btn-ghost" onclick="verGit()">GitHub</button>
+        <h3  class="cpMail">
+            guillermosantosanchez@gmail.com
+        </h3>
+        <div class="botonera">
+            <button class="boton" onclick="verPDF()">CV</button>
+            <button class="boton" onclick="verLinkelin()">Linkedin</button>
+            <button class="boton" onclick="verGit()">Github</button>
         </div>
-      </div>
+    </header>
 
-      <aside class="status-panel panel">
-        <div class="status-row">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span class="status-label">Sistema operativo</span>
-        </div>
-        <dl class="status-data">
-          <div>
-            <dt>Disponibilidad</dt>
-            <dd>Abierta a nuevos proyectos</dd>
-          </div>
-          <div>
-            <dt>Tiempo de sesión</dt>
-            <dd id="sessionClock">00:00:00</dd>
-          </div>
-          <div>
-            <dt>Canal directo</dt>
-            <dd class="copy-mail" id="mailTrigger" tabindex="0" role="button">guillermosantosanchez@gmail.com</dd>
-          </div>
-        </dl>
-      </aside>
+    <div class="menuCt">
+        <label  class="burger" >
+            <input type="checkbox" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav>
+            <a href="#sc1" class="enlace">
+                <span data-lang-key="about-me">¿Quíen Soy?</span>
+            </a>
+            <a href="#sc4" class="enlace">
+                <span data-lang-key="technologies">Técnologías</span>
+            </a>
+            <a href="#sc2" class="enlace">
+                <span data-lang-key="projects">Proyectos</span>
+            </a>
+            <a href="#sc3" class="enlace">
+                <span data-lang-key="experience">Esperiencia</span>
+            </a>
+            
+            <a href="#sc5" class="enlace">
+                <span data-lang-key="contact">Contácto</span>
+            </a>
+
+            <div>
+                <div id="idiomas">
+                    <button class="sel" id="btn-espanol">ES</button>
+                    <button id="btn-ingles">EN</button>
+                </div>
+
+                <i class="material-icons" id="dark_mode"  onclick="modoOscuro()">
+                    light_mode</i>
+            </div>
+            
+        </nav>
     </div>
-    <div class="hero-foot">
-      <span>Ingeniería telemática · Electrónica</span>
-      <span class="divider">/</span>
-      <span>Grado Superior DAM</span>
-      <span class="divider">/</span>
-      <span>Madrid, España</span>
-    </div>
-  </header>
 
-  <!-- 01 IDENTIFICACIÓN -->
-  <section id="ident" class="section reveal">
-    <div class="section-head">
-      <span class="n-big">01</span>
-      <h2>Identificación</h2>
+    <button id="btnScrollTop" data-lang-key="upBttn" >Arriba</button>
+    <div class="notification">
+        <h3 id="tituloNot">guillermosantosanchez@gmail.com</h3>
+        <p id="infoNot" data-lang-key="notText">El correo ha sido copiado a tu portapapeles</p>
     </div>
 
-    <div class="ident-grid">
-      <figure class="panel ident-photo">
-        <img src="resources/avatar2.PNG" alt="Fotografía de Guillermo Santos Sánchez">
-      </figure>
+    <main>
 
-      <div class="panel ident-card">
-        <h3><span class="tag">FICHA</span> Quién soy</h3>
-        <p>
-          Desarrollador backend con base en Java, C/C++ y Docker. Empecé por curiosidad de
-          entender cómo funcionan los sistemas por dentro; hoy aplico esa misma curiosidad,
-          de forma metódica, para construir soluciones fiables y escalables.
-        </p>
-      </div>
+        <section id="sc0">
+            <h1>
+                <span data-lang-key="fullstack">Desarrollador Full-Stack</span><span>Desarrollador Full-Stack</span>
+                <br>
+                <span data-lang-key="minombre">Guillermo</span>
+            </h1>
+            <p data-lang-key="sc0-descript">
+                Creo soluciones tecnológicas que combinan eficiencia y creatividad. 
+                Mi enfoque metódico y mi pasión por aprender me permiten enfrentar 
+                desafíos técnicos con confianza y determinación.
+            </p>
+            <div class="botonera">
+                <button class="boton" onclick="verPDF()">CV</button>
+                <button class="boton" onclick="verLinkelin()">Linkedin</button>
+                <button class="boton" onclick="verGit()">Github</button>
+            </div>
+        </section>
 
-      <div class="panel ident-card">
-        <h3><span class="tag">PROTOCOLO</span> Método de trabajo</h3>
-        <p>
-          Curioso, organizado y perseverante. Mi paso por la docencia me enseñó a descomponer
-          problemas complejos en partes verificables — el mismo procedimiento que aplico
-          cada día antes de dar algo por cerrado.
-        </p>
-      </div>
+        <section id="sc1">            
+            <h2 class="tituloSection" data-lang-key="about-me">¿Quién soy?</h2>
+            <div class="gridQnSy">
+                <img src="resources/avatar2.PNG" alt="">
+                <div>
+                    <h3 data-lang-key="about-me">Quién soy</h3>
+                    <p data-lang-key="sc1-descrip1">
+                        Soy un desarrollador BackEnd con experiencia en 
+                        Java, C/C++ y Docker. Mi curiosidad por entender cómo
+                         funcionan las cosas me llevó a la programación, 
+                         donde disfruto resolviendo problemas complejos y 
+                         creando soluciones eficientes.
+                    </p>
+                </div>
 
-      <div class="panel ident-card">
-        <h3><span class="tag">FUERA DE TURNO</span> Fuera del puesto</h3>
-        <p>
-          Música, cine y dibujo. La robótica también fue una gran pasión personal, aunque
-          hoy forma parte de mi trabajo tanto como de mi tiempo libre.
-        </p>
-      </div>
+                <div>
+                    <h3 data-lang-key="hobby">Hobbies</h3>
+                    <p data-lang-key="sc1-descrip2">
+                        En mi tiempo libre, disfruto de la música, el cine y el 
+                        dibujo. La robótica también ha sido una gran pasión, 
+                        aunque ahora es más parte de mi trabajo que de mi ocio.
+                    </p>
+                </div>
 
-      <div class="panel ident-card ident-contact">
-        <h3><span class="tag">ENLACE</span> Puede encontrarme en</h3>
-        <p>
-          Conecte conmigo en <a href="https://www.linkedin.com/in/guillermosant" target="_blank" rel="noopener">LinkedIn</a>
-          o revise el registro de proyectos en <a href="https://github.com/guille-ss" target="_blank" rel="noopener">GitHub</a>.
-        </p>
-      </div>
-    </div>
-  </section>
+                <div>
+                    <h3 data-lang-key="caracteristicas">Características</h3>
+                    <p data-lang-key="sc1-descrip2">
+                        Soy curioso, organizado y perseverante. Mi experiencia como 
+                        profesor me ha enseñado a descomponer problemas complejos en 
+                        partes más sencillas, lo que aplico en mi trabajo diario.
+                    </p>    
+                </div>
 
-  <!-- 02 SISTEMAS -->
-  <section id="sistemas" class="section reveal">
-    <div class="section-head">
-      <span class="n-big">02</span>
-      <h2>Sistemas</h2>
-    </div>
-    <p class="section-intro">Inventario de tecnologías por capa de responsabilidad, ordenado de mayor a menor nivel de dominio.</p>
+                <div>
+                    <h3 data-lang-key="encuentrame">Puedes encontrarme en</h3>
+                    <p data-lang-key="sc1-descrip3">
+                        Conéctate conmigo en 
+                        <a href="https://www.linkedin.com/in/tu-perfil" target="_blank"><b>LinkedIn</b></a>
+                         o revisa mis proyectos en 
+                        <a href="https://github.com/tu-usuario" target="_blank"><b>GitHub</b></a>.
+                </div>
+            </div>
+        </section>
 
-    <div class="inventory">
-      <div class="panel inv-block">
-        <div class="inv-head">
-          <span class="tag">SYS&#8209;BACKEND</span>
-          <span class="inv-level">Dominio principal</span>
+        <section id="sc4"  class="">
+            <h2 onclick="enterTech()" class="tituloSection" 
+                data-lang-key="technologies">Tecnologías</h2>
+
+            <!-- terciarios -->
+            <div>
+                <img src="resources/img/tech_icon/mysql.png" alt="My SQL" class="tech">
+                <img src="resources/img/tech_icon/apache_maven.png" alt="Apache Maven" class="tech">
+                <img src="resources/img/tech_icon/eclipse.png" alt="Eclipse" class="tech">
+                <img src="resources/img/tech_icon/phy.png" alt="Phython" class="tech">
+                <img src="resources/img/tech_icon/ph.png" alt="Photoshop" class="tech">
+                <img src="resources/img/tech_icon/docker.png" alt="Docker" class="tech">
+                <img src="resources/img/tech_icon/arduino.png" alt="Arduino" class="tech">
+                <img src="resources/img/tech_icon/trello.png" alt="Trello" class="tech">
+            </div>
+
+            <!-- secundarios  -->
+            <div>
+                <img src="resources/img/tech_icon/js.png" alt="JavaScript" class="tech">
+                <img src="resources/img/tech_icon/css.png" alt="CSS" class="tech">
+                <img src="resources/img/tech_icon/html.png" alt="HTML" class="tech">
+                <img src="resources/img/tech_icon/vs.png" alt="Visual Studio Code" class="tech">
+            </div>
+
+            <!-- primatio -->
+            <div>
+                <img src="resources/img/tech_icon/java.png" alt="Java" class="tech">
+                <img src="resources/img/tech_icon/c.png" alt="C" class="tech">
+            </div>
+
+            <div class="opened">
+                <card class="card">
+                    <p>BackEnd</p>
+                    <ul>
+                        <li>Java</li>
+                        <li>C/C++</li>
+                        <li>MySQL</li>
+                        <li>Phython</li>
+                        <li>PL/SQL</li>
+                        <li>XQuery</li>
+                        <li></li>
+                        <li>XPath</li>
+                    </ul>
+                </card>
+                <card>
+                    <p>FrontEnd</p>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </card>
+                <card>
+                    <p data-lang-key="otros">Otros</p>
+                    <ul>
+                        <li>XSD</li>
+                        <li>Eclipse</li>
+                        <li>Maven</li>
+                        <li>Trello</li>
+                        <li>Docker</li>
+                        <li>Arduino</li>
+                        <li>SCRUM</li>
+                        <li>GitLab</li>
+                    </ul>
+                </card>
+            </div>
+        </section>
+        
+        <section id="sc2">
+            <h2 class="tituloSection" data-lang-key="projects">Proyectos</h2>
+
+            <div class="tarjetas">             
+
+                <article class="tarjeta" id="pT1">
+                    <div class="window">
+                        <img src="resources\img\projects\GFS_2.jpeg" 
+                            class="imgProyectos" alt="Gestor de Paquetería" >
+                            <span></span>
+                        <img class="bttn" src="resources/img/github.png" 
+                            onclick="verGit()" alt="Enlace a Github">
+                    </div>
+                    
+                    
+                    <div class="descripcion">
+                        <h3 data-lang-key="comSer">Comunicación Serial</h3>
+                        <div class="techProyectos">
+                            <span class="b">C</span>
+                            <span class="o">Linux</span>
+                            <span class="o">ESP32</span>
+                            <span class="o">RS-232</span>
+                        </div>
+                        <p data-lang-key="comSer-descrip">
+                            Desarrollo e implementación de un sistema de comunicación serial para una embarcación de competición. Utilicé C y Docker para garantizar la transmisión de datos en tiempo real.
+                        </p>
+                    </div>
+                    
+                    
+                </article>
+
+                <article class="tarjeta" id="pT2">
+                    <div class="window">
+                        <img src="resources\img\projects\rfidApp.png" 
+                            class="imgProyectos" alt="Gestor de Paquetería" >
+                            <span></span>
+                            <img class="bttn" src="resources/img/github.png" 
+                            onclick="verGit()" alt="Enlace a Github">
+                    </div>
+
+                    <div class="descripcion">
+                        <h3 data-lang-key="rfid">Control de acceso por RFID</h3>
+
+                        <div class="techProyectos">
+                            <span class="b">C</span>
+                            <span class="b">C++</span>
+                            <span class="f">HTML</span>
+                            <span class="o">Arduino</span>
+                            <span class="o">Visual Code</span>
+                        </div>
+
+                        <p data-lang-key="rfid-descrip">
+                            Sistema de control de acceso y monitoreo mediante tarjetas RFID. Desarrollé la lógica en C/C++ y diseñé una interfaz web para la visualización de datos.
+                        </p>
+                    </div>
+                    
+                    
+                </article>
+
+                <article class="tarjeta" id="pT1">
+                    <div class="window">
+                        
+                        <img src="resources\img\projects\lockerApp.png" 
+                        class="imgProyectos" alt="Gestor de Paquetería" >
+                        <span></span>
+                        <img class="bttn" src="resources/img/github.png" 
+                            onclick="verGit()" alt="Enlace a Github">
+                    </div>
+                    
+                    <div class="descripcion">
+                        <h3 data-lang-key="paqueteria">Gestor de Paquetería</h3>
+
+                        <div class="techProyectos">
+                            <span class="b">Java</span>
+                            <span class="b">MySQL</span>
+                            <span class="o">Eclipse</span>
+                            <span class="o">Maven</span>
+                        </div>
+
+                        <p data-lang-key="paqueteria-descrip">
+                            Aplicación para la gestión de lockers de recogida de paquetes en diferentes campus. Utilicé Java y MySQL para garantizar un sistema robusto y escalable.
+                        </p>
+                    </div>                  
+                </article> 
+                
+                <article class="tarjeta" id="pT3">
+                    <div class="window">
+                        <img src="resources\img\projects\serviciosTI.png" 
+                            class="imgProyectos" alt="Gestor de Paquetería" >
+                            <span></span>
+                            <img class="bttn" src="resources/img/github.png" 
+                            onclick="verGit()" alt="Enlace a Github">
+                    </div>
+                    
+                    <div class="descripcion">
+                        <h3 data-lang-key="webIt">Diseño WEB Servicios IT</h3>
+
+                        <div class="techProyectos">
+                            <span class="f">HTML</span>
+                            <span class="f">CSS</span>
+                            <span class="f">JavaScript</span>
+                            <span class="o">VSCode</span>
+                        </div>
+
+                        <p data-lang-key="webIt-descrip">Página web diseñada para alojar servicios IT. 
+                        Encargado del diseño responsive y planteamiento de la 
+                        sección de servicios IT</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="sc3">
+            <h2 class="tituloSection"  data-lang-key="experience">Experiencia</h2>
+
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+
+            <div id="contentExp">
+
+                <!-- <div>
+                    <h3>Puesto</h3>
+                    <h4>Tiempo</h4>
+                    <p>Caracteristicas del pusto 1</p>
+                    <p>Caracteristicas del pusto 2</p>
+                    <p>Caracteristicas del pusto 3</p>
+                    <ul>
+                        li*4>{tecnologia $}
+                        <li>tecnologia 1</li>
+                        <li>tecnologia 2</li>
+                        <li>tecnologia 3</li>
+                        <li>tecnologia 4</li>
+                    </ul>
+                </div> -->
+
+                <div class="study">
+                    <h3 data-lang-key="upmGrado">Doble Grado Ing. Telemática y Electrónica</h3>
+                    <h4>Sep. 2018 - Dic. 2023</h4>
+                    <ul>
+                        <!-- li*4>{tecnologia $} -->
+                        <li class="b">C</li>
+                        <li class="b">C++</li>
+                        <li class="f">HTML</li>
+                        <li class="o">Scrum</li>
+                        <li class="o">Trello</li>
+                        <li class="o">Fusion 360</li>
+                        <li class="o">Impresora 3D</li>
+                    </ul>
+                </div>
+
+                <div class="work">
+                    <h3 data-lang-key="fgUpm-tit">Monitor de Ingeniería</h3>
+                    <h4>Jun. 2023 - Agst. 2024</h4>
+                    <p data-lang-key="fgUpm-info1">Organización y supervisión de talleres de robótica y programación.</p>
+                    <p data-lang-key="fgUpm-info2">Dirección de equipos de hasta 7 personas.</p>
+                    <ul>
+                        <!-- li*4>{tecnologia $} -->
+                        <li class="b">C</li>
+                        <li class="b">C++</li>
+                        <li class="f">HTML</li>
+                        <li class="o">Scrum</li>
+                        <li class="o">Trello</li>
+                        <li class="o">Fusion 360</li>
+                        <li class="o">Impresora 3D</li>
+                    </ul>
+                </div>
+
+                <div class="work">
+                    <h3 data-lang-key="cara-tit">Profesor de Robótica</h3>
+                    <h4>Oct. 2023 - Jun. 2024</h4>
+                    <p data-lang-key="cara-info1">Formación a más de 100 estudiantes en programación y robótica.</p>
+                    <p data-lang-key="cara-info2">Diseño de actividades con metodología STEAM.</p>
+                    <ul>
+                        <!-- li*4>{tecnologia $} -->
+                        <li class="b">C</li>
+                        <li class="b">C++</li>
+                        <li class="b">Java</li>
+                        <li class="o">Scrum</li>
+                        <li class="o">STEAM</li>
+                        <li class="o">Thinkercad</li>
+                        <li class="o">Scratch</li>
+                    </ul>
+                </div>
+
+                <div class="study">
+                    <h3 data-lang-key="dam-tit">Grado Superior DAM</h3>
+                    <h4>Sep. 2024 - Actualmente</h4>
+                    <p data-lang-key="dam-info">Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
+                    <ul>
+                        <!-- <li class="b"></li>
+                        <li class="f"></li>
+                        <li class="f"></li>
+                        <li class="f"></li>
+                        <li class="o"></li>
+                        <li class="o"></li>
+                        <li class="o"></li> -->
+                        
+                    </ul>
+                </div>
+
+                <div class="work">
+                    <h3 data-lang-key="gfs-tit">Técnico de Control y Telemetría</h3>
+                    <h4>Nov. 2024 - Actualmente</h4>
+                    <p data-lang-key="gfs-info">Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
+                    <ul>
+                        <li class="b">C</li>
+                        <li class="b">GitLab</li>
+                        <li class="o">RS-232</li>
+                        <li class="o">Docker</li>
+                        <li class="o">Scrum</li>
+                        
+                    </ul>
+                </div>
+
+                
+            </div>
+
+            
+        </section>
+
+        <section id="sc5">
+            <h2 class="tituloSection" data-lang-key="contact">Contáctemos</h2>
+            
+            <form id="contactForm" action="">
+                <fieldset>
+                    <label for="nombre" data-lang-key="name">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <p class="error" id="err-name">Por favor, ingresa tu nombre.</p>
+                </fieldset>
+                <fieldset>
+                    <label for="correo" data-lang-key="mail">Correo</label>
+                    <input type="email" id="email" name="email">
+                    <p class="error" id="err-email">Por favor, ingresa un correo válido.</p>
+                </fieldset>
+                <fieldset>
+                    <label for="phone" data-lang-key="tel">Teléfono</label>
+                    <input type="tel" name="phone" id="phone">
+                    <p class="error" id="err-tel">Por favor, ingresa un número de teléfono válido.</p>
+                </fieldset>
+                <fieldset>
+                    <label for="asunto" data-lang-key="asunto">Asunto</label>
+                    <input type="text" name="asunto" id="asunto">
+                    <p class="error" id="asunto-err">Por favor, ingresa un asunto.</p>
+                </fieldset>
+                <fieldset>
+                    <label for="mensaje" data-lang-key="mnsj">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje"></textarea>
+                    <p class="error" id="err-mnsj">Por favor, ingresa un mensaje.</p>
+                </fieldset>
+                <button type="button" class="boton" data-lang-key="send" onclick="validarMailFCN()">Enviar</button>
+                <button type="reset" class="boton" data-lang-key="rst">Restablecer</button>
+            </form>
+        </section>
+
+        
+    </main>
+
+    <footer>
+        <div>
+            <p>Guillermo Santos Sánchez</p>
+            <p class="cpMail">guillermosantosanchez@gmail.com</p>
         </div>
-        <ul class="inv-list">
-          <li><img src="resources/img/tech_icon/java.png" alt="">Java</li>
-          <li><img src="resources/img/tech_icon/c.png" alt="">C / C++</li>
-          <li><img src="resources/img/tech_icon/mysql.png" alt="">MySQL</li>
-          <li><img src="resources/img/tech_icon/phy.png" alt="">Python</li>
-          <li>PL/SQL</li>
-          <li>XQuery / XPath</li>
-        </ul>
-      </div>
-
-      <div class="panel inv-block">
-        <div class="inv-head">
-          <span class="tag">SYS&#8209;FRONTEND</span>
-          <span class="inv-level">Dominio secundario</span>
+        
+        <div class="botonera">
+            <button onclick="abrirCV()">CV</button>
+            <img src="resources/img/linkedin.png" alt="Linkedin">
+            <img src="resources/img/github.png" alt="Gihub">
         </div>
-        <ul class="inv-list">
-          <li><img src="resources/img/tech_icon/html.png" alt="">HTML</li>
-          <li><img src="resources/img/tech_icon/css.png" alt="">CSS</li>
-          <li><img src="resources/img/tech_icon/js.png" alt="">JavaScript</li>
-        </ul>
-      </div>
+    </footer>
 
-      <div class="panel inv-block">
-        <div class="inv-head">
-          <span class="tag">SYS&#8209;SOPORTE</span>
-          <span class="inv-level">Herramientas y procesos</span>
-        </div>
-        <ul class="inv-list">
-          <li><img src="resources/img/tech_icon/docker.png" alt="">Docker</li>
-          <li><img src="resources/img/tech_icon/apache_maven.png" alt="">Maven</li>
-          <li><img src="resources/img/tech_icon/eclipse.png" alt="">Eclipse</li>
-          <li><img src="resources/img/tech_icon/vs.png" alt="">VS Code</li>
-          <li><img src="resources/img/tech_icon/arduino.png" alt="">Arduino</li>
-          <li><img src="resources/img/tech_icon/trello.png" alt="">Trello</li>
-          <li>SCRUM · GitLab</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    
+    <script src="scripts/validationMail.js"></script>
+    <script>
+        function abrirCV(){
+            // console.log("DENTRO");
+            window.open('resources/CV.pdf', '_blank');
+                
+        }       
+       
 
-  <!-- 03 CASOS -->
-  <section id="casos" class="section reveal">
-    <div class="section-head">
-      <span class="n-big">03</span>
-      <h2>Casos</h2>
-    </div>
-    <p class="section-intro">Expedientes de proyecto, documentados con su alcance técnico y pila utilizada.</p>
+        // Boton scroll UP
+        const btnScrollTop = document.getElementById("btnScrollTop");
 
-    <div class="cases-grid">
+        // Mostrar el botón al hacer scroll
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                btnScrollTop.style.display = "block";
+            } else {
+                btnScrollTop.style.display = "none";
+            }
+        });
 
-      <article class="panel case-card">
-        <div class="case-window">
-          <img src="resources/img/projects/GFS_2.jpeg" alt="Comunicación serial para embarcación de competición">
-          <a class="case-git" href="https://github.com/guille-ss" target="_blank" rel="noopener" aria-label="Ver en GitHub">
-            <img src="resources/img/github.png" alt="">
-          </a>
-        </div>
-        <div class="case-body">
-          <span class="tag">CASO&nbsp;01</span>
-          <h3>Comunicación serial</h3>
-          <div class="case-stack">
-            <span class="chip chip-b">C</span>
-            <span class="chip">Linux</span>
-            <span class="chip">ESP32</span>
-            <span class="chip">RS&#8209;232</span>
-          </div>
-          <p>
-            Sistema de comunicación serial en tiempo real para una embarcación de competición.
-            Transmisión de datos garantizada mediante C y Docker.
-          </p>
-        </div>
-      </article>
+        // Función para volver arriba
+        btnScrollTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth" 
+            });
+        });
 
-      <article class="panel case-card">
-        <div class="case-window">
-          <img src="resources/img/projects/rfidApp.png" alt="Control de acceso por RFID">
-          <a class="case-git" href="https://github.com/guille-ss" target="_blank" rel="noopener" aria-label="Ver en GitHub">
-            <img src="resources/img/github.png" alt="">
-          </a>
-        </div>
-        <div class="case-body">
-          <span class="tag">CASO&nbsp;02</span>
-          <h3>Control de acceso por RFID</h3>
-          <div class="case-stack">
-            <span class="chip chip-b">C</span>
-            <span class="chip chip-b">C++</span>
-            <span class="chip chip-f">HTML</span>
-            <span class="chip">Arduino</span>
-          </div>
-          <p>
-            Sistema de control de acceso y monitoreo mediante tarjetas RFID. Lógica en C/C++
-            y una interfaz web dedicada a la visualización de datos.
-          </p>
-        </div>
-      </article>
+        //Copiar correo
+        document.addEventListener("click", (evento) => {
+            if (evento.target.classList.contains("cpMail")) {
+                copiarTextoAlPortapapeles("guillermosantosanchez@gmail.com");
+            }
+        });
 
-      <article class="panel case-card">
-        <div class="case-window">
-          <img src="resources/img/projects/lockerApp.png" alt="Gestor de paquetería">
-          <a class="case-git" href="https://github.com/guille-ss" target="_blank" rel="noopener" aria-label="Ver en GitHub">
-            <img src="resources/img/github.png" alt="">
-          </a>
-        </div>
-        <div class="case-body">
-          <span class="tag">CASO&nbsp;03</span>
-          <h3>Gestor de paquetería</h3>
-          <div class="case-stack">
-            <span class="chip chip-b">Java</span>
-            <span class="chip chip-b">MySQL</span>
-            <span class="chip">Maven</span>
-          </div>
-          <p>
-            Aplicación para la gestión de lockers de recogida de paquetes en varios campus.
-            Sistema construido en Java y MySQL para garantizar fiabilidad y escalado.
-          </p>
-        </div>
-      </article>
+        function copiarTextoAlPortapapeles(texto) {
+            navigator.clipboard.writeText(texto).catch((error) => {
+                console.error("Error al copiar al portapapeles:", error);
+            });
+        }
 
-      <article class="panel case-card">
-        <div class="case-window">
-          <img src="resources/img/projects/serviciosTI.png" alt="Diseño web de Servicios IT">
-          <a class="case-git" href="https://github.com/guille-ss" target="_blank" rel="noopener" aria-label="Ver en GitHub">
-            <img src="resources/img/github.png" alt="">
-          </a>
-        </div>
-        <div class="case-body">
-          <span class="tag">CASO&nbsp;04</span>
-          <h3>Diseño web · Servicios IT</h3>
-          <div class="case-stack">
-            <span class="chip chip-f">HTML</span>
-            <span class="chip chip-f">CSS</span>
-            <span class="chip chip-f">JavaScript</span>
-          </div>
-          <p>
-            Página web para alojar un catálogo de servicios IT. Responsable del diseño
-            responsive y del planteamiento de la sección de servicios.
-          </p>
-        </div>
-      </article>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cpMailButtons = document.querySelectorAll(".cpMail");
 
-    </div>
-  </section>
+            cpMailButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    notificacion("Copiado", "El correo guillermosantosanchez@gmail.com ha sido copiado en el portapapeles")
+                });
+            });
+        });
 
-  <!-- 04 REGISTRO -->
-  <section id="registro" class="section reveal">
-    <div class="section-head">
-      <span class="n-big">04</span>
-      <h2>Registro de operaciones</h2>
-    </div>
-    <p class="section-intro">Historial cronológico de formación y puestos, con la pila técnica asociada a cada entrada.</p>
 
-    <ol class="log">
-      <li class="log-entry panel" data-kind="Formación">
-        <div class="log-meta">
-          <span class="tag">FORMACIÓN</span>
-          <time>Sep. 2018 — Dic. 2023</time>
-        </div>
-        <h3>Doble Grado Ing. Telemática y Electrónica</h3>
-        <ul class="log-stack">
-          <li class="chip chip-b">C</li><li class="chip chip-b">C++</li>
-          <li class="chip chip-f">HTML</li><li class="chip">Scrum</li>
-          <li class="chip">Trello</li><li class="chip">Fusion 360</li>
-          <li class="chip">Impresora 3D</li>
-        </ul>
-      </li>
+        //Menu burger
+        const burger = document.getElementById('burger');
+        const nav = document.querySelector('nav');
 
-      <li class="log-entry panel" data-kind="Puesto">
-        <div class="log-meta">
-          <span class="tag">PUESTO</span>
-          <time>Jun. 2023 — Ago. 2024</time>
-        </div>
-        <h3>Monitor de Ingeniería</h3>
-        <p>Organización y supervisión de talleres de robótica y programación.</p>
-        <p>Dirección de equipos de hasta 7 personas.</p>
-        <ul class="log-stack">
-          <li class="chip chip-b">C</li><li class="chip chip-b">C++</li>
-          <li class="chip chip-f">HTML</li><li class="chip">Scrum</li>
-          <li class="chip">Trello</li><li class="chip">Fusion 360</li>
-        </ul>
-      </li>
+        burger.addEventListener('change', () => {
+        if (burger.checked) {
+            nav.classList.add('active');
+        } else {
+            nav.classList.remove('active');
+        }
+        });
 
-      <li class="log-entry panel" data-kind="Puesto">
-        <div class="log-meta">
-          <span class="tag">PUESTO</span>
-          <time>Oct. 2023 — Jun. 2024</time>
-        </div>
-        <h3>Profesor de Robótica</h3>
-        <p>Formación a más de 100 estudiantes en programación y robótica.</p>
-        <p>Diseño de actividades con metodología STEAM.</p>
-        <ul class="log-stack">
-          <li class="chip chip-b">C</li><li class="chip chip-b">C++</li>
-          <li class="chip chip-b">Java</li><li class="chip">Scrum</li>
-          <li class="chip">STEAM</li><li class="chip">Tinkercad</li>
-          <li class="chip">Scratch</li>
-        </ul>
-      </li>
 
-      <li class="log-entry panel" data-kind="Formación">
-        <div class="log-meta">
-          <span class="tag">FORMACIÓN</span>
-          <time>Sep. 2024 — Actualmente</time>
-        </div>
-        <h3>Grado Superior DAM</h3>
-        <p>Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
-      </li>
-
-      <li class="log-entry panel" data-kind="Puesto">
-        <div class="log-meta">
-          <span class="tag">PUESTO</span>
-          <time>Nov. 2024 — Actualmente</time>
-        </div>
-        <h3>Técnico de Control y Telemetría</h3>
-        <p>Desarrollo de sistemas de comunicación para una embarcación de competición.</p>
-        <ul class="log-stack">
-          <li class="chip chip-b">C</li><li class="chip">GitLab</li>
-          <li class="chip">RS&#8209;232</li><li class="chip">Docker</li>
-          <li class="chip">Scrum</li>
-        </ul>
-      </li>
-    </ol>
-  </section>
-
-  <!-- 05 CANAL SEGURO -->
-  <section id="canal" class="section reveal">
-    <div class="section-head">
-      <span class="n-big">05</span>
-      <h2>Canal seguro</h2>
-    </div>
-    <p class="section-intro">Todo campo se valida antes de transmitir. Sin envíos incompletos, sin errores silenciosos.</p>
-
-    <form id="contactForm" class="panel contact-form" novalidate>
-      <div class="field">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre" autocomplete="name">
-        <p class="error" id="err-nombre">Indique su nombre.</p>
-      </div>
-      <div class="field">
-        <label for="email">Correo</label>
-        <input type="email" id="email" name="email" autocomplete="email">
-        <p class="error" id="err-email">Indique un correo válido.</p>
-      </div>
-      <div class="field">
-        <label for="phone">Teléfono <span class="opt">(opcional)</span></label>
-        <input type="tel" id="phone" name="phone" autocomplete="tel">
-        <p class="error" id="err-phone">Indique un teléfono válido.</p>
-      </div>
-      <div class="field">
-        <label for="asunto">Asunto</label>
-        <input type="text" id="asunto" name="asunto">
-        <p class="error" id="err-asunto">Indique un asunto.</p>
-      </div>
-      <div class="field field-full">
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" name="mensaje" rows="5"></textarea>
-        <p class="error" id="err-mensaje">Escriba un mensaje.</p>
-      </div>
-      <div class="field-full form-actions">
-        <button type="submit" class="btn btn-primary">Transmitir mensaje</button>
-        <button type="reset" class="btn btn-ghost">Restablecer</button>
-      </div>
-    </form>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="footer-id">
-    <p class="footer-name">Guillermo Santos Sánchez</p>
-    <p class="copy-mail" id="footerMail" tabindex="0" role="button">guillermosantosanchez@gmail.com</p>
-  </div>
-  <div class="footer-links">
-    <button class="icon-link" onclick="verPDF()" aria-label="Ver CV">CV</button>
-    <button class="icon-link" onclick="verLinkedin()" aria-label="LinkedIn">
-      <img src="resources/img/linkedin.png" alt="">
-    </button>
-    <button class="icon-link" onclick="verGit()" aria-label="GitHub">
-      <img src="resources/img/github.png" alt="">
-    </button>
-  </div>
-  <p class="footer-fine">Sistema operativo · Registro actualizado 2026</p>
-</footer>
-
-<button id="btnTop" class="btn-top" aria-label="Volver arriba">↑</button>
-
-<script src="identidad.js"></script>
+    </script>
 </body>
 </html>
+
