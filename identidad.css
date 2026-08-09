@@ -158,8 +158,10 @@ nav{ display:flex; align-items:center; gap: clamp(14px, 2.4vw, 30px); }
 
 /* ===================== HERO ===================== */
 .hero{
-  background: var(--carbon); color: var(--smoke);
+  background: var(--carbon); 
+  color: var(--smoke);
   padding: clamp(64px, 11vw, 130px) var(--pad) clamp(56px, 9vw, 100px);
+  height: 95dvh;
 }
 .hero-inner{ max-width: 900px; margin: 0 auto; }
 .hero h1{ color: var(--white); margin-bottom: 22px; }
