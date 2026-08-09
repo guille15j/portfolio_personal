@@ -226,26 +226,90 @@ nav{ display:flex; align-items:center; gap: clamp(14px, 2.4vw, 30px); }
 @media (max-width: 760px){ .about-grid{ grid-template-columns: 1fr; } .about-photo{ max-width: 220px; } .proof-row{ grid-template-columns: 1fr; } }
 
 /* ---- Sistemas ---- */
-.stack-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
-.stack-block{ background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
-.stack-head{ margin-bottom: 18px; }
-.stack-tag{
-  font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.05em;
-  padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line-strong);
-  color: var(--carbon); display:inline-block; margin-bottom: 8px;
+.stack-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
 }
-.stack-tag-rigor{ border-color: var(--carbon); }
-.stack-tag-speed{ border-color: var(--accent); color: var(--accent); }
-.stack-note{ display:block; font-size: 0.82rem; color: var(--slate-soft); }
-.stack-list{ list-style:none; display:flex; flex-direction:column; gap:11px; }
-.stack-list li{ font-family: var(--f-mono); font-size: 0.88rem; padding-bottom: 11px; border-bottom: 1px solid var(--line); }
-.stack-list li:last-child{ border-bottom:0; padding-bottom:0; }
-@media (max-width: 900px){ .stack-grid{ grid-template-columns: 1fr; } }
+
+
+@media (min-width: 760px){
+  .stack-block{
+    flex: 0 1 calc((100% - (2 * var(--gap))) / 3);
+    max-width: calc((100% - (2 * var(--gap))) / 3);
+  }
+}
+
+@media (min-width: 1100px){
+  .stack-block{
+    flex: 0 1 calc((100% - (4 * var(--gap))) / 5);
+    max-width: calc((100% - (4 * var(--gap))) / 5);
+  }
+} 
+
+.stack-block{
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(20px, 2.4vw, 28px);
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(200px, 30dvh, 300px);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  
+  flex: 0 1 100%;
+}
+.stack-block:hover{
+  border-color: var(--line-strong);
+  box-shadow: 0 16px 32px rgba(20,22,26,0.07);
+  transform: translateY(-2px);
+}
+
+.stack-head{
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.stack-tag{
+  font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--carbon); display: inline-block; margin-bottom: 8px;
+}
+/* Unificado: ya no hay color-coding rigor/velocidad, un único acento en toda la marca */
+.stack-tag-rigor, .stack-tag-speed{ color: var(--carbon); }
+.stack-note{ display: block; font-size: 0.82rem; color: var(--slate-soft); line-height: 1.4; }
+
+.stack-list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.stack-list li{
+  font-family: var(--f-mono); font-size: 0.86rem; color: var(--carbon);
+  padding-bottom: 10px; border-bottom: 1px solid var(--line);
+}
+.stack-list li:last-child{ border-bottom: 0; padding-bottom: 0; }
+
+.stack-sub-label{
+  font-family: var(--f-mono); font-size: 0.64rem; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--slate-soft); margin: 16px 0 8px;
+}
+.stack-list-secondary{ gap: 8px; }
+.stack-list-secondary li{ color: var(--slate); font-size: 0.8rem; opacity: 0.85; }
+
+/* La lista principal absorbe el espacio sobrante para que el pie de cada
+   tarjeta quede alineado aunque el contenido varíe en longitud */
+.stack-block > .stack-list:first-of-type{ flex: 1 0 auto; }
+
+@media (max-width: 480px){
+  .stack-block{ min-height: clamp(160px, 24dvh, 240px); }
+}
 
 /* ---- Casos de estudio ---- */
 .case-group-head{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin: 44px 0 16px; padding-top: 28px; border-top: 1px solid var(--line); }
 .case-group-head-first{ margin-top:0; padding-top:0; border-top:0; }
-.case-group-head .eyebrow-mini{ margin-bottom:0; }
+.case-group-head .eyebrow-mini{ margin-bottom:0; font-size: 16px;}
 .case-group-note{ font-size: 0.86rem; color: var(--slate-soft); max-width: 40ch; }
 
 .case-badge{
