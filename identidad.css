@@ -335,11 +335,23 @@ nav{ display:flex; align-items:center; gap: clamp(14px, 2.4vw, 30px); }
 .case-summary-side{ display:flex; align-items:center; gap: 16px; }
 .case-chips{ display:flex; gap:6px; flex-wrap:wrap; justify-content:flex-end; max-width: 240px; }
 .case-toggle{
-  font-family: var(--f-mono); font-size: 1.1rem; width: 30px; height:30px; border-radius:50%;
-  border: 1px solid var(--line-strong); display:flex; align-items:center; justify-content:center;
+  font-family: var(--f-mono); 
+  font-size: 1.1rem; 
+  /* width: 30px; 
+  height: 30px;  */
+  padding: 2px 5px;
+  border-radius:50%;
+  border: 1px solid var(--line-strong); 
+  display:flex; align-items:center; 
+  justify-content:center;
   transition: transform .2s ease, background .2s ease, color .2s ease;
 }
-.case[data-open="true"] .case-toggle{ transform: rotate(45deg); background: var(--carbon); color: var(--white); border-color: var(--carbon); }
+.case[data-open="true"] .case-toggle{ 
+  transform: rotate(45deg); 
+  background: var(--carbon); 
+  color: var(--white); 
+  border-color: var(--carbon); 
+}
 
 .case-body{
   max-height: 0; overflow:hidden; transition: max-height .4s ease;
