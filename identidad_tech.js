@@ -10,7 +10,7 @@
   };
 
   /* ============ LIENZO INTERACTIVO DE TELEMETRÍA (ESPACIO + ÁTOMOS) ============ */
-  function initTelemetryCanvas() {
+function initTelemetryCanvas() {
     const canvas = document.getElementById("telemetryCanvas");
     if (!canvas || prefersReducedMotion) return;
 
@@ -18,8 +18,41 @@
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    const NUM_PARTICLES = 220;
-    const particles = [];
+    // ---- Densidad de partículas según ancho de pantalla ----
+    function getParticleCount(screenWidth) {
+        return Math.min(320, Math.max(90, Math.floor(screenWidth / 8)));
+    }
+
+    function createParticles(count) {
+        const newParticles = [];
+        for (let i = 0; i < count; i++) {
+            const domain = i % 5;
+            const isHub = i % 9 === 0;
+            const isOrbital = i > count * 0.82;
+
+            const phi = Math.acos(1 - (2 * (i + 0.5)) / (count * 0.82));
+            const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+
+            const ringAngle = i * 0.35;
+            const ringRadius = 1.2 + (i % 3) * 0.1;
+
+            newParticles.push({
+                i: i,
+                domain: domain,
+                isHub: isHub,
+                isOrbital: isOrbital,
+                baseX: isOrbital ? Math.cos(ringAngle) * ringRadius : Math.sin(phi) * Math.cos(theta),
+                baseY: isOrbital ? Math.sin(ringAngle * 0.5) * 0.25 : Math.sin(phi) * Math.sin(theta),
+                baseZ: isOrbital ? Math.sin(ringAngle) * ringRadius : Math.cos(phi),
+                size: isHub ? 3.2 : 1.2 + (i % 4) * 0.4,
+                orbitSpeed: 0.08 + (i % 5) * 0.04
+            });
+        }
+        return newParticles;
+    }
+
+    let NUM_PARTICLES = getParticleCount(width);
+    let particles = createParticles(NUM_PARTICLES);
     let time = 0;
 
     // Posición del cursor para la atracción de nodos
@@ -43,31 +76,6 @@
     function smoothstep(min, max, value) {
       const x = Math.max(0, Math.min(1, (value - min) / (max - min)));
       return x * x * (3 - 2 * x);
-    }
-
-    // Inicialización de la red atómica espacial
-    for (let i = 0; i < NUM_PARTICLES; i++) {
-      const domain = i % 5;
-      const isHub = i % 9 === 0;
-      const isOrbital = i > NUM_PARTICLES * 0.82;
-
-      const phi = Math.acos(1 - (2 * (i + 0.5)) / (NUM_PARTICLES * 0.82));
-      const theta = Math.PI * (1 + Math.sqrt(5)) * i;
-
-      const ringAngle = i * 0.35;
-      const ringRadius = 1.2 + (i % 3) * 0.1;
-
-      particles.push({
-        i: i,
-        domain: domain,
-        isHub: isHub,
-        isOrbital: isOrbital,
-        baseX: isOrbital ? Math.cos(ringAngle) * ringRadius : Math.sin(phi) * Math.cos(theta),
-        baseY: isOrbital ? Math.sin(ringAngle * 0.5) * 0.25 : Math.sin(phi) * Math.sin(theta),
-        baseZ: isOrbital ? Math.sin(ringAngle) * ringRadius : Math.cos(phi),
-        size: isHub ? 3.2 : 1.2 + (i % 4) * 0.4,
-        orbitSpeed: 0.08 + (i % 5) * 0.04
-      });
     }
 
     function getScrollProgress() {
@@ -339,6 +347,13 @@
       resizeTimer = setTimeout(() => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
+
+        const newCount = getParticleCount(width);
+        if (newCount !== NUM_PARTICLES) {
+          NUM_PARTICLES = newCount;
+          particles = createParticles(NUM_PARTICLES);
+          incomingPulses.length = 0; // evitar índices obsoletos
+        }
       }, 100);
     });
 
