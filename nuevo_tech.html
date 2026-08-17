@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guillermo Santos Sánchez — Rigor de proceso. Velocidad de producto.</title>
+  <meta name="description" content="Guillermo Santos Sánchez. Desarrollador Backend y Técnico de Control y Telemetría. Estructura para escalar, velocidad para lanzar.">
+  <link rel="icon" href="resources/avatar2.PNG" type="image/png">
+
+  <!-- FUENTES DE ALTA PRECISIÓN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="identidad_tech.css">
+</head>
+<body>
+
+<!-- LIENZO ESPACIAL DE TELEMETRÍA INTERACTIVA (CANVAS) -->
+<canvas id="telemetryCanvas" class="telemetry-canvas"></canvas>
+
+<!-- TOAST / NOTIFICACIONES -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <p class="toast-title" id="toastTitle">SISTEMA</p>
+  <p class="toast-body" id="toastBody">Notificación del sistema.</p>
+</div>
+
+<!-- NAVEGACIÓN PRINCIPAL -->
+<div class="nav-wrap">
+  <a href="#top" class="nav-mark">GS<span class="nav-mark-dot">.</span> <span class="nav-mark-tag">SYS//NODE</span></a>
+  <nav id="mainNav">
+    <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+    <a href="#sistemas" class="nav-link">Stack</a>
+    <a href="#casos" class="nav-link">Proyectos</a>
+    <a href="#registro" class="nav-link">Trayectoria</a>
+    <a href="#canal" class="nav-link nav-link-cta">Contacto</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<main id="top">
+
+  <!-- HERO / MANIFIESTO ARQUITECTÓNICO -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow"><span class="pulse-dot"></span> Desarrollador Junior Backend</p>
+      <h1>Disciplina en el proceso.<br><span class="hero-highlight">Orientado a producto.</span></h1>
+      <p class="lead">
+        Trabajo con rigor cuando el proceso lo exige y con velocidad cuando el contexto lo demanda.
+        <br>
+        Mi foco es construir soluciones que funcionan, que escalan y que aportan valor real.
+      </p>
+
+      <div class="duality-badges">
+        <span class="duality-badge">Metodología · Consistencia · Fiabilidad</span>
+        <span class="duality-badge duality-badge-accent">MVP · Ownership · Growth</span>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn btn-primary" onclick="document.getElementById('casos').scrollIntoView({behavior:'smooth'})">
+          <span>Ver proyectos</span>
+        </button>
+        <button class="btn btn-ghost" onclick="document.getElementById('canal').scrollIntoView({behavior:'smooth'})">
+          <span>Hablemos</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MÉTRICAS DESTACADAS -->
+  <section class="metrics-strip">
+    <div class="metrics-grid">
+      <div class="metric blueprint-card">
+        <span class="blueprint-coord">METRIC // 01</span>
+        <span class="metric-value">10/10</span>
+        <span class="metric-label">Nota del TFG <br> FocusBot, de principio a fin</span>
+      </div>
+      <div class="metric blueprint-card">
+        <span class="blueprint-coord">METRIC // 02</span>
+        <span class="metric-value">~5h</span>
+        <span class="metric-label">De trabajo manual eliminadas cada semana</span>
+      </div>
+      <div class="metric blueprint-card">
+        <span class="blueprint-coord">METRIC // 03</span>
+        <span class="metric-value">14</span>
+        <span class="metric-label">Personas coordinadas en el equipo técnico más grande</span>
+      </div>
+      <div class="metric blueprint-card">
+        <span class="blueprint-coord">METRIC // 04</span>
+        <span class="metric-value">200+</span>
+        <span class="metric-label">Estudiantes formados en programación</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section id="sobre-mi" class="section reveal">
+    <div class="section-head">
+      <!-- <span class="eyebrow-mini">// 01. SOBRE MÍ</span> -->
+      <h2>Un perfil hecho para dos velocidades</h2>
+    </div>
+
+    <div class="about-grid">
+      <figure class="about-photo blueprint-card">
+        <span class="blueprint-coord">FIG // 01.A</span>
+        <img src="resources/avatar2.PNG" alt="Fotografía de Guillermo Santos Sánchez" loading="lazy">
+        <div class="photo-overlay"></div>
+      </figure>
+
+      <div class="about-copy">
+        <p>
+          Soy Guillermo Santos, desarrollador backend formado en Java, C/C++ y Docker. Empecé en la programación por pura curiosidad; con el tiempo, esa curiosidad se convirtió en una forma de trabajar: entender, estructurar y construir con intención.
+        </p>
+        <p>
+          La docencia me enseñó a explicar y a dividir problemas sin perder precisión, una habilidad que aplico cada vez que diseño un sistema. Cuando no estoy programando, dibujo, hago música o experimento con robótica. Mi trabajo combina estructura cuando hace falta y rapidez cuando el producto lo pide.
+        </p>
+        <div class="proof-row">
+          <div class="proof blueprint-card">
+            <span class="blueprint-coord">PRINCIPLE // R</span>
+            <span class="proof-tag">Rigor</span>
+            <p>Estructura clara, documentación útil y trazabilidad real en cada entrega.</p>
+          </div>
+          <div class="proof blueprint-card">
+            <span class="blueprint-coord">PRINCIPLE // V</span>
+            <span class="proof-tag">Velocidad</span>
+            <p>Prototipos funcionales desde el inicio; refinamiento cuando aporta valor.</p>
+          </div>
+        </div>
+        <p class="contact-inline">
+          <a href="https://www.linkedin.com/in/guillermosant" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="sep">·</span>
+          <a href="https://github.com/guille15j" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <!-- TITULOS OBTENIDOS -->
+  <section id="titulos" class="section reveal ">
+    <div class="section-head">
+      <h2>Títulos y certificados</h2>
+    </div>
+
+    <div class="titulos-viewport" id="titulosViewport">
+      <div class="titulos-track" id="titulosTrack">
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- SISTEMAS / STACK -->
+  <section id="sistemas" class="section reveal section-alt">
+    <div class="section-head">
+      <!-- <span class="eyebrow-mini">// 02. STACK TECNOLÓGICO</span> -->
+      <h2>Con qué trabajo</h2>
+      <p class="section-intro">Cinco capas, de la placa electrónica al dashboard. Lo primero de cada lista es lo que más he usado en proyectos reales; lo que va después de "también", lo que también domino pero aún no tiene un caso que lo demuestre.</p>
+    </div>
+
+    <div class="stack-grid">
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 01</span>
+        <div class="stack-head">
+          <span class="stack-tag stack-tag-rigor">Backend &amp; APIs</span>
+          <span class="stack-note">Donde vive la lógica que no puede fallar</span>
+        </div>
+        <ul class="stack-list">
+          <li>Java</li><li>Spring Boot</li><li>C / C++</li><li>Python</li><li>Flask</li>
+        </ul>
+        <p class="stack-sub-label">También</p>
+        <ul class="stack-list stack-list-secondary">
+          <li>Node.js</li><li>Kotlin</li><li>OAuth 2.0</li>
+        </ul>
+      </div>
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 02</span>
+        <div class="stack-head">
+          <span class="stack-tag stack-tag-speed">Frontend &amp; Móvil</span>
+          <span class="stack-note">La parte que la gente toca</span>
+        </div>
+        <ul class="stack-list">
+          <li>JavaScript</li><li>HTML / CSS</li><li>React Native</li><li>Flutter / Dart</li>
+        </ul>
+      </div>
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 03</span>
+        <div class="stack-head">
+          <span class="stack-tag">IoT &amp; Hardware</span>
+          <span class="stack-note">Software que también controla el mundo físico</span>
+        </div>
+        <ul class="stack-list">
+          <li>ESP32</li><li>Arduino</li><li>MQTT</li><li>RS-232 / serie</li><li>Sensórica / actuadores</li>
+        </ul>
+      </div>
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 04</span>
+        <div class="stack-head">
+          <span class="stack-tag">Datos, Cloud &amp; Analítica</span>
+          <span class="stack-note">De la base de datos al dashboard</span>
+        </div>
+        <ul class="stack-list">
+          <li>PostgreSQL</li><li>MySQL</li><li>Supabase</li><li>Palantir Foundry</li><li>Tableau</li><li>Power BI</li><li>Vercel</li>
+        </ul>
+      </div>
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 05</span>
+        <div class="stack-head">
+          <span class="stack-tag">Herramientas &amp; Proceso</span>
+          <span class="stack-note">Cómo entrego, no solo qué construyo</span>
+        </div>
+        <ul class="stack-list">
+          <li>Docker</li><li>Maven</li><li>Git / GitHub</li><li>GitLab</li><li>Google Apps Script</li><li>Scrum / Daily</li>
+        </ul>
+        <p class="stack-sub-label">También</p>
+        <ul class="stack-list stack-list-secondary">
+          <li>Postman</li><li>JUnit</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TITULOS OBTENIDOS -->
+  <section id="titulos" class="section reveal">
+    <div class="section-head">
+      <!-- <span class="eyebrow-mini">// 03. ACREDITACIONES</span> -->
+      <h2>Títulos y certificados</h2>
+    </div>
+
+    <div class="titulos-viewport" id="titulosViewport">
+      <div class="titulos-track" id="titulosTrack"></div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS / CASOS DE ESTUDIO -->
+  <section id="casos" class="section reveal section-alt">
+    <div class="section-head">
+      <!-- <span class="eyebrow-mini">// 04. CASOS DE ESTUDIO</span> -->
+      <h2>De la necesidad al resultado: mi proceso</h2>
+      <p class="section-intro">
+        Cada proyecto sigue el mismo método: identificar la necesidad, tomar decisiones claras y construir una solución que funciona.
+      </p>
+    </div>
+
+    <div class="case-group-head case-group-head-first">
+      <span class="eyebrow-mini">Proyectos Destacados</span>
+      <p class="case-group-note">Donde la complejidad y el resultado fueron reales.</p>
+    </div>
+
+    <div class="cases-list">
+
+      <article class="case blueprint-card" data-open="false">
+        <span class="blueprint-coord">CASE // 01</span>
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">01</span>
+            <div>
+              <span class="case-badge case-badge-top">TFG · Nota 10/10</span>
+              <h3>FocusBot: un robot para mantener rutinas de foco y descanso</h3>
+              <p class="case-result-line">Resultado: sistema completo, desde el hardware hasta el backend, evaluado con la nota máxima.</p>
+            </div>
+          </div>
+
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">C++</span><span class="chip">ESP32</span><span class="chip">React Native</span><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">PostgreSQL</span><span class="chip">Supabase</span><span class="chip">MQTT</span><span class="chip">OAuth</span><span class="chip">NGINX</span><span class="chip">Docker</span><span class="chip">Vercel</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <img class="case-image" src="resources/img/projects/GFS_2.jpeg" alt="Carcasa FocusBot" loading="lazy">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">El problema</span>
+              <p>La digitalización del entorno laboral y académico ha multiplicado las distracciones y notificaciones. Gestionar el tiempo desde el propio teléfono reduce la concentración sostenida.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Lo que lo complicaba</span>
+              <p>La solución debía sacar la gestión del tiempo fuera del teléfono mediante un sistema IoT completo sincronizado en tiempo real.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Qué hice</span>
+              <p>
+                Ecosistema de tres capas:<br>
+                • <b>Dispositivo físico</b>: robot con pantalla, táctil y audio.<br>
+                • <b>Backend</b>: Flask + PostgreSQL sobre MQTT.<br>
+                • <b>App móvil</b>: React Native para configuración.
+              </p>
+            </div>            
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado</span>
+              <p>Sistema IoT funcional end-to-end con monitorización Pomodoro completa. Evaluado con <b>10/10</b>.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case blueprint-card" data-open="false">
+        <span class="blueprint-coord">CASE // 02</span>
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">02</span>
+            <div>
+              <span class="case-badge case-badge-top">Proyecto de clase · Nota 10/10</span>
+              <h3>Gestión de Incidencias: sistema de tickets para soporte técnico</h3>
+              <p class="case-result-line">Resultado: el ciclo completo de un ticket con una API REST propia sólida.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">JavaScript</span><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">MySQL</span><span class="chip">JPA</span><span class="chip">REST API</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">El problema</span>
+              <p>Un equipo de soporte sin sistema propio que registraba incidencias manualmente sin trazabilidad.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Lo que lo complicaba</span>
+              <p>Múltiples roles (empleados, clientes) con permisos estrictos validados obligatoriamente en backend.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Qué hice</span>
+              <p>Dashboard en frontend respaldado por API REST en Spring Boot (Controller, Service, DAO, DTO) sobre MySQL con JPA/Hibernate.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado</span>
+              <p>Calificación 10/10. Lógica de negocio blindada en servidor y API totalmente desacoplada.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="case-group-head">
+      <span class="eyebrow-mini">Proyectos en producción</span>
+      <p class="case-group-note">Los que buscan funcionar, no una calificación.</p>
+    </div>
+
+    <div class="cases-list">
+
+      <article class="case blueprint-card" data-open="false">
+        <span class="blueprint-coord">CASE // 03</span>
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">03</span>
+            <div>
+              <span class="case-badge case-badge-prod">En producción · Uso real</span>
+              <h3>Gestión de Grupos: clasificación y equipos de campamento</h3>
+              <p class="case-result-line">Resultado: una tarde entera de trabajo manual eliminada cada semana.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">JavaScript</span><span class="chip">PostgreSQL</span><span class="chip">Vercel</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">El problema</span>
+              <p>Clasificación semanal manual de campistas por edad y grupo en hojas de cálculo extensas.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Lo que lo complicaba</span>
+              <p>Uso en campo por personal no técnico, con conexión móvil inestable y sin presupuesto en servidores.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Qué hice</span>
+              <p>Aplicación web con árbol de decisión automatizado conectada a PostgreSQL en Vercel.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado</span>
+              <p>Ahorro de ~5 horas semanales. En producción activa con el equipo del campamento.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case blueprint-card" data-open="false">
+        <span class="blueprint-coord">CASE // 04</span>
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">04</span>
+            <div>
+              <span class="case-badge case-badge-prod">En producción · Uso real</span>
+              <h3>Gestión de Inventario: control de material sobre Google Sheets</h3>
+              <p class="case-result-line">Resultado: inventario consultado y actualizado en segundos desde el móvil.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">JavaScript</span><span class="chip">Google Apps Script</span><span class="chip">Mobile-first</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">El problema</span>
+              <p>Dificultad para conocer la disponibilidad o avería de materiales en tiempo real.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Lo que lo complicaba</span>
+              <p>Debía funcionar sobre la hoja de cálculo existente sin requerir instalaciones externas.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Qué hice</span>
+              <p>Interfaz Web Single-File táctil enlazada directamente mediante Apps Script a Google Sheets.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado</span>
+              <p>Control inmediato de estados desde dispositivos móviles en el terreno.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="case-group-head">
+      <span class="eyebrow-mini">Proyectos académicos y de ingeniería</span>
+      <p class="case-group-note">Los cimientos de hardware y bajo nivel.</p>
+    </div>
+
+    <div class="cases-list">
+
+      <article class="case blueprint-card" data-open="false">
+        <span class="blueprint-coord">CASE // 05</span>
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">05</span>
+            <div>
+              <span class="case-badge case-badge-academic">En producción · Competición</span>
+              <h3>Comunicación serial para embarcación de competición</h3>
+              <p class="case-result-line">Resultado: señal estable toda la competición, cero pérdidas de paquetes.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">C</span><span class="chip">Docker</span><span class="chip">RS-232</span><span class="chip">ESP32</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">El problema</span>
+              <p>Necesidad de enviar telemetría confiable entre la embarcación y la estación base durante la regata.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Lo que lo complicaba</span>
+              <p>Recursos limitados en microcontrolador y alto ruido electromagnético en el canal RS-232.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Qué hice</span>
+              <p>Protocolo serial en C con manejo robusto de errores y reconexión automática en contenedores Docker.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado</span>
+              <p>Transmisión ininterrumpida sin pérdida de señal durante toda la prueba.</p>
+            </div>
+          </div>
+          <a class="case-link" href="https://github.com/guille15j" target="_blank" rel="noopener">Ver repositorio en GitHub →</a>
+        </div>
+      </article>
+
+      <article class="case blueprint-card" data-open="false">
+        <span class="blueprint-coord">CASE // 06</span>
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">06</span>
+            <div>
+              <span class="case-badge case-badge-academic">Proyecto académico</span>
+              <h3>Control de acceso por RFID</h3>
+              <p class="case-result-line">Resultado: registro digitalizado instantáneo.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">C</span><span class="chip">C++</span><span class="chip">HTML</span><span class="chip">Arduino</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">El problema</span>
+              <p>Falta de trazabilidad en los accesos físicos por parte del personal.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Lo que lo complicaba</span>
+              <p>Hardware embebido de bajo coste y necesidad de una interfaz web directa.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Qué hice</span>
+              <p>Firmware C/C++ en Arduino acoplado a un servidor web ligero para despliegue de registros.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado</span>
+              <p>Digitalización total de las lecturas y eliminación de planillas de papel.</p>
+            </div>
+          </div>
+          <a class="case-link" href="https://github.com/guille15j" target="_blank" rel="noopener">Ver repositorio en GitHub →</a>
+        </div>
+      </article>
+
+      <article class="case blueprint-card" data-open="false">
+        <span class="blueprint-coord">CASE // 07</span>
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">07</span>
+            <div>
+              <span class="case-badge case-badge-academic">Proyecto académico</span>
+              <h3>Gestor de paquetería multi-campus</h3>
+              <p class="case-result-line">Resultado: modelo de datos unificado y escalable.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">Java</span><span class="chip">MySQL</span><span class="chip">Maven</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">El problema</span>
+              <p>Lockers de paquetería distribuidos en sedes desconectadas entre sí.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Lo que lo complicaba</span>
+              <p>Sincronización de estados entre múltiples sedes físicas.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Qué hice</span>
+              <p>Sistema modular en Java y MySQL orquestado mediante Maven para facilitar nuevas integraciones.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado</span>
+              <p>Gestión distribuida eficiente bajo un único esquema de base de datos.</p>
+            </div>
+          </div>
+          <a class="case-link" href="https://github.com/guille15j" target="_blank" rel="noopener">Ver repositorio en GitHub →</a>
+        </div>
+      </article>
+
+      <article class="case blueprint-card" data-open="false">
+        <span class="blueprint-coord">CASE // 08</span>
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">08</span>
+            <div>
+              <span class="case-badge case-badge-academic">Diseño Web</span>
+              <h3>Catálogo de Servicios IT</h3>
+              <p class="case-result-line">Resultado: plataforma accesible y ágil desde el primer despliegue.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">El problema</span>
+              <p>Ausencia de un portal claro para consultar los servicios de tecnologías de información.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Lo que lo complicaba</span>
+              <p>Desarrollo acelerado que exigía máxima adaptabilidad responsive.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Qué hice</span>
+              <p>Maquetación pulcra con Vanilla JS/CSS priorizando velocidad de carga y simplicidad visual.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado</span>
+              <p>Despliegue operativo inmediato sin reescrituras de interfaz.</p>
+            </div>
+          </div>
+          <a class="case-link" href="https://github.com/guille15j" target="_blank" rel="noopener">Ver repositorio en GitHub →</a>
+        </div>
+      </article>
+
+      <article class="case blueprint-card" data-open="false">
+        <span class="blueprint-coord">CASE // 09</span>
+        <button class="case-summary" aria-expanded="false">
+          <div class="case-summary-main">
+            <span class="case-index">09</span>
+            <div>
+              <span class="case-badge case-badge-practice">Ejercicio de práctica · Nota 8/10</span>
+              <h3>TPV: punto de venta simulado</h3>
+              <p class="case-result-line">Resultado: arquitectura multiplataforma limpia sobre Flutter.</p>
+            </div>
+          </div>
+          <div class="case-summary-side">
+            <div class="case-chips">
+              <span class="chip">Flutter</span><span class="chip">Dart</span>
+            </div>
+            <span class="case-toggle" aria-hidden="true">＋</span>
+          </div>
+        </button>
+
+        <div class="case-body">
+          <div class="case-flow">
+            <div class="flow-step">
+              <span class="flow-label">El problema</span>
+              <p>Simular la operativa completa de un TPV (Tienda, Administración, Carrito) en plataformas móviles y de escritorio.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Lo que lo complicaba</span>
+              <p>Desarrollo estrictamente frontend estructurado sin backend persistente.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-label">Qué hice</span>
+              <p>Aplicación modular en Flutter/Dart estructurada por componentes reutilizables.</p>
+            </div>
+            <div class="flow-step flow-step-result">
+              <span class="flow-label">Resultado</span>
+              <p>Calificación 8/10. Base técnica sólida para desarrollo con Flutter.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- TRAYECTORIA -->
+  <section id="registro" class="section reveal">
+    <div class="section-head">
+      <!-- <span class="eyebrow-mini">// 05. HISTORIAL Y TRAYECTORIA</span> -->
+      <h2>Formación y puestos de trabajo</h2>
+      <div class="timeline-legend">
+        <span class="legend-item"><span class="legend-dot legend-dot-puesto"></span>Puesto de trabajo</span>
+        <span class="legend-item"><span class="legend-dot legend-dot-formacion"></span>Formación</span>
+      </div>
+    </div>
+
+    <ol class="timeline">
+      <li class="timeline-entry" data-kind="formacion">
+        <div class="timeline-meta">
+          <span class="chip chip-formacion">Formación</span>
+          <time>2018 — 2023</time>
+        </div>
+        <h3>Ingeniería Telemática y Electrónica</h3>
+        <p>Universidad Politécnica de Madrid (UPM). 180 ECTS cursados: redes TCP/IP, programación (C/Java) y electrónica analógica/digital.</p>
+        <div class="timeline-chips">
+          <span class="chip">C</span><span class="chip">Java</span><span class="chip">TCP/IP</span><span class="chip">Electrónica</span>
+        </div>
+      </li>
+
+      <li class="timeline-entry" data-kind="puesto">
+        <div class="timeline-meta">
+          <span class="chip chip-puesto">Puesto</span>
+          <time>2023 — 2025</time>
+        </div>
+        <h3>Jefe de Equipo Técnico — FGUPM Campamento Tecnológico UPM</h3>
+        <p>Coordinación de un equipo de 7 personas en el diseño y despliegue de proyectos educativos tecnológicos. Ciclos de entrega cortos y seguimiento diario (Daily Scrum).</p>
+        <div class="timeline-chips">
+          <span class="chip">Scrum</span><span class="chip">Daily Scrum</span><span class="chip">Liderazgo técnico</span>
+        </div>
+      </li>
+
+      <li class="timeline-entry" data-kind="puesto">
+        <div class="timeline-meta">
+          <span class="chip chip-puesto">Puesto</span>
+          <time>2024 — 2025</time>
+        </div>
+        <h3>Técnico de Control y Telemetría — Green Foaling Spain UPM</h3>
+        <p>Implementación de sistemas de recolección de datos y resolución de incidencias críticas en la transmisión de señal telemétrica, con metodología Scrum.</p>
+        <div class="timeline-chips">
+          <span class="chip">Telemetría</span><span class="chip">RS-232</span><span class="chip">Scrum</span>
+        </div>
+      </li>
+
+      <li class="timeline-entry" data-kind="formacion">
+        <div class="timeline-meta">
+          <span class="chip chip-formacion">Formación</span>
+          <time>2024 — 2026</time>
+        </div>
+        <h3>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+        <p>Especialización en Java Spring Boot, desarrollo móvil (Kotlin/Flutter), SQL, APIs REST y metodologías ágiles. TFG calificado con 10: FocusBot (sistema IoT con dispositivo físico, app móvil y backend Flask sobre MQTT).</p>
+        <div class="timeline-chips">
+          <span class="chip">Spring Boot</span><span class="chip">Kotlin</span><span class="chip">Flutter</span><span class="chip">REST APIs</span>
+          <span class="chip">Maven</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">MongoDB</span>
+        </div>
+      </li>
+
+      <li class="timeline-entry" data-kind="puesto">
+        <div class="timeline-meta">
+          <span class="chip chip-puesto">Puesto</span>
+          <time>2026</time>
+        </div>
+        <h3>Analista de Datos (Prácticas) — Road To Data</h3>
+        <p>Diseño y orquestación de flujos ETL para integrar múltiples orígenes de datos con el ecosistema de Palantir Foundry[cite: 26]. Cuadros de mando interactivos que traducen datos técnicos en visualizaciones estratégicas de negocio.</p>
+        <div class="timeline-chips">
+          <span class="chip">Palantir Foundry</span><span class="chip">Workshop</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Python</span>
+        </div>
+      </li>
+
+      <li class="timeline-entry" data-kind="puesto">
+        <div class="timeline-meta">
+          <span class="chip chip-puesto">Puesto</span>
+          <time>2026</time>
+        </div>
+        <h3>Jefe de Área de Tecnología y Robótica — FGUPM Campamento Tecnológico UPM</h3>
+        <p>Coordinación operativa de un equipo técnico de 14 personas para la ejecución de 13 talleres. Desarrollo de 2 aplicaciones web (Supabase/PostgreSQL) para inventario y registro de participantes. Dirección técnica de 5 proyectos de robótica (ESP32/Arduino).</p>
+        <div class="timeline-chips">
+          <span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">ESP32</span><span class="chip">Liderazgo de 14 personas</span>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="canal" class="section reveal section-alt">
+    <div class="section-head">
+      <!-- <span class="eyebrow-mini">// 06. CONTACTO Y COMUNICACIÓN</span> -->
+      <h2>Hablemos de tu próximo reto</h2>
+      <p class="section-intro">Toda entrega, aunque sea un formulario, se valida antes de enviarse.</p>
+    </div>
+
+    <form id="contactForm" class="contact-form blueprint-card" novalidate>
+      <span class="blueprint-coord">FORM // CONNECT</span>
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Ej. Ana Gómez">
+        <p class="error" id="err-nombre">Indica tu nombre.</p>
+      </div>
+      <div class="field">
+        <label for="email">Correo</label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="correo@ejemplo.com">
+        <p class="error" id="err-email">Indica un correo válido.</p>
+      </div>
+      <div class="field">
+        <label for="phone">Teléfono <span class="opt">(opcional)</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+34 600 000 000">
+        <p class="error" id="err-phone">Indica un teléfono válido.</p>
+      </div>
+      <div class="field">
+        <label for="asunto">Asunto</label>
+        <input type="text" id="asunto" name="asunto" placeholder="Propuesta de proyecto / Consulta">
+        <p class="error" id="err-asunto">Indica un asunto.</p>
+      </div>
+      <div class="field field-full">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Detalla las necesidades de tu proyecto..."></textarea>
+        <p class="error" id="err-mensaje">Escribe un mensaje.</p>
+      </div>
+      <div class="field-full form-actions">
+        <button type="submit" class="btn btn-primary">
+          <span>Enviar mensaje</span>
+        </button>
+        <button type="reset" class="btn btn-ghost">
+          <span>Restablecer</span>
+        </button>
+      </div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-id">
+      <p class="footer-name">Guillermo Santos Sánchez</p>
+      <p class="copy-mail" id="footerMail" tabindex="0" role="button">guillermosantosanchez@gmail.com</p>
+    </div>
+    <div class="footer-links">
+      <button class="icon-link" onclick="verPDF()">Ver CV</button>
+      <a class="icon-link" href="https://www.linkedin.com/in/guillermosant" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="icon-link" href="https://github.com/guille15j" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+  <p class="footer-fine">SYSTEM STATUS: ONLINE // RIGOR &amp; SPEED © 2026</p>
+</footer>
+
+<button id="btnTop" class="btn-top" aria-label="Volver arriba">↑</button>
+
+<script src="identidad_tech.js"></script>
+</body>
+</html>
