@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 (function () {
   "use strict";
 
@@ -6,59 +8,58 @@
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   window.verPDF = function () {
-    window.open(CV_URL, "_blank");
+    window.open(CV_URL, "_blank", "noopener,noreferrer");
   };
 
   /* ============ LIENZO INTERACTIVO DE TELEMETRÍA (ESPACIO + ÁTOMOS) ============ */
-function initTelemetryCanvas() {
+  function initTelemetryCanvas() {
     const canvas = document.getElementById("telemetryCanvas");
     if (!canvas || prefersReducedMotion) return;
+
+    canvas.setAttribute("aria-hidden", "true");
 
     const ctx = canvas.getContext("2d");
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    // ---- Densidad de partículas según ancho de pantalla ----
     function getParticleCount(screenWidth) {
-        return Math.min(320, Math.max(90, Math.floor(screenWidth / 8)));
+      return Math.min(320, Math.max(90, Math.floor(screenWidth / 8)));
     }
 
     function createParticles(count) {
-        const newParticles = [];
-        for (let i = 0; i < count; i++) {
-            const domain = i % 5;
-            const isHub = i % 9 === 0;
-            const isOrbital = i > count * 0.82;
+      const newParticles = [];
+      for (let i = 0; i < count; i++) {
+        const domain = i % 5;
+        const isHub = i % 9 === 0;
+        const isOrbital = i > count * 0.82;
 
-            const phi = Math.acos(1 - (2 * (i + 0.5)) / (count * 0.82));
-            const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+        const phi = Math.acos(1 - (2 * (i + 0.5)) / (count * 0.82));
+        const theta = Math.PI * (1 + Math.sqrt(5)) * i;
 
-            const ringAngle = i * 0.35;
-            const ringRadius = 1.2 + (i % 3) * 0.1;
+        const ringAngle = i * 0.35;
+        const ringRadius = 1.2 + (i % 3) * 0.1;
 
-            newParticles.push({
-                i: i,
-                domain: domain,
-                isHub: isHub,
-                isOrbital: isOrbital,
-                baseX: isOrbital ? Math.cos(ringAngle) * ringRadius : Math.sin(phi) * Math.cos(theta),
-                baseY: isOrbital ? Math.sin(ringAngle * 0.5) * 0.25 : Math.sin(phi) * Math.sin(theta),
-                baseZ: isOrbital ? Math.sin(ringAngle) * ringRadius : Math.cos(phi),
-                size: isHub ? 3.2 : 1.2 + (i % 4) * 0.4,
-                orbitSpeed: 0.08 + (i % 5) * 0.04
-            });
-        }
-        return newParticles;
+        newParticles.push({
+          i: i,
+          domain: domain,
+          isHub: isHub,
+          isOrbital: isOrbital,
+          baseX: isOrbital ? Math.cos(ringAngle) * ringRadius : Math.sin(phi) * Math.cos(theta),
+          baseY: isOrbital ? Math.sin(ringAngle * 0.5) * 0.25 : Math.sin(phi) * Math.sin(theta),
+          baseZ: isOrbital ? Math.sin(ringAngle) * ringRadius : Math.cos(phi),
+          size: isHub ? 3.2 : 1.2 + (i % 4) * 0.4,
+          orbitSpeed: 0.08 + (i % 5) * 0.04
+        });
+      }
+      return newParticles;
     }
 
     let NUM_PARTICLES = getParticleCount(width);
     let particles = createParticles(NUM_PARTICLES);
     let time = 0;
 
-    // Posición del cursor para la atracción de nodos
     let mouse = { x: width / 2, y: height / 2, active: false };
 
-    // Interpolación de scroll
     let currentProgress = 0;
     let targetProgress = 0;
 
@@ -127,7 +128,6 @@ function initTelemetryCanvas() {
       });
     }
 
-    // Event Listener de interacción con el ratón
     window.addEventListener("mousemove", (e) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
@@ -138,7 +138,6 @@ function initTelemetryCanvas() {
       mouse.active = false;
     });
 
-    // Bucle principal de renderizado (Garantizado a 60 FPS)
     function render() {
       ctx.clearRect(0, 0, width, height);
       time += 0.005;
@@ -152,7 +151,6 @@ function initTelemetryCanvas() {
 
       const heroFactor = 1 - smoothstep(0.0, 0.8, progress);
 
-      // 1. RESPLANDOR Y ATMÓSFERA CENTRAL
       const heroAtmosphereAlpha = 1 - smoothstep(0.0, 1.2, progress);
       if (heroAtmosphereAlpha > 0) {
         const auraRadius = Math.min(width, height) * 0.42;
@@ -167,7 +165,6 @@ function initTelemetryCanvas() {
         ctx.fill();
       }
 
-      // 2. CÁLCULO DE PROYECCIÓN 3D
       const breath = Math.sin(time * 0.8) * 8;
       const maxSphereRadius = Math.min(width, height) * 0.28;
       const baseRadius = maxSphereRadius + breath;
@@ -219,7 +216,6 @@ function initTelemetryCanvas() {
         let screenX = cx + rx * scale;
         let screenY = cy + y3d * scale;
 
-        // Microinteracción sutil con el ratón (atracción magnética suave)
         if (mouse.active) {
           const dx = mouse.x - screenX;
           const dy = mouse.y - screenY;
@@ -244,7 +240,6 @@ function initTelemetryCanvas() {
 
       ctx.globalCompositeOperation = "lighter";
 
-      // 3. GENERACIÓN DE PULSOS LATERALES
       if (progress < 0.15 && incomingPulses.length < MAX_INCOMING_PULSES && Math.random() < 0.12) {
         spawnIncomingPulse(projected, baseRadius, cx, cy);
       }
@@ -291,7 +286,6 @@ function initTelemetryCanvas() {
         }
       }
 
-      // 4. CONEXIONES ATÓMICAS / LÍNEAS DE TELEMETRÍA
       const baseConnectDist = 52 + progress * 10;
       for (let i = 0; i < projected.length; i++) {
         for (let j = i + 1; j < projected.length; j++) {
@@ -315,7 +309,6 @@ function initTelemetryCanvas() {
         }
       }
 
-      // 5. NODOS Y VÉRTICES
       projected.forEach((p) => {
         const sizeBoost = 1 + p.activation * 1.2;
         const radius = Math.max(1.0, p.baseSize * sizeBoost * p.scale);
@@ -340,7 +333,6 @@ function initTelemetryCanvas() {
       requestAnimationFrame(render);
     }
 
-    // Reajuste responsivo con debouncing
     let resizeTimer = null;
     window.addEventListener("resize", () => {
       clearTimeout(resizeTimer);
@@ -352,7 +344,7 @@ function initTelemetryCanvas() {
         if (newCount !== NUM_PARTICLES) {
           NUM_PARTICLES = newCount;
           particles = createParticles(NUM_PARTICLES);
-          incomingPulses.length = 0; // evitar índices obsoletos
+          incomingPulses.length = 0;
         }
       }, 100);
     });
@@ -455,34 +447,62 @@ function initTelemetryCanvas() {
   }
 
   function copiarCorreo() {
-    navigator.clipboard
-      .writeText(EMAIL)
-      .then(() => notify("Copiado", "El correo " + EMAIL + " se copió al portapapeles."))
-      .catch(() => notify("Aviso", "No se pudo copiar automáticamente. Correo: " + EMAIL));
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard
+        .writeText(EMAIL)
+        .then(() => notify("Copiado", "El correo " + EMAIL + " se copió al portapapeles."))
+        .catch(() => notify("Aviso", "No se pudo copiar automáticamente. Correo: " + EMAIL));
+    } else {
+      notify("Aviso", "No se pudo copiar automáticamente. Correo: " + EMAIL);
+    }
   }
 
   document.querySelectorAll(".copy-mail").forEach((el) => {
     el.addEventListener("click", copiarCorreo);
-    el.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        copiarCorreo();
+  });
+
+  /* ============ SCROLL DE CTAS ============ */
+  document.querySelectorAll("[data-scroll-to]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const targetId = btn.getAttribute("data-scroll-to");
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
       }
     });
   });
 
+  /* ============ BOTÓN VER CV ============ */
+  const cvButton = document.getElementById("cvButton");
+  if (cvButton) {
+    cvButton.addEventListener("click", verPDF);
+  }
+
   /* ============ MENÚ MÓVIL ============ */
   const burger = document.getElementById("burger");
   const nav = document.getElementById("mainNav");
+
   if (burger && nav) {
-    burger.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
+    function setMenu(open) {
+      nav.classList.toggle("open", open);
       burger.setAttribute("aria-expanded", String(open));
+      burger.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    }
+
+    burger.addEventListener("click", () => {
+      setMenu(!nav.classList.contains("open"));
     });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("open")) {
+        setMenu(false);
+        burger.focus();
+      }
+    });
+
     nav.querySelectorAll(".nav-link").forEach((link) => {
       link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        burger.setAttribute("aria-expanded", "false");
+        setMenu(false);
       });
     });
   }
@@ -512,12 +532,23 @@ function initTelemetryCanvas() {
     const body = caseEl.querySelector(".case-body");
     if (!summaryBtn || !body) return;
 
+    function setCaseOpen(open) {
+      caseEl.setAttribute("data-open", String(open));
+      summaryBtn.setAttribute("aria-expanded", String(open));
+      body.style.maxHeight = open ? body.scrollHeight + "px" : "0px";
+    }
+
     summaryBtn.addEventListener("click", () => {
-      const isOpen = caseEl.getAttribute("data-open") === "true";
-      const next = !isOpen;
-      caseEl.setAttribute("data-open", String(next));
-      summaryBtn.setAttribute("aria-expanded", String(next));
-      body.style.maxHeight = next ? body.scrollHeight + "px" : "0px";
+      const next = caseEl.getAttribute("data-open") !== "true";
+      setCaseOpen(next);
+    });
+
+    summaryBtn.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        const next = caseEl.getAttribute("data-open") !== "true";
+        setCaseOpen(next);
+      }
     });
   });
 
@@ -531,6 +562,7 @@ function initTelemetryCanvas() {
       },
       { passive: true }
     );
+
     btnTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
     });
@@ -544,35 +576,73 @@ function initTelemetryCanvas() {
       email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
       phone: (v) => v.trim() === "" || /^[\d\s+()-]{6,}$/.test(v.trim()),
       asunto: (v) => v.trim().length >= 3,
-      mensaje: (v) => v.trim().length >= 10,
+      mensaje: (v) => v.trim().length >= 10
     };
 
     function validateField(id) {
       const input = document.getElementById(id);
       if (!input) return true;
+
       const field = input.closest(".field");
       const valid = rules[id](input.value);
+
       field.classList.toggle("invalid", !valid);
+
+      if (valid) {
+        input.removeAttribute("aria-invalid");
+      } else {
+        input.setAttribute("aria-invalid", "true");
+      }
+
       return valid;
     }
 
     Object.keys(rules).forEach((id) => {
       const input = document.getElementById(id);
       if (!input) return;
+
       input.addEventListener("blur", () => validateField(id));
       input.addEventListener("input", () => {
         if (input.closest(".field").classList.contains("invalid")) validateField(id);
       });
     });
 
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const allValid = Object.keys(rules)
         .map(validateField)
         .every(Boolean);
 
       if (!allValid) {
         notify("Formulario incompleto", "Revisa los campos marcados antes de enviar.");
+
+        const firstInvalid = Object.keys(rules)
+          .map((id) => document.getElementById(id))
+          .find((input) => input && input.getAttribute("aria-invalid") === "true");
+
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      // Leemos los valores ANTES de resetear nada
+      const now = new Date();
+      const data = {
+        nombre: form.nombre.value.trim(),
+        email: form.email.value.trim(),
+        phone: form.phone.value.trim(),
+        asunto: form.asunto.value.trim(),
+        mensaje: form.mensaje.value.trim(),
+        date: now.toLocaleDateString("es-ES"),
+        time: now.toLocaleTimeString("es-ES"),
+      };
+
+      try {
+        const response = await emailjs.send(process.env.GMAIL_ID_EMAILJS, process.env.TEMPLATED_ID_EMAILJS, data);
+        if (response.status !== 200) throw new Error("EmailJS status " + response.status);
+      } catch (err) {
+        console.error("EmailJS error:", err);
+        notify("Error al enviar", "No se pudo enviar el mensaje. Inténtalo de nuevo.");
         return;
       }
 
@@ -580,7 +650,22 @@ function initTelemetryCanvas() {
       form.reset();
       Object.keys(rules).forEach((id) => {
         const el = document.getElementById(id);
-        if (el) el.closest(".field").classList.remove("invalid");
+        if (el) {
+          el.closest(".field").classList.remove("invalid");
+          el.removeAttribute("aria-invalid");
+        }
+      });
+    });
+
+    form.addEventListener("reset", () => {
+      requestAnimationFrame(() => {
+        Object.keys(rules).forEach((id) => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.closest(".field").classList.remove("invalid");
+            el.removeAttribute("aria-invalid");
+          }
+        });
       });
     });
   }
@@ -614,54 +699,6 @@ function initTelemetryCanvas() {
     track.appendChild(placeholder);
   }
 
-  function buildCard(entry) {
-  const isPdf = /\.pdf$/i.test(entry.file);
-  const thumbSrc = entry.thumb || (isPdf ? null : entry.file);
-
-  const card = document.createElement("a");
-  card.className = "titulo-card";
-  card.href = TITULOS_FOLDER + entry.file;
-  card.target = "_blank";
-  card.rel = "noopener";
-
-  const caption = document.createElement("figcaption");
-  caption.className = "titulo-caption";
-  caption.textContent = entry.file.replace(/\.[^/.]+$/, "");
-
-  if (isPdf) {
-    const badge = document.createElement("span");
-    badge.className = "titulo-badge";
-    badge.textContent = "PDF";
-    card.appendChild(badge);
-  }
-
-  if (!thumbSrc) {
-    const broken = document.createElement("div");
-    broken.className = "titulo-broken";
-    broken.innerHTML = svgNoImageIcon() + '<span>Sin vista previa</span>';
-    card.classList.add("titulo-card--broken");
-    card.appendChild(broken);
-    card.appendChild(caption);
-    return card;
-  }
-
-  /* === NUEVO: contenedor 3D para flip de imagen === */
-  const imgWrapper = document.createElement("div");
-  imgWrapper.className = "titulo-img-wrapper";
-
-  const img = document.createElement("img");
-  img.src = TITULOS_FOLDER + thumbSrc;
-  img.alt = entry.file;
-  img.loading = "lazy";
-  img.onerror = function () { showBrokenState(card, img); };
-
-  imgWrapper.appendChild(img);
-  card.appendChild(imgWrapper);
-
-  card.appendChild(caption);
-  return card;
-}
-
   function svgNoImageIcon() {
     return `
       <svg viewBox="0 0 48 48" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -682,11 +719,65 @@ function initTelemetryCanvas() {
     card.prepend(broken);
   }
 
+  function buildCard(entry) {
+    const isPdf = /\.pdf$/i.test(entry.file);
+    const thumbSrc = entry.thumb || (isPdf ? null : entry.file);
+
+    const card = document.createElement("a");
+    card.className = "titulo-card";
+    card.href = TITULOS_FOLDER + encodeURI(entry.file);
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+
+    const caption = document.createElement("span");
+    caption.className = "titulo-caption";
+    caption.textContent = entry.file.replace(/\.[^/.]+$/, "");
+
+    if (isPdf) {
+      const badge = document.createElement("span");
+      badge.className = "titulo-badge";
+      badge.textContent = "PDF";
+      card.appendChild(badge);
+    }
+
+    if (!thumbSrc) {
+      const broken = document.createElement("div");
+      broken.className = "titulo-broken";
+      broken.innerHTML = svgNoImageIcon() + '<span>Sin vista previa</span>';
+      card.classList.add("titulo-card--broken");
+      card.appendChild(broken);
+      card.appendChild(caption);
+      return card;
+    }
+
+    const imgWrapper = document.createElement("div");
+    imgWrapper.className = "titulo-img-wrapper";
+
+    const img = document.createElement("img");
+    img.src = TITULOS_FOLDER + encodeURI(thumbSrc);
+    img.alt = caption.textContent;
+    img.loading = "lazy";
+    img.onerror = function () { showBrokenState(card, img); };
+
+    imgWrapper.appendChild(img);
+    card.appendChild(imgWrapper);
+    card.appendChild(caption);
+    return card;
+  }
+
   function renderCards(track, entries) {
-  track.innerHTML = "";
-  track.classList.remove("is-marquee");
-  entries.forEach((entry) => track.appendChild(buildCard(entry)));
-}
+    track.innerHTML = "";
+    track.classList.remove("is-marquee");
+    entries.forEach((entry) => track.appendChild(buildCard(entry)));
+  }
+
+  function cloneCardWithHandlers(node) {
+    const clone = node.cloneNode(true);
+    clone.querySelectorAll("img").forEach((img) => {
+      img.onerror = function () { showBrokenState(clone, img); };
+    });
+    return clone;
+  }
 
   function evaluateOverflow(viewport, track, originalFiles) {
     const singleSetWidth = track.classList.contains("is-marquee")
@@ -696,15 +787,16 @@ function initTelemetryCanvas() {
     const overflows = singleSetWidth > viewport.clientWidth;
 
     if (overflows && !track.classList.contains("is-marquee")) {
-      // Duplicamos el set una vez para que el bucle infinito no dé salto
       Array.from(track.children)
-        .map((n) => n.cloneNode(true))
+        .map(cloneCardWithHandlers)
         .forEach((clone) => track.appendChild(clone));
+
       track.classList.add("is-marquee");
       const duration = Math.max(18, Math.round(singleSetWidth / 40));
       track.style.setProperty("--marquee-duration", duration + "s");
     } else if (!overflows && track.classList.contains("is-marquee")) {
-      renderCards(track, originalFiles); // ya cabe: quitamos duplicados
+      renderCards(track, originalFiles);
+      track.style.removeProperty("--marquee-duration");
     }
   }
 
@@ -721,6 +813,8 @@ function initTelemetryCanvas() {
     const track = getContainer(trackId);
     if (!viewport || !track) return;
 
+    let resizeBound = false;
+
     fetch(TITULOS_MANIFEST, { cache: "no-store" })
       .then((res) => {
         if (!res.ok) throw new Error("manifest no encontrado");
@@ -731,12 +825,17 @@ function initTelemetryCanvas() {
           renderPlaceholder(track);
           return;
         }
+
         renderCards(track, files);
         requestAnimationFrame(() => evaluateOverflow(viewport, track, files));
-        window.addEventListener(
-          "resize",
-          debounce(() => evaluateOverflow(viewport, track, files), 200)
-        );
+
+        if (!resizeBound) {
+          resizeBound = true;
+          window.addEventListener(
+            "resize",
+            debounce(() => evaluateOverflow(viewport, track, files), 200)
+          );
+        }
       })
       .catch(() => renderPlaceholder(track));
   }
@@ -745,3 +844,5 @@ function initTelemetryCanvas() {
     initTitulosCarousel("titulosViewport", "titulosTrack");
   });
 })();
+
+emailjs.init(process.env.EMAILJS_ID);
