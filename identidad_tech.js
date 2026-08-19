@@ -638,7 +638,7 @@
       };
 
       try {
-        const response = await emailjs.send(process.env.GMAIL_ID_EMAILJS, process.env.TEMPLATED_ID_EMAILJS, data);
+        const response = await emailjs.send(process.env.VITE_GMAIL_ID_EMAILJS, process.env.VITE_TEMPLATED_ID_EMAILJS, data);
         if (response.status !== 200) throw new Error("EmailJS status " + response.status);
       } catch (err) {
         console.error("EmailJS error:", err);
@@ -845,4 +845,4 @@
   });
 })();
 
-emailjs.init(process.env.EMAILJS_ID);
+emailjs.init(process.env.VITE_EMAILJS_ID);
