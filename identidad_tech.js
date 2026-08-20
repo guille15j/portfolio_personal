@@ -34,8 +34,8 @@
         const phi = Math.acos(1 - (2 * (i + 0.5)) / (count * 0.82));
         const theta = Math.PI * (1 + Math.sqrt(5)) * i;
 
-        const ringAngle = i * 0.35;
-        const ringRadius = 1.2 + (i % 3) * 0.1;
+        const ringAngle = i * 0.15;
+        const ringRadius = 1.6 + (i % 3) * 0.1;
 
         newParticles.push({
           i: i,
@@ -126,15 +126,15 @@
       });
     }
 
-    window.addEventListener("mousemove", (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-      mouse.active = true;
-    }, { passive: true });
+    // window.addEventListener("mousemove", (e) => {
+    //   mouse.x = e.clientX;
+    //   mouse.y = e.clientY;
+    //   mouse.active = true;
+    // }, { passive: true });
 
-    window.addEventListener("mouseleave", () => {
-      mouse.active = false;
-    });
+    // window.addEventListener("mouseleave", () => {
+    //   mouse.active = false;
+    // });
 
     function render() {
       ctx.clearRect(0, 0, width, height);
@@ -350,69 +350,6 @@
     render();
   }
 
-  /* ============ ANIMACIÓN DE MÉTRICAS VIVAS (CONTEO NUMÉRICO) ============ */
-  function initLiveMetrics() {
-    const metricEls = document.querySelectorAll(".metric-value");
-    if (metricEls.length === 0) return;
-
-    function animateValue(el) {
-      const originalText = el.textContent.trim();
-      const numbers = [];
-      const regex = /\d+/g;
-      let match;
-
-      while ((match = regex.exec(originalText)) !== null) {
-        numbers.push({ index: match.index, length: match[0].length, target: parseInt(match[0], 10) });
-      }
-
-      if (numbers.length === 0) return;
-
-      const duration = 1600;
-      const startTime = performance.now();
-
-      function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easeOutQuad = 1 - Math.pow(1 - progress, 3);
-
-        let currentResult = originalText;
-        for (let i = numbers.length - 1; i >= 0; i--) {
-          const numObj = numbers[i];
-          const currentVal = Math.floor(easeOutQuad * numObj.target);
-          currentResult =
-            currentResult.substring(0, numObj.index) +
-            currentVal +
-            currentResult.substring(numObj.index + numObj.length);
-        }
-
-        el.textContent = currentResult;
-
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        } else {
-          el.textContent = originalText;
-        }
-      }
-
-      requestAnimationFrame(update);
-    }
-
-    if ("IntersectionObserver" in window && !prefersReducedMotion) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateValue(entry.target);
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.3 }
-      );
-      metricEls.forEach((el) => observer.observe(el));
-    }
-  }
-
   /* ============ BORDE LUMINOSO MAGNÉTICO (MOUSE TRACKING) ============ */
   function initMagneticBorders() {
     if (prefersReducedMotion) return;
@@ -505,7 +442,7 @@
     });
   }
 
-  /* ============ REVELADO PROGRESIVO DE ENSAMBLAJE (REVEAL) ============ */
+  /* ============ REVELADO POR SCROLL ============ */
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && !prefersReducedMotion) {
     const io = new IntersectionObserver(
@@ -524,7 +461,7 @@
     revealEls.forEach((el) => el.classList.add("in"));
   }
 
-  /* ============ ACORDEÓN DE CASOS DE ESTUDIO ============ */
+  /* ============ ACORDEÓN DE PROYECTOS ============ */
   document.querySelectorAll(".case").forEach((caseEl) => {
     const summaryBtn = caseEl.querySelector(".case-summary");
     const body = caseEl.querySelector(".case-body");
