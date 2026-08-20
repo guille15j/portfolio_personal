@@ -1304,6 +1304,10 @@ nav {
 
 /* -------- about -------- */
 
+.about-copy{
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+}
+
 .about-grid {
   display: grid;
   align-items: flex-start;
