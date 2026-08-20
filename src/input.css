@@ -162,6 +162,41 @@
     background: rgba(0, 229, 255, 0.14);
   }
 
+  .btn-icon {
+    @apply border border-line-strong rounded-full 
+    flex items-center justify-center transition-all 
+    duration-200 cursor-pointer backdrop-blur-sm 
+     bg-bg-card;
+
+    width: 42px;
+    height: 42px;
+
+    /* background: rgba(255, 255, 255, 0.699); */
+    box-shadow: 0 2px 10px rgba(0, 229, 255, 0.18);
+  }
+
+  .btn-icon:hover {
+    @apply -translate-y-0.5;
+    background: rgba(0, 229, 255, 0.10);
+    box-shadow: 0 4px 18px rgba(0, 229, 255, 0.35);
+    filter: brightness(1.08);
+  }
+
+  .btn-icon:active {
+    transform: scale(0.96);
+    transition: transform 100ms ease-out;
+    background: rgba(0, 229, 255, 0.14);
+    box-shadow: 0 2px 10px rgba(0, 229, 255, 0.25);
+    filter: brightness(0.95);
+  }
+
+  .btn-icon img {
+    filter: invert(1);
+  }
+
+
+
+
   /* -------- nav -------- */
   .nav-wrap {
     @apply sticky top-0 z-[100] flex items-center justify-between border-b border-line-subtle backdrop-blur-glass-strong px-pad py-4;
@@ -449,7 +484,13 @@
   .case-body { @apply max-h-0 overflow-hidden transition-[max-height] duration-slow ease-system; }
   .case[data-open="true"] .case-body { @apply border-t border-line-subtle; }
 
-  .case-image { @apply w-full object-cover; max-height: 320px; filter: brightness(0.85) contrast(1.08); }
+  .case-image { 
+    @apply w-full object-cover; 
+    max-height: 320px; 
+    filter: brightness(0.85) 
+    contrast(1.08); 
+    padding: 1.75rem clamp(1.25rem, 3vw, 2rem) 1.25rem;
+  }
 
   .case-flow { @apply grid grid-cols-4 gap-4; padding: 1.75rem clamp(1.25rem, 3vw, 2rem) 1.25rem; }
   .flow-step { @apply p-4 border-l-2 border-line-strong min-w-0; background: rgba(0, 229, 255, 0.014); }

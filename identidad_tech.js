@@ -681,7 +681,7 @@
 (function () {
   "use strict";
 
-  const TITULOS_FOLDER = "resources/titulos/";
+  const TITULOS_FOLDER = "/resources/titulos/";
   const TITULOS_MANIFEST = TITULOS_FOLDER + "manifest.json";
 
   function getContainer(id) {

@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- <link rel="stylesheet" href="dist/output.css"> -->
+  <link rel="stylesheet" href="dist/output.css">
   <link rel="stylesheet" href="/src/input.css">
 </head>
 <body>
@@ -28,8 +28,8 @@
   <a href="#top" class="nav-mark">GS<span class="nav-mark-dot">.</span></a>
   <nav id="mainNav" aria-label="Navegación principal">
     <a href="#sobre-mi" class="nav-link">Sobre mí</a>
-    <a href="#sistemas" class="nav-link">Stack</a>
     <a href="#casos" class="nav-link">Proyectos</a>
+    <a href="#sistemas" class="nav-link">Stack</a>
     <a href="#registro" class="nav-link">Trayectoria</a>
     <a href="#canal" class="nav-link nav-link-cta">Contacto</a>
   </nav>
@@ -47,8 +47,8 @@
   <!-- HERO  -->
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow"><span class="pulse-dot"></span> Desarrollador Junior </p>
-      <h1>Disciplina en el proceso.<br><span class="hero-highlight">Orientado a producto.</span></h1>
+      <p class="eyebrow">Desarrollador Junior </p>
+      <h1>Disciplina en el proceso.<br>Orientado a producto.</h1>
       <p class="lead">
         Trabajo con rigor cuando el proceso lo exige y con velocidad cuando el contexto lo demanda.
         <br>
@@ -56,18 +56,25 @@
       </p>
 
       <div class="duality-badges">
-        <span class="duality-badge">Metodología · Consistencia · Fiabilidad</span>
-        <span class="duality-badge duality-badge-accent">MVP · Ownership · Growth</span>
+        <button type="button" class="btn btn-icon" id="cvButton">CV</button>
+
+        <button class="btn-icon linkedin" onclick="window.open('https://www.linkedin.com/in/guillermosant')">
+          <img src="resources/img/linkedin.png" alt="LinkedIn" class="w-5 h-5" />
+        </button>
+
+        <button class="btn-icon github" onclick="window.open('https://github.com/guille-ss')">
+          <img src="resources/img/github.png" alt="GitHub" class="w-5 h-5" />
+        </button>
       </div>
 
-      <div class="cta-row">
+      <!-- <div class="cta-row">
         <button type="button" class="btn btn-primary" data-scroll-to="casos">
           <span>Ver proyectos</span>
         </button>
         <button type="button" class="btn btn-ghost" data-scroll-to="canal">
           <span>Hablemos</span>
         </button>
-      </div>
+      </div> -->
     </div>
   </header>
 
@@ -134,92 +141,6 @@
           <a href="https://github.com/guille15j" target="_blank" rel="noopener noreferrer">GitHub</a>
         </p>
       </div>
-    </div>
-  </section>
-
-  <!-- STACK -->
-  <section id="sistemas" class="section reveal section-alt">
-    <div class="section-head">
-      <h2>Con qué trabajo</h2>
-      <p class="section-intro">Cinco capas, de la placa electrónica al dashboard. Lo primero de cada lista es lo que más he usado en proyectos reales; lo que va después de "también", lo que también domino pero aún no tiene un caso que lo demuestre.</p>
-    </div>
-
-    <div class="stack-grid">
-
-      <div class="stack-block blueprint-card">
-        <span class="blueprint-coord">LAYER // 01</span>
-        <div class="stack-head">
-          <span class="stack-tag stack-tag-rigor">Backend &amp; APIs</span>
-          <span class="stack-note">Donde vive la lógica que no puede fallar</span>
-        </div>
-        <ul class="stack-list">
-          <li>Java</li><li>Spring Boot</li><li>C / C++</li><li>Python</li><li>Flask</li>
-        </ul>
-        <p class="stack-sub-label">También</p>
-        <ul class="stack-list stack-list-secondary">
-          <li>Node.js</li><li>Kotlin</li><li>OAuth 2.0</li>
-        </ul>
-      </div>
-
-      <div class="stack-block blueprint-card">
-        <span class="blueprint-coord">LAYER // 02</span>
-        <div class="stack-head">
-          <span class="stack-tag stack-tag-speed">Frontend &amp; Móvil</span>
-          <span class="stack-note">La parte que la gente toca</span>
-        </div>
-        <ul class="stack-list">
-          <li>JavaScript</li><li>HTML / CSS</li><li>React Native</li><li>Flutter / Dart</li>
-        </ul>
-      </div>
-
-      <div class="stack-block blueprint-card">
-        <span class="blueprint-coord">LAYER // 03</span>
-        <div class="stack-head">
-          <span class="stack-tag">IoT &amp; Hardware</span>
-          <span class="stack-note">Software que también controla el mundo físico</span>
-        </div>
-        <ul class="stack-list">
-          <li>ESP32</li><li>Arduino</li><li>MQTT</li><li>RS-232 / serie</li><li>Sensórica / actuadores</li>
-        </ul>
-      </div>
-
-      <div class="stack-block blueprint-card">
-        <span class="blueprint-coord">LAYER // 04</span>
-        <div class="stack-head">
-          <span class="stack-tag">Datos, Cloud &amp; Analítica</span>
-          <span class="stack-note">De la base de datos al dashboard</span>
-        </div>
-        <ul class="stack-list">
-          <li>PostgreSQL</li><li>MySQL</li><li>Supabase</li><li>Palantir Foundry</li><li>Tableau</li><li>Power BI</li><li>Vercel</li>
-        </ul>
-      </div>
-
-      <div class="stack-block blueprint-card">
-        <span class="blueprint-coord">LAYER // 05</span>
-        <div class="stack-head">
-          <span class="stack-tag">Herramientas &amp; Proceso</span>
-          <span class="stack-note">Cómo entrego, no solo qué construyo</span>
-        </div>
-        <ul class="stack-list">
-          <li>Docker</li><li>Maven</li><li>Git / GitHub</li><li>GitLab</li><li>Google Apps Script</li><li>Scrum / Daily</li>
-        </ul>
-        <p class="stack-sub-label">También</p>
-        <ul class="stack-list stack-list-secondary">
-          <li>Postman</li><li>JUnit</li>
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TITULOS -->
-  <section id="titulos" class="section reveal">
-    <div class="section-head">
-      <h2>Títulos y certificados</h2>
-    </div>
-
-    <div class="titulos-viewport" id="titulosViewport">
-      <div class="titulos-track" id="titulosTrack"></div>
     </div>
   </section>
 
@@ -647,6 +568,95 @@
 
     </div>
   </section>
+
+
+  <!-- STACK -->
+  <section id="sistemas" class="section reveal section-alt">
+    <div class="section-head">
+      <h2>Con qué trabajo</h2>
+      <p class="section-intro">Cinco capas, de la placa electrónica al dashboard. Lo primero de cada lista es lo que más he usado en proyectos reales; lo que va después de "también", lo que también domino pero aún no tiene un caso que lo demuestre.</p>
+    </div>
+
+    <div class="stack-grid">
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 01</span>
+        <div class="stack-head">
+          <span class="stack-tag stack-tag-rigor">Backend &amp; APIs</span>
+          <span class="stack-note">Donde vive la lógica que no puede fallar</span>
+        </div>
+        <ul class="stack-list">
+          <li>Java</li><li>Spring Boot</li><li>C / C++</li><li>Python</li><li>Flask</li>
+        </ul>
+        <p class="stack-sub-label">También</p>
+        <ul class="stack-list stack-list-secondary">
+          <li>Node.js</li><li>Kotlin</li><li>OAuth 2.0</li>
+        </ul>
+      </div>
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 02</span>
+        <div class="stack-head">
+          <span class="stack-tag stack-tag-speed">Frontend &amp; Móvil</span>
+          <span class="stack-note">La parte que la gente toca</span>
+        </div>
+        <ul class="stack-list">
+          <li>JavaScript</li><li>HTML / CSS</li><li>React Native</li><li>Flutter / Dart</li>
+        </ul>
+      </div>
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 03</span>
+        <div class="stack-head">
+          <span class="stack-tag">IoT &amp; Hardware</span>
+          <span class="stack-note">Software que también controla el mundo físico</span>
+        </div>
+        <ul class="stack-list">
+          <li>ESP32</li><li>Arduino</li><li>MQTT</li><li>RS-232 / serie</li><li>Sensórica / actuadores</li>
+        </ul>
+      </div>
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 04</span>
+        <div class="stack-head">
+          <span class="stack-tag">Datos, Cloud &amp; Analítica</span>
+          <span class="stack-note">De la base de datos al dashboard</span>
+        </div>
+        <ul class="stack-list">
+          <li>PostgreSQL</li><li>MySQL</li><li>Supabase</li><li>Palantir Foundry</li><li>Tableau</li><li>Power BI</li><li>Vercel</li>
+        </ul>
+      </div>
+
+      <div class="stack-block blueprint-card">
+        <span class="blueprint-coord">LAYER // 05</span>
+        <div class="stack-head">
+          <span class="stack-tag">Herramientas &amp; Proceso</span>
+          <span class="stack-note">Cómo entrego, no solo qué construyo</span>
+        </div>
+        <ul class="stack-list">
+          <li>Docker</li><li>Maven</li><li>Git / GitHub</li><li>GitLab</li><li>Google Apps Script</li><li>Scrum / Daily</li>
+        </ul>
+        <p class="stack-sub-label">También</p>
+        <ul class="stack-list stack-list-secondary">
+          <li>Postman</li><li>JUnit</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TITULOS -->
+  <section id="titulos" class="section reveal">
+    <div class="section-head">
+      <h2>Títulos y certificados</h2>
+    </div>
+
+    <div class="titulos-viewport" id="titulosViewport">
+      <div class="titulos-track" id="titulosTrack"></div>
+    </div>
+  </section>
+
+
 
   <!-- TRAYECTORIA -->
   <section id="registro" class="section reveal">
