@@ -581,7 +581,7 @@
         return;
       }
 
-      notify("Mensaje enviado", "Gracias por escribir. Responderé a la brevedad.");
+      notify("Mensaje enviado", "Gracias por escribir. Responderé lo más pronto posible.");
       form.reset();
       Object.keys(rules).forEach((id) => {
         const el = document.getElementById(id);
