@@ -533,7 +533,7 @@
     function setCaseOpen(open) {
       caseEl.setAttribute("data-open", String(open));
       summaryBtn.setAttribute("aria-expanded", String(open));
-      body.style.maxHeight = open ? body.scrollHeight + "px" : "0px";
+      // body.style.maxHeight = open ? body.scrollHeight + "px" : "0px";
     }
 
     summaryBtn.addEventListener("click", () => {
