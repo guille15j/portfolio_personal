@@ -440,17 +440,8 @@
   }
   .case[data-open="true"] .case-toggle { @apply rotate-45 bg-primary-cyan text-bg-dark; }
 
-  .case-body {
-    display: grid;
-    grid-template-rows: 0fr;
-    overflow: hidden;
-    transition: grid-template-rows theme("transitionDuration.slow") theme("transitionTimingFunction.system");
-  }
-  .case-body > * { overflow: hidden; min-height: 0; }
-  .case[data-open="true"] .case-body {
-    grid-template-rows: 1fr;
-    @apply border-t border-line-subtle;
-  }
+  .case-body { @apply max-h-0 overflow-hidden transition-[max-height] duration-slow ease-system; }
+  .case[data-open="true"] .case-body { @apply border-t border-line-subtle; }
 
   .case-image { @apply w-full object-cover; max-height: 320px; filter: brightness(0.85) contrast(1.08); }
 
