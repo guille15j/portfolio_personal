@@ -1,3 +1,4 @@
 .env
 *repomix*
 node_modules/
+infra.md

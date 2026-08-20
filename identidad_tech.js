@@ -1,5 +1,3 @@
-// require('dotenv').config();
-
 (function () {
   "use strict";
 
@@ -638,7 +636,7 @@
       };
 
       try {
-        const response = await emailjs.send(process.env.VITE_GMAIL_ID_EMAILJS, process.env.VITE_TEMPLATED_ID_EMAILJS, data);
+        const response = await emailjs.send(import.meta.env.VITE_GMAIL_ID_EMAILJS, import.meta.env.VITE_TEMPLATED_ID_EMAILJS, data);
         if (response.status !== 200) throw new Error("EmailJS status " + response.status);
       } catch (err) {
         console.error("EmailJS error:", err);
@@ -845,4 +843,4 @@
   });
 })();
 
-emailjs.init(process.env.VITE_EMAILJS_ID);
+emailjs.init(import.meta.env.VITE_EMAILJS_ID);
