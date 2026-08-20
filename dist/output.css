@@ -718,8 +718,8 @@ p {
 
 .hero-highlight {
   --tw-text-opacity: 1;
-  color: rgb(0 229 255 / var(--tw-text-opacity, 1));
-  filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.25));
+  color: rgb(148 163 184 / var(--tw-text-opacity, 1));
+  /* filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.25)); */
 }
 
 .eyebrow {

@@ -72,8 +72,8 @@
   .telemetry-canvas { @apply fixed inset-0 w-screen h-screen pointer-events-none -z-10; }
 
   .hero-highlight {
-    @apply text-primary-cyan;
-    filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.25));
+    @apply text-text-muted ;
+    /* filter: drop-shadow(0 0 16px rgba(0, 229, 255, 0.25)); */
   }
 
   .eyebrow {
