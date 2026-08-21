@@ -780,4 +780,30 @@
   });
 })();
 
+function getAnonId() {
+  const existing = document.cookie.match(/anonId=([^;]+)/)?.[1];
+  if (existing) return existing;
+
+  const newId = crypto.randomUUID();
+  document.cookie = `anonId=${newId}; path=/; max-age=31536000`;
+  return newId;
+}
+
+async function registrarVisita() {
+  const anonId = getAnonId();
+  const hora = new Date().toISOString();
+
+  try {
+    await fetch("/api/track", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ anonId, hora })
+    });
+  } catch (err) {
+    console.error("Error enviando visita:", err);
+  }
+}
+
+
+registrarVisita();
 emailjs.init(import.meta.env.VITE_EMAILJS_ID);
