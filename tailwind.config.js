@@ -2,31 +2,31 @@
 module.exports = {
   content: ["./index.html", "./identidad_tech.js"],
   darkMode: "class",
-  theme: {
+theme: {
     extend: {
       colors: {
-        "bg-dark": "#05070c",
-        "bg-surface": "rgba(11, 16, 26, 0.76)",
-        "bg-card": "rgba(13, 19, 30, 0.6)",
-        "bg-card-hover": "rgba(18, 27, 43, 0.82)",
-        "bg-elevated": "#04060a",
+        "bg-dark": "#0e0f11",
+        "bg-surface": "rgba(20, 22, 24, 0.78)",
+        "bg-card": "rgba(24, 26, 29, 0.70)",
+        "bg-card-hover": "rgba(31, 34, 38, 0.85)",
+        "bg-elevated": "#14161a",
 
-        "text-main": "#f7fafc",
-        "text-muted": "#94a3b8",
-        "text-subtle": "#62748e",
+        "text-main": "#f2f3f1",
+        "text-muted": "#9ba1a0",
+        "text-subtle": "#7d8382",
 
-        "primary-cyan": "#00e5ff",
-        "primary-cyan-soft": "#5eead4",
-        "primary-blue": "#0a3d91",
-        "primary-blue-strong": "#1746c2",
-        "accent-glow": "rgba(0, 229, 255, 0.2)",
-        "accent-glow-strong": "rgba(0, 229, 255, 0.45)",
+        "primary-cyan": "#3fa89b",
+        "primary-cyan-soft": "#7fc9bf",
+        "primary-blue": "#d9873f",
+        "primary-blue-strong": "#b5661f",
+        "accent-glow": "rgba(63, 168, 155, 0.18)",
+        "accent-glow-strong": "rgba(63, 168, 155, 0.40)",
 
-        "state-error": "#f87171",
+        "state-error": "#e0574a",
 
-        "line-subtle": "rgba(0, 229, 255, 0.12)",
-        "line-strong": "rgba(0, 229, 255, 0.32)",
-        "line-dark": "rgba(255, 255, 255, 0.07)",
+        "line-subtle": "rgba(63, 168, 155, 0.12)",
+        "line-strong": "rgba(63, 168, 155, 0.28)",
+        "line-dark": "rgba(255, 255, 255, 0.06)",
       },
       fontFamily: {
         display: ["Archivo", "system-ui", "-apple-system", "sans-serif"],

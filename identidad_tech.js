@@ -819,5 +819,5 @@ async function registrarVisita() {
 }
 
 
-registrarVisita();
+// registrarVisita();
 emailjs.init(import.meta.env.VITE_EMAILJS_ID);

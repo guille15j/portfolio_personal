@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   try {
     const body = typeof req.body === "string" ? JSON.parse(req.body) : req.body || {};
     
-    const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbwPAZF6H0dk5T1T4dry6sBendLibfPUXmHH4sOITwBY41OipnhfaBu-ZvmM5NmBA2cAGg/exec";
 
     if (!scriptUrl) {
       return res.status(500).json({ ok: false, error: "Variable no configurada" });
