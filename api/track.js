@@ -1,6 +1,7 @@
 export default async function handler(req, res) {
   try {
-    // IP real del visitante
+    console.log("Iniciando envio de datos métricas");
+
     const ip =
       req.headers["x-forwarded-for"]?.split(",")[0] ||
       req.socket.remoteAddress ||
@@ -11,7 +12,6 @@ export default async function handler(req, res) {
 
     const { anonId, hora } = req.body;
 
-    // Payload para Google Sheets
     const payload = {
       anonId,
       hora,
@@ -19,12 +19,14 @@ export default async function handler(req, res) {
       userAgent: req.headers["user-agent"] || ""
     };
 
-    await fetch(import.meta.env.VITE_URL_APP, {
+    const response = await fetch(process.env.URL_APP, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
 
+    console.log("Respuesta: ", response.status);
+    
     res.status(200).json({ ok: true });
   } catch (error) {
     console.error("Error en track:", error);
