@@ -326,7 +326,10 @@
 
   /* responsive */
   @media (max-width: 820px) { .metrics-grid { @apply grid-cols-2; } }
-  @media (max-width: 480px) { .metrics-grid { @apply grid-cols-1; } }
+  @media (max-width: 480px) { 
+    .metrics-grid { @apply grid-cols-1; } 
+    .metrics-strip {margin-top: 200px}
+  }
 
 
   /* -------- sections -------- */

@@ -1254,6 +1254,10 @@ nav {
   .metrics-grid {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
+
+  .metrics-strip {
+    margin-top: 200px
+  }
 }
 
 /* -------- sections -------- */
