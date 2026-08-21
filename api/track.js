@@ -7,8 +7,17 @@ export default async function handler(req, res) {
       req.socket.remoteAddress ||
       "0.0.0.0";
 
-    const geo = await fetch(`https://ipapi.co/${ip}/json/`).then(r => r.json());
-    const comunidad = geo.region || "Desconocida";
+    let comunidad = "Desconocida";
+
+    try {
+        const geoResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+        if (geoResponse.ok) {
+            const geo = await geoResponse.json();
+            comunidad = geo.region || "Desconocida";
+        }
+    } catch (geoErr) {
+        console.warn("Fallo de geolocalización (posible rate limit):", geoErr);
+    }
 
     const { anonId, hora } = req.body;
 
