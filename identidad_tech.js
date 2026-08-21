@@ -792,15 +792,29 @@ function getAnonId() {
 async function registrarVisita() {
   const anonId = getAnonId();
   const hora = new Date().toISOString();
+  let comunidad = "Desconocida";
+
+  try {
+    const geoRes = await fetch("https://ipapi.co/json/");
+    if (geoRes.ok) {
+      const geo = await geoRes.json();
+      comunidad = geo.region || "Desconocida";
+    }
+  } catch (e) {}
 
   try {
     await fetch("/api/track", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ anonId, hora })
+      body: JSON.stringify({
+        anonId,
+        hora,
+        comunidad,
+        userAgent: navigator.userAgent
+      })
     });
   } catch (err) {
-    console.error("Error enviando visita:", err);
+    console.error("Error registrando visita:", err);
   }
 }
 
